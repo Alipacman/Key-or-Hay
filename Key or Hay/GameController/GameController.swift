@@ -20,55 +20,60 @@ class GameController: UIViewController {
     @IBOutlet weak var ViewForPictureCon: UIView!
     @IBOutlet weak var imageContainer2: UIView!
     
-    var containerArray = [UIView]()
+   
     var pressCounter = 0
-    var count = 4
+    var startSecond = 4
     var timer = Timer()
+    
+    
     var imageCounter = 0
+    var pictureArray = [UIView]()
     
-    
+    var pointCounter = 0
+    var userGuess = 0
+    var solution = 0
     
     override func viewDidLoad() {
         startAfterTime()
-        containerArray = []
+        pictureArray = []
         
         imageContainer2.isHidden = true
         PointCounter.isHidden = true
         timeCounter.isHidden = true
         super.viewDidLoad()
         
-        
-//        imageContainer2.addSubview(ImageView)
-//        view.addSubview(imageContainer)
-//        setupContainer(view: imageContainer)
     }
     
-
-    func startAfterTime(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.start()
-            
-        })
-    }
     
     
    @IBAction func buttonClicked(sender: UIButton){
         switch sender.tag {
         case 1:
-            animatedSlideoutLeft(card: containerArray[pressCounter])
+            animatedSlideoutLeft(card: pictureArray[pressCounter])
         case 2:
-            animatedSlideoutUp(card: containerArray[pressCounter])
+            animatedSlideoutUp(card: pictureArray[pressCounter])
         case 3:
-            animatedSlideoutRight(card: containerArray[pressCounter])
+            animatedSlideoutRight(card: pictureArray[pressCounter])
         default:
             print("error at buttonClicked()")
         }
         pressCounter += 1
-        setViewUp()
+        pointSystem()
+        createCard()
     }
     
     
-    
+    func pointSystem(){
+        if (userGuess == solution) {
+            pointCounter += 1
     }
+        else{
+            pointCounter -= 1
+        }
+        PointCounter.text = "Points: \(String(pointCounter))"
+    }
+    
+    
+}
 
 

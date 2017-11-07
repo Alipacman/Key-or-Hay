@@ -12,46 +12,10 @@ import UIKit
 extension GameController{
     
     
-    func start(){
-        let translateTransform = CGAffineTransform(translationX: 500, y: 0)
-        let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        UIView.animate(withDuration: 1.5, delay: 0.1, options: [.curveEaseIn, .repeat ] , animations: {
-            UIView.setAnimationRepeatCount(3)
-            self.StartNumberView.transform = translateTransform
-            self.startdown()
-            UIView.animate(withDuration: 1.5, delay: 1, options: [.curveEaseIn, .repeat ], animations: {
-                UIView.setAnimationRepeatCount(3)
-                self.StartNumberView.transform = scaleTransform
-            }, completion: { _ in
-                self.downCounter()
-                self.gameStart()
-                self.StartNumberView.isHidden = true
-            })
-        },completion: nil)
-        
-    }
-    
-    
-    
-    func startdown(){
-        timer = Timer.scheduledTimer(timeInterval: 1.4, target: self, selector: #selector(self.downCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc func downCounter(){
-        
-        self.count = self.count - 1
-        DispatchQueue.main.async {
-            self.StartNumberLabel.text = "\(self.self.count)"
-        }
-    }
-    
-    
-    
-    
-    
     
     func animatedSlideoutUp (card : UIView){
 
+        userGuess = 1
         let translateTransform = CGAffineTransform(translationX: 0, y: -600)
  
         
@@ -62,7 +26,7 @@ extension GameController{
         })
     }
     func animatedSlideoutRight (card : UIView){
-        
+        userGuess = 2
         let rotateTransfrom = CGAffineTransform(rotationAngle: 25)
         let translateTransform = CGAffineTransform(translationX: 520, y: 0)
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
@@ -75,7 +39,7 @@ extension GameController{
     }
     
     func animatedSlideoutLeft (card : UIView){
-        
+        userGuess = 0
         let rotateTransfrom = CGAffineTransform(rotationAngle: -25)
         let translateTransform = CGAffineTransform(translationX: -520, y: 0)
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
