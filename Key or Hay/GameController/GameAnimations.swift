@@ -31,6 +31,8 @@ extension GameController{
         
     }
     
+    
+    
     func startdown(){
         timer = Timer.scheduledTimer(timeInterval: 1.4, target: self, selector: #selector(self.downCounter), userInfo: nil, repeats: true)
     }
