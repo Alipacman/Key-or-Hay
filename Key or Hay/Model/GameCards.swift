@@ -1,49 +1,40 @@
 //
-//  GameExpension.swift
+//  GameCards.swift
 //  Key or Hay
 //
-//  Created by Ali Ebrahimi Pourasad on 01.11.17.
+//  Created by Ali Ebrahimi Pourasad on 07.11.17.
 //  Copyright © 2017 Ali Ebrahimi Pourasad. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
+
 extension GameController {
     
-    func showLayout(){
-        PointCounter.isHidden = false
-        timeCounter.isHidden = false
-    }
     
-    func gameStart(){
-        showLayout()
-        setViewUp()
-    }
-    
-
-    
-    
-    func setViewUp(){
+    func createCard(){
         let card = createViewContainer()
         let pic = createViewsPic()
         card.addSubview(pic)
-        containerArray.append(card)
+        pictureArray.append(card)
         view.addSubview(card)
         view.sendSubview(toBack: card)
         setupContainer(cardToUse: card , PicToUse :pic)
     }
     
     func createViewsPic() -> UIImageView {
+        
+        solution = Int(arc4random_uniform(2))
         let imageView = UIImageView()
-        let imagenumber = imageCounter % 2
-        imageView.image = UIImage(named: "\(imagenumber)")
+        let imagenumber = imageCounter % 3
+        imageView.image = UIImage(named: "  \(imagenumber)")
         imageCounter += 1
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
-
+    
     func createViewContainer() -> UIView {
         let view = UIView()
         view.backgroundColor = UIColor.black
@@ -63,4 +54,5 @@ extension GameController {
         PicToUse.widthAnchor.constraint(equalTo: ViewForPictureCon.widthAnchor).isActive = true
         PicToUse.heightAnchor.constraint(equalTo: ViewForPictureCon.widthAnchor).isActive = true
     }
+    
 }

@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
-extension GameController {
-    
 
-    func gameStart(){
+//Resets the MainView and starts Countdown
+class StartController {
+    
+    func startGame(){
         PointCounter.isHidden = false
         timeCounter.isHidden = false
+        scheduledTimerWithTimeInterval()
         createCard()
     }
+    
+
     
     func start(){
         let translateTransform = CGAffineTransform(translationX: 500, y: 0)
@@ -48,12 +52,18 @@ extension GameController {
     }
     
     @objc func downCounter(){
-        
         self.startSecond = self.startSecond - 1
         DispatchQueue.main.async {
             self.StartNumberLabel.text = "\(self.self.startSecond)"
         }
     }
+    
+    func addCardToView(card : Card) {
+        view.addSubview(card)
+        view.sendSubview(toBack: card)
+        card.setupContainer(cardToUse: card , PicToUse :pic)
+    }
+    
 
     
     

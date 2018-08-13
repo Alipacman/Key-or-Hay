@@ -9,45 +9,39 @@
 import Foundation
 import UIKit
 
-extension GameController{
+extension Card{
     
-    
-    
-    func animatedSlideoutUp (card : UIView){
-
-        userGuess = 1
+    func animatedSlideoutUp (){
         let translateTransform = CGAffineTransform(translationX: 0, y: -600)
  
-        
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            card.transform = translateTransform
+            self.transform = translateTransform
         }, completion:{ _ in
-            card.removeFromSuperview()
+            self.removeFromSuperview()
         })
     }
-    func animatedSlideoutRight (card : UIView){
-        userGuess = 2
+    
+    func animatedSlideoutRight (){
         let rotateTransfrom = CGAffineTransform(rotationAngle: 25)
         let translateTransform = CGAffineTransform(translationX: 520, y: 0)
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            card.transform = comboTransform
+            self.transform = comboTransform
         }, completion:{ _ in
-            card.removeFromSuperview()
+            self.removeFromSuperview()
         })
     }
     
-    func animatedSlideoutLeft (card : UIView){
-        userGuess = 0
+    func animatedSlideoutLeft (){
         let rotateTransfrom = CGAffineTransform(rotationAngle: -25)
         let translateTransform = CGAffineTransform(translationX: -520, y: 0)
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            card.transform = comboTransform
+            self.transform = comboTransform
         }, completion:{ _ in
-            card.removeFromSuperview()
+            self.removeFromSuperview()
         })
     }
 }
