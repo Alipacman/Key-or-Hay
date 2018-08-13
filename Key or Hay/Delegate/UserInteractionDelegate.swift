@@ -10,6 +10,7 @@ import Foundation
 
 protocol UserInteractionDelegate {
     
+    func gameViewLoaded(_ sender : GameView)
     func pressedLeftButton(_ sender : GameView)
     func pressedRightButton(_ sender : GameView)
     func pressedCenteredButton(_ sender : GameView)

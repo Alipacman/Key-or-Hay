@@ -9,10 +9,11 @@
 import UIKit
 
 
-class GameController: UIViewController, UserInteractionDelegate {
+class GameController: UserInteractionDelegate, PreparationDelegate {
     
     
-    var mainView : GameView?
+    var gameView : GameView?
+    var startController : StartController?
     
     var pressCounter = 0
     var startSecond = 4
@@ -28,16 +29,12 @@ class GameController: UIViewController, UserInteractionDelegate {
     
     
     
-    override func viewDidLoad() {
-        mainView = GameView()
-        mainView?.delegate = self
-        startAfterTime()
-        pictureArray = []
-        
-        imageContainer2.isHidden = true
-        PointCounter.isHidden = true
-        timeCounter.isHidden = true
-        super.viewDidLoad()
+    func gameViewLoaded(_ view : GameView ){
+        gameView = view
+        gameView?.delegate = self
+        startController = StartController(gameView! , startSecond)
+        startController?.delegate = self
+        startController.prepareStart()
     }
     
     
@@ -52,29 +49,42 @@ class GameController: UIViewController, UserInteractionDelegate {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinysugue = segue.destination as! HighScoreViewController
             destinysugue.userScore = pointCounter
         }
     
+// Handels Counting
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateCounting), userInfo: timestore, repeats: true)
     }
     
     @objc func updateCounting(){
-        mainView?.timeCounter.text = String(timer.userInfo as! Double)
+        gameView?.timeCounter.text = String(timer.userInfo as! Double)
     }
     
     func addCardToView(card : Card) {
-        view.addSubview(card)
-        view.sendSubview(toBack: card)
+        gameView!.view.addSubview(card)
+        gameView!.view.sendSubview(toBack: card)
         card.setupContainer(cardToUse: card , PicToUse :pic)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: GameView) {
         let destinysugue = segue.destination as! HighScoreViewController
         destinysugue.userScore = pointCounter
+    }
+    
+    
+    func startGame(){
+        gameView!.PointCounter.isHidden = false
+        gameView!.timeCounter.isHidden = false
+        scheduledTimerWithTimeInterval()
+        createCard()
+    }
+    
+    func preparationDone(_ sender: StartController) {
+        startGame()
     }
     
     

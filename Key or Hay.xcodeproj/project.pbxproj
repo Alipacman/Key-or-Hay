@@ -18,6 +18,8 @@
 		41A50B99212213220034E640 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B98212213220034E640 /* GameController.swift */; };
 		41A50B9C21221BB20034E640 /* UserInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B9B21221BB20034E640 /* UserInteractionDelegate.swift */; };
 		41A50B9E212223480034E640 /* GameController Kopie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B9D212223470034E640 /* GameController Kopie.swift */; };
+		41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */; };
+		41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50BA121222F950034E640 /* PreparationDelegate.swift */; };
 		41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFF2391FAA08B2002F2E0F /* StartController.swift */; };
 		41DD4C811FB2723000B7727E /* GameCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD4C801FB2723000B7727E /* GameCards.swift */; };
 		41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E30EBF2041DD0300C3F17E /* HighScoreView.swift */; };
@@ -38,6 +40,8 @@
 		41A50B98212213220034E640 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		41A50B9B21221BB20034E640 /* UserInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractionDelegate.swift; sourceTree = "<group>"; };
 		41A50B9D212223470034E640 /* GameController Kopie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameController Kopie.swift"; sourceTree = "<group>"; };
+		41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAnimation.swift; sourceTree = "<group>"; };
+		41A50BA121222F950034E640 /* PreparationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDelegate.swift; sourceTree = "<group>"; };
 		41BFF2391FAA08B2002F2E0F /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		41DD4C801FB2723000B7727E /* GameCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCards.swift; sourceTree = "<group>"; };
 		41E30EBF2041DD0300C3F17E /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				41DD4C801FB2723000B7727E /* GameCards.swift */,
 				41A50B932121F3DA0034E640 /* Card.swift */,
 				416A63B21FAA4C1800074381 /* GameCardAnimations.swift */,
+				41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				413E113A1FA7DFCB00926D52 /* AppDelegate.swift */,
 				41A50B9B21221BB20034E640 /* UserInteractionDelegate.swift */,
+				41A50BA121222F950034E640 /* PreparationDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -123,9 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				41A50B98212213220034E640 /* GameController.swift */,
-				41A50B9D212223470034E640 /* GameController Kopie.swift */,
 				41BFF2391FAA08B2002F2E0F /* StartController.swift */,
 				41A50B95212212350034E640 /* StartController Kopie.swift */,
+				41A50B9D212223470034E640 /* GameController Kopie.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */,
 				41A50B96212212350034E640 /* StartController Kopie.swift in Sources */,
 				416A63B31FAA4C1800074381 /* GameCardAnimations.swift in Sources */,
 				413E114D1FA7F51600926D52 /* GameView.swift in Sources */,
@@ -275,6 +282,7 @@
 				41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */,
 				41A50B99212213220034E640 /* GameController.swift in Sources */,
 				41DD4C811FB2723000B7727E /* GameCards.swift in Sources */,
+				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				41A50B9C21221BB20034E640 /* UserInteractionDelegate.swift in Sources */,
 				41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */,
 			);
