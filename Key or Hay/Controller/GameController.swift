@@ -14,88 +14,84 @@ class GameController: UserInteractionDelegate, PreparationDelegate {
     
     var gameView : GameView?
     var startController : StartController?
+    var cardPointController : CardPointController?
     
     var pressCounter = 0
     var startSecond = 4
-    var timer = Timer()
-    var timestore = 0.0
     
-    var imageCounter = 0
-    var pictureArray = [UIView]()
+    var time = 0.0
     
-    var pointCounter = 0
+    var gameLengh = 10.0
     var userGuess = 0
-    var solution = 0
     
     
     
     func gameViewLoaded(_ view : GameView ){
         gameView = view
         gameView?.delegate = self
-        startController = StartController(gameView! , startSecond)
-        startController?.delegate = self
-        startController.prepareStart()
-    }
-    
-    
-    func pointSystem(){
-        if (userGuess == solution) {
-            pointCounter += 1
-    }
-        else{
-            pointCounter -= 1
-        }
-        PointCounter.text = "Points: \(String(pointCounter))"
-    }
-    
-    
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinysugue = segue.destination as! HighScoreViewController
-            destinysugue.userScore = pointCounter
-        }
-    
-// Handels Counting
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateCounting), userInfo: timestore, repeats: true)
-    }
-    
-    @objc func updateCounting(){
-        gameView?.timeCounter.text = String(timer.userInfo as! Double)
-    }
-    
-    func addCardToView(card : Card) {
-        gameView!.view.addSubview(card)
-        gameView!.view.sendSubview(toBack: card)
-        card.setupContainer(cardToUse: card , PicToUse :pic)
-    }
-    
-    func prepare(for segue: UIStoryboardSegue, sender: GameView) {
-        let destinysugue = segue.destination as! HighScoreViewController
-        destinysugue.userScore = pointCounter
-    }
-    
-    
-    func startGame(){
-        gameView!.PointCounter.isHidden = false
-        gameView!.timeCounter.isHidden = false
-        scheduledTimerWithTimeInterval()
-        createCard()
+        
+        self.startController = StartController(gameView!, startSecond)
+        self.startController?.delegate = self
+        self.startController?.prepareStart()
+        
+        self.cardPointController = CardPointController(gameView!)
     }
     
     func preparationDone(_ sender: StartController) {
         startGame()
     }
     
-    
-    func pressedLeftButton(_ sender: GameView) {
+    func startGame(){
+        gameView!.pointTimeStack.isHidden = false
+        scheduledTimerWithTimeInterval()
+        cardPointController?.spawnCard()
     }
     
-    func pressedRightButton(_ sender: GameView) {
+    func endGame() {
+        if (time > 10.0){
+            gameView?.performSegue(withIdentifier: "highscore", sender: gameView!)
+        }
+        else{
+            cardPointController?.spawnCard()
+        }
+    }
+    
+    
+    
+    func prepare(for segue: UIStoryboardSegue, sender: GameView) {
+        let points = Int(gameView!.pointCounter.text!)
+        let destinysugue = segue.destination as! HighScoreViewController
+        destinysugue.userScore = points!
+    }
+    
+    
+    // Handels Counting
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateCounting), userInfo: time, repeats: true)
+    }
+    
+    @objc func updateCounting(){
+        gameView?.timeCounter.text = String(time)
+    }
+    
+    func pressedLeftButton(_ sender: GameView) {
+        cardPointController?.buttonPressed(buttonNumber: 0)
+        endGame()
     }
     
     func pressedCenteredButton(_ sender: GameView) {
+        cardPointController?.buttonPressed(buttonNumber: 1)
+        endGame()
     }
+    
+    func pressedRightButton(_ sender: GameView) {
+        cardPointController?.buttonPressed(buttonNumber: 2)
+        endGame()
+    }
+    
+    
+    
     
 }
 

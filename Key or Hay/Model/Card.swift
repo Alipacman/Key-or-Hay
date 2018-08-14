@@ -32,6 +32,7 @@ class Card :UIView {
     
     func createViewsPic() -> UIImageView {
         let imageView = UIImageView()
+        imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
