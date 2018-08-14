@@ -220,14 +220,13 @@
                         <viewLayoutGuide key="safeArea" id="DQP-PU-NqZ"/>
                     </view>
                     <connections>
-                        <outlet property="CardContainer" destination="WwW-cE-SPD" id="lmL-jr-248"/>
-                        <outlet property="PointCounter" destination="Iaf-MG-NHB" id="Uza-L2-QgK"/>
-                        <outlet property="PointTimeStack" destination="GyF-LO-6cp" id="VQF-3Q-ffy"/>
-                        <outlet property="StartNumberView" destination="aOe-Bi-by3" id="1gz-yB-mjh"/>
-                        <outlet property="imageContainer" destination="Z6J-pX-o13" id="l5m-El-A5J"/>
-                        <outlet property="imageContainer2" destination="WwW-cE-SPD" id="AGX-Uj-rkc"/>
-                        <outlet property="startNumberLabel" destination="Mp4-fD-BRr" id="3Jt-nm-kJx"/>
-                        <outlet property="timeCounter" destination="UhK-Bv-5l7" id="Ftb-N5-vXo"/>
+                        <outlet property="cardContainer" destination="WwW-cE-SPD" id="RN1-R6-DQu"/>
+                        <outlet property="imageContainer" destination="Z6J-pX-o13" id="wz6-NK-Fhd"/>
+                        <outlet property="pointCounter" destination="Iaf-MG-NHB" id="2mE-xg-Hxk"/>
+                        <outlet property="pointTimeStack" destination="GyF-LO-6cp" id="xvH-2j-kqj"/>
+                        <outlet property="startNumberLabel" destination="Mp4-fD-BRr" id="xDi-eY-kql"/>
+                        <outlet property="startNumberView" destination="aOe-Bi-by3" id="T9e-oC-Xxn"/>
+                        <outlet property="timeCounter" destination="UhK-Bv-5l7" id="ELh-t0-c2C"/>
                         <segue destination="frc-xp-hlY" kind="show" identifier="highscore" id="g4i-Nu-zQI"/>
                     </connections>
                 </viewController>

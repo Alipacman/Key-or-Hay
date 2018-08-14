@@ -11,8 +11,7 @@ import UIKit
 
 class GameController: UserInteractionDelegate, PreparationDelegate {
     
-    
-    var gameView : GameView?
+    var gameView : GameView
     var startController : StartController?
     var cardPointController : CardPointController?
     
@@ -25,16 +24,17 @@ class GameController: UserInteractionDelegate, PreparationDelegate {
     var userGuess = 0
     
     
+    init(_ mainView : GameView) {
+        self.gameView = mainView
+        print("init Coordinator")
+    }
     
     func gameViewLoaded(_ view : GameView ){
-        gameView = view
-        gameView?.delegate = self
-        
-        self.startController = StartController(gameView!, startSecond)
+        self.startController = StartController(gameView, startSecond)
         self.startController?.delegate = self
         self.startController?.prepareStart()
-        
-        self.cardPointController = CardPointController(gameView!)
+        print("starting prep")
+        self.cardPointController = CardPointController(gameView)
     }
     
     func preparationDone(_ sender: StartController) {
@@ -42,14 +42,14 @@ class GameController: UserInteractionDelegate, PreparationDelegate {
     }
     
     func startGame(){
-        gameView!.pointTimeStack.isHidden = false
+        gameView.pointTimeStack.isHidden = false
         scheduledTimerWithTimeInterval()
         cardPointController?.spawnCard()
     }
     
     func endGame() {
         if (time > 10.0){
-            gameView?.performSegue(withIdentifier: "highscore", sender: gameView!)
+            gameView.performSegue(withIdentifier: "highscore", sender: gameView)
         }
         else{
             cardPointController?.spawnCard()
@@ -59,7 +59,7 @@ class GameController: UserInteractionDelegate, PreparationDelegate {
     
     
     func prepare(for segue: UIStoryboardSegue, sender: GameView) {
-        let points = Int(gameView!.pointCounter.text!)
+        let points = Int(gameView.pointCounter.text!)
         let destinysugue = segue.destination as! HighScoreViewController
         destinysugue.userScore = points!
     }
@@ -72,7 +72,7 @@ class GameController: UserInteractionDelegate, PreparationDelegate {
     }
     
     @objc func updateCounting(){
-        gameView?.timeCounter.text = String(time)
+        gameView.timeCounter.text = String(time)
     }
     
     func pressedLeftButton(_ sender: GameView) {

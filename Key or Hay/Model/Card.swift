@@ -13,24 +13,23 @@ import UIKit
 class Card :UIView {
     
     var image : UIImage?
+    var viewContainer : UIView?
+    var imageContainer : UIImageView?
     
     public init(image : UIImage, frame: CGRect) {
-        self.image = image
         super.init(frame: frame)
+        self.image = image
+        self.viewContainer = self.createViewContainer()
+        self.imageContainer = self.createImageContainer()
+        self.viewContainer?.addSubview(imageContainer!)
+        viewContainer?.addSubview(imageContainer!)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func createCard() -> UIView {
-        let card = createViewContainer()
-        let pic = createViewsPic()
-        card.addSubview(pic)
-        return card
-    }
-    
-    func createViewsPic() -> UIImageView {
+    func createImageContainer() -> UIImageView {
         let imageView = UIImageView()
         imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,5 +43,6 @@ class Card :UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
+ 
     
 }

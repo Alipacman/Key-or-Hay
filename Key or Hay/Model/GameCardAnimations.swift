@@ -13,29 +13,22 @@ extension Card {
     
     func animatedSlideoutUp (){
         let translateTransform = CGAffineTransform(translationX: 0, y: -600)
- 
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            self.transform = translateTransform
+            self.viewContainer?.transform = translateTransform
         }, completion:{ _ in
-            self.removeFromSuperview()
+            self.viewContainer?.removeFromSuperview()
         })
     }
     
-    func animatedSlideoutRight (){
-        let rotateTransfrom = CGAffineTransform(rotationAngle: 25)
-        let translateTransform = CGAffineTransform(translationX: 520, y: 0)
-        let comboTransform = translateTransform.concatenating(rotateTransfrom)
-        
-        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            self.transform = comboTransform
-        }, completion:{ _ in
-            self.removeFromSuperview()
-        })
-    }
-    
-    func animatedSlideoutLeft (){
-        let rotateTransfrom = CGAffineTransform(rotationAngle: -25)
-        let translateTransform = CGAffineTransform(translationX: -520, y: 0)
+    func animatedSlideoutRL(direction : String){
+        var rotationAngle : CGFloat = 25
+        var translationX : CGFloat = 520
+        if (direction == "right"){
+            rotationAngle *= -1
+            translationX *= -1
+        }
+        let rotateTransfrom = CGAffineTransform(rotationAngle: rotationAngle)
+        let translateTransform = CGAffineTransform(translationX: translationX, y: 0)
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {

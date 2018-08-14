@@ -11,5 +11,4 @@ import Foundation
 protocol PreparationDelegate {
     
     func preparationDone(_ sender : StartController)
-
 }

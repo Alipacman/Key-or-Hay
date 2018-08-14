@@ -13,12 +13,15 @@ extension StartController {
     
     //TODO: Nice Spring animation
     func StartCountDown(){
+        print("starting Countdown")
+        
         let translateTransform = CGAffineTransform(translationX: 500, y: 0)
         let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         UIView.animate(withDuration: 1.5, delay: 0.1, options: [.curveEaseIn, .repeat ] , animations: {
             UIView.setAnimationRepeatCount(3)
             self.gameView!.startNumberView.transform = translateTransform
             self.startdown()
+            print("animation durchlauf")
             UIView.animate(withDuration: 1.5, delay: 1, options: [.curveEaseIn, .repeat ], animations: {
                 UIView.setAnimationRepeatCount(3)
                 self.gameView!.startNumberView.transform = scaleTransform
