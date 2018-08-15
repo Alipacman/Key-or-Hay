@@ -26,6 +26,5 @@ class HighScoreViewController: UIViewController {
     @IBAction func restart(_ sender: Any) {
         performSegue(withIdentifier: "restart", sender: self)
         
-    }
-    
+    }    
 }

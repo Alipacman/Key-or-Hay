@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
+		4121CA042124D4DE00BAEB66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* NetworkController.swift */; };
+		4121CA062124D8FC00BAEB66 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA052124D8FC00BAEB66 /* Leaderboard.swift */; };
 		413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E113A1FA7DFCB00926D52 /* AppDelegate.swift */; };
 		413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E113E1FA7DFCB00926D52 /* Main.storyboard */; };
 		413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413E11411FA7DFCB00926D52 /* Assets.xcassets */; };
@@ -23,12 +26,14 @@
 		41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */; };
 		41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50BA121222F950034E640 /* PreparationDelegate.swift */; };
 		41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFF2391FAA08B2002F2E0F /* StartController.swift */; };
-		41DD4C811FB2723000B7727E /* GameCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD4C801FB2723000B7727E /* GameCards.swift */; };
 		41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E30EBF2041DD0300C3F17E /* HighScoreView.swift */; };
 		6A8F0452EF01965A9ECA3CA9 /* Pods_Key_or_Hay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4121CA032124D4DE00BAEB66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		4121CA052124D8FC00BAEB66 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		413E11371FA7DFCB00926D52 /* Key or Hay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key or Hay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		413E113A1FA7DFCB00926D52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		413E113F1FA7DFCB00926D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,11 +48,11 @@
 		416639B5212338F10011D5F3 /* TimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
 		416639B72123399E0011D5F3 /* TimerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDelegate.swift; sourceTree = "<group>"; };
 		416A63B21FAA4C1800074381 /* GameCardAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardAnimations.swift; sourceTree = "<group>"; };
+		418AE8942124CEE40004C47F /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
 		41A50B932121F3DA0034E640 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAnimation.swift; sourceTree = "<group>"; };
 		41A50BA121222F950034E640 /* PreparationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDelegate.swift; sourceTree = "<group>"; };
 		41BFF2391FAA08B2002F2E0F /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
-		41DD4C801FB2723000B7727E /* GameCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCards.swift; sourceTree = "<group>"; };
 		41E30EBF2041DD0300C3F17E /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
 		63EB1C6C03BBB2678D1018F5 /* Pods-Key or Hay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Key or Hay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Key or Hay/Pods-Key or Hay.release.xcconfig"; sourceTree = "<group>"; };
 		AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Key_or_Hay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,8 @@
 				413E11411FA7DFCB00926D52 /* Assets.xcassets */,
 				413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */,
 				413E11461FA7DFCB00926D52 /* Info.plist */,
+				418AE8942124CEE40004C47F /* Notes.md */,
+				4121CA012124D20600BAEB66 /* GoogleService-Info.plist */,
 			);
 			path = "Key or Hay";
 			sourceTree = "<group>";
@@ -111,8 +118,8 @@
 		41A50B922121F3050034E640 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41DD4C801FB2723000B7727E /* GameCards.swift */,
 				41A50B932121F3DA0034E640 /* Card.swift */,
+				4121CA052124D8FC00BAEB66 /* Leaderboard.swift */,
 				416A63B21FAA4C1800074381 /* GameCardAnimations.swift */,
 				41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */,
 			);
@@ -145,6 +152,7 @@
 				41BFF2391FAA08B2002F2E0F /* StartController.swift */,
 				416639AF2122CE250011D5F3 /* CardPointController.swift */,
 				416639B12122E4670011D5F3 /* ImageController.swift */,
+				4121CA032124D4DE00BAEB66 /* NetworkController.swift */,
 				416639B5212338F10011D5F3 /* TimeController.swift */,
 			);
 			path = Controller;
@@ -229,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */,
+				4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */,
 				413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */,
 				413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */,
 			);
@@ -264,15 +273,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Key or Hay/Pods-Key or Hay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,8 +309,9 @@
 				416639B22122E4680011D5F3 /* ImageController.swift in Sources */,
 				413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */,
 				41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */,
+				4121CA042124D4DE00BAEB66 /* NetworkController.swift in Sources */,
 				416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */,
-				41DD4C811FB2723000B7727E /* GameCards.swift in Sources */,
+				4121CA062124D8FC00BAEB66 /* Leaderboard.swift in Sources */,
 				414175DC21248E4A002B1B90 /* setupController.swift in Sources */,
 				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				416639B4212312770011D5F3 /* Coordinator.swift in Sources */,
@@ -442,7 +458,7 @@
 				DEVELOPMENT_TEAM = 7RKKG423GF;
 				INFOPLIST_FILE = "Key or Hay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Key-or-Hay";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.Hay-or-Key";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -458,7 +474,7 @@
 				DEVELOPMENT_TEAM = 7RKKG423GF;
 				INFOPLIST_FILE = "Key or Hay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "test.Key-or-Hay";
+				PRODUCT_BUNDLE_IDENTIFIER = "test.Hay-or-Key";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
