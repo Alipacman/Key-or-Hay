@@ -12,6 +12,7 @@
 		413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413E11411FA7DFCB00926D52 /* Assets.xcassets */; };
 		413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */; };
 		413E114D1FA7F51600926D52 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E114C1FA7F51600926D52 /* GameView.swift */; };
+		414175DC21248E4A002B1B90 /* setupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414175DB21248E4A002B1B90 /* setupController.swift */; };
 		416639B02122CE250011D5F3 /* CardPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639AF2122CE250011D5F3 /* CardPointController.swift */; };
 		416639B22122E4680011D5F3 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B12122E4670011D5F3 /* ImageController.swift */; };
 		416639B4212312770011D5F3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B3212312770011D5F3 /* Coordinator.swift */; };
@@ -35,6 +36,7 @@
 		413E11441FA7DFCB00926D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		413E11461FA7DFCB00926D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		413E114C1FA7F51600926D52 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		414175DB21248E4A002B1B90 /* setupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupController.swift; sourceTree = "<group>"; };
 		416639AF2122CE250011D5F3 /* CardPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPointController.swift; sourceTree = "<group>"; };
 		416639B12122E4670011D5F3 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		416639B3212312770011D5F3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -89,12 +91,21 @@
 				41A50B922121F3050034E640 /* Model */,
 				41A50B97212213070034E640 /* View */,
 				41A8DD7D1FB114D900925712 /* Controller */,
+				414175DA21248E36002B1B90 /* Extensions */,
 				413E113E1FA7DFCB00926D52 /* Main.storyboard */,
 				413E11411FA7DFCB00926D52 /* Assets.xcassets */,
 				413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */,
 				413E11461FA7DFCB00926D52 /* Info.plist */,
 			);
 			path = "Key or Hay";
+			sourceTree = "<group>";
+		};
+		414175DA21248E36002B1B90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				414175DB21248E4A002B1B90 /* setupController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		41A50B922121F3050034E640 /* Model */ = {
@@ -285,6 +296,7 @@
 				41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */,
 				416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */,
 				41DD4C811FB2723000B7727E /* GameCards.swift in Sources */,
+				414175DC21248E4A002B1B90 /* setupController.swift in Sources */,
 				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				416639B4212312770011D5F3 /* Coordinator.swift in Sources */,
 				416639B02122CE250011D5F3 /* CardPointController.swift in Sources */,
@@ -362,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -413,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

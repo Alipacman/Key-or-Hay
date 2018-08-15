@@ -12,8 +12,16 @@ import UIKit
 class ImageController {
     
     let image = #imageLiteral(resourceName: "Ahmedo")
+    let image2 = #imageLiteral(resourceName: "keanu")
+    
+    var switcher  = true
     
     func getImageValues() -> Array<Any> {
-        return [image, 1]
+        if switcher {
+            switcher = !switcher
+            return [image, 1]
+        }
+        switcher = !switcher
+        return  [image2, 2]
     }
 }

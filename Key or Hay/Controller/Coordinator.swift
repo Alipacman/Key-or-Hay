@@ -15,11 +15,11 @@ extension GameView{
         imageContainer.isHidden = true
         pointTimeStack.isHidden = true
         self.startController = StartController(self, preparationTime)
-        self.startController?.prepareStart()
+        self.startController!.prepareStart()
         
         self.cardPointController = CardPointController(self)
         
-        self.timeController = TimeController(self)
+        self.timeController = TimeController(self, timeToPlay: gameLenght)
         super.viewDidLoad()
     }
     
@@ -31,23 +31,15 @@ extension GameView{
     
     func startGame(){
         self.pointTimeStack.isHidden = false
-        timeController?.startTimer()
-        cardPointController?.spawnCard()
+        timeController!.startTimer()
+        cardPointController!.spawnCard()
     }
     
-    func pressedLeftButton(_ sender: GameView) {
-        cardPointController?.buttonPressed(buttonNumber: 0)
+    func pressedButton(tag : Int){
+        cardPointController!.buttonPressed(buttonNumber: tag)
     }
     
-    func pressedCenteredButton(_ sender: GameView) {
-        cardPointController?.buttonPressed(buttonNumber: 1)
-    }
-    
-    func pressedRightButton(_ sender: GameView) {
-        cardPointController?.buttonPressed(buttonNumber: 2)
-    }
-    
-    func timeFinieshed(_ sender: TimeController) {
+    func timeFinished(_ sender: TimeController) {
         self.performSegue(withIdentifier: "highscore", sender: self)
     }
 }

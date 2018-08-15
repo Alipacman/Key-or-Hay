@@ -23,7 +23,7 @@ extension Card {
     func animatedSlideoutRL(direction : String){
         var rotationAngle : CGFloat = 25
         var translationX : CGFloat = 520
-        if (direction == "right"){
+        if (direction == "left"){
             rotationAngle *= -1
             translationX *= -1
         }
@@ -32,9 +32,9 @@ extension Card {
         let comboTransform = translateTransform.concatenating(rotateTransfrom)
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn] , animations: {
-            self.transform = comboTransform
+            self.viewContainer?.transform = comboTransform
         }, completion:{ _ in
-            self.removeFromSuperview()
+            self.viewContainer?.removeFromSuperview()
         })
     }
 }

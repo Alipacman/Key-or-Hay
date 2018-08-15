@@ -9,7 +9,7 @@
 import UIKit
 
 class HighScoreViewController: UIViewController {
-
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
     
@@ -21,7 +21,11 @@ class HighScoreViewController: UIViewController {
         super.viewDidLoad()
         scoreLabel.text = "Dein Score: \(userScore)"
     }
-
-
-
-} 
+    
+    
+    @IBAction func restart(_ sender: Any) {
+        performSegue(withIdentifier: "restart", sender: self)
+        
+    }
+    
+}

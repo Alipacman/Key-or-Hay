@@ -10,5 +10,5 @@ import Foundation
 
 protocol TimerDelegate {
     
-    func timeFinieshed(_ sender : TimeController)
+    func timeFinished(_ sender : TimeController)
 }

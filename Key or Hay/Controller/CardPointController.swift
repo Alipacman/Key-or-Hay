@@ -14,8 +14,8 @@ class CardPointController {
     let imageController = ImageController()
     
     var gameView : GameView?
-    var rightButton = 0
-    var cardArray = [Card]()
+    var rightButton = -1
+    var cardStackArray = [Card]()
     
     init(_ gameView : GameView) {
         self.gameView = gameView
@@ -26,40 +26,42 @@ class CardPointController {
         print("spawning card")
         let imageValues = imageController.getImageValues()
         rightButton = (imageValues[1] as? Int)!
-        
         let card = Card(image : imageValues[0] as! UIImage, frame: (gameView?.cardContainer.frame)!)
+        
         gameView!.view.addSubview(card.viewContainer!)
         gameView!.view.sendSubview(toBack: card.viewContainer!)
         self.setupContainer(cardToUse: card.viewContainer!, PicToUse:card.imageContainer!)
-        cardArray.append(card)
+        cardStackArray.append(card)
     }
     
     func buttonPressed(buttonNumber : Int) {
-        var pointCounter = self.gameView!.pointCounter.text!
-        let currentPoints = Int(pointCounter)
-        
-        if buttonNumber == rightButton{
-            pointCounter = "\(Int (currentPoints! + 1))"
-        }
-        else{
-            pointCounter = "\(Int (currentPoints! - 1))"
-        }
-        cardArray[0].animatedSlideoutUp()
+        self.checkResult(pressedButton: buttonNumber)
+        self.handleSlideOut(pressedButton: buttonNumber)
+        print("buttonPressed: \(buttonNumber)")
         spawnCard()
     }
     
-    func setupContainer(cardToUse: UIView, PicToUse : UIImageView){
-        let cardContainer = gameView!.cardContainer
-        let imageContainer = gameView!.imageContainer
+    func checkResult(pressedButton : Int) {
+        let currentPoints = Int(self.gameView!.pointCounter.text!)
         
-        cardToUse.topAnchor.constraint(equalTo: cardContainer!.topAnchor).isActive = true
-        cardToUse.leftAnchor.constraint(equalTo: cardContainer!.leftAnchor).isActive = true
-        cardToUse.widthAnchor.constraint(equalTo: cardContainer!.widthAnchor).isActive = true
-        cardToUse.heightAnchor.constraint(equalTo: cardContainer!.widthAnchor).isActive = true
-        
-        PicToUse.topAnchor.constraint(equalTo: imageContainer!.topAnchor).isActive = true
-        PicToUse.leftAnchor.constraint(equalTo: imageContainer!.leftAnchor).isActive = true
-        PicToUse.widthAnchor.constraint(equalTo: imageContainer!.widthAnchor).isActive = true
-        PicToUse.heightAnchor.constraint(equalTo: imageContainer!.widthAnchor).isActive = true
+        if pressedButton == rightButton{
+            self.gameView!.pointCounter.text = String(currentPoints! + 1)
+        }
+        else{
+            self.gameView!.pointCounter.text = String(currentPoints! - 1)
+        }
+    }
+    
+    func handleSlideOut(pressedButton : Int) {
+        if pressedButton == 0{
+            cardStackArray[0].animatedSlideoutRL(direction: "left")
+        }
+        if pressedButton == 1{
+            cardStackArray[0].animatedSlideoutUp()
+        }
+        if pressedButton == 2{
+            cardStackArray[0].animatedSlideoutRL(direction: "right")
+        }
+        cardStackArray.remove(at: 0)
     }
 }
