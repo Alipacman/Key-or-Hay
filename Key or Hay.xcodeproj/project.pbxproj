@@ -24,6 +24,7 @@
 		416639B6212338F10011D5F3 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B5212338F10011D5F3 /* TimeController.swift */; };
 		416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B72123399E0011D5F3 /* TimerDelegate.swift */; };
 		416A63B31FAA4C1800074381 /* GameCardAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A63B21FAA4C1800074381 /* GameCardAnimations.swift */; };
+		419CEB632126245100414DBF /* OnlineImageCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CEB622126245100414DBF /* OnlineImageCount.swift */; };
 		41A50B942121F3DA0034E640 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B932121F3DA0034E640 /* Card.swift */; };
 		41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */; };
 		41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50BA121222F950034E640 /* PreparationDelegate.swift */; };
@@ -53,6 +54,7 @@
 		416639B72123399E0011D5F3 /* TimerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDelegate.swift; sourceTree = "<group>"; };
 		416A63B21FAA4C1800074381 /* GameCardAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardAnimations.swift; sourceTree = "<group>"; };
 		418AE8942124CEE40004C47F /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
+		419CEB622126245100414DBF /* OnlineImageCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineImageCount.swift; sourceTree = "<group>"; };
 		41A50B932121F3DA0034E640 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownAnimation.swift; sourceTree = "<group>"; };
 		41A50BA121222F950034E640 /* PreparationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		419CEB612126241100414DBF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				416639B12122E4670011D5F3 /* ImageController.swift */,
+				4121CA032124D4DE00BAEB66 /* NetworkController.swift */,
+				419CEB622126245100414DBF /* OnlineImageCount.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		41A50B922121F3050034E640 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,9 +169,8 @@
 				411F0F802125EC3400493D34 /* EntranceViewController.swift */,
 				41BFF2391FAA08B2002F2E0F /* StartController.swift */,
 				416639AF2122CE250011D5F3 /* CardPointController.swift */,
-				416639B12122E4670011D5F3 /* ImageController.swift */,
-				4121CA032124D4DE00BAEB66 /* NetworkController.swift */,
 				416639B5212338F10011D5F3 /* TimeController.swift */,
+				419CEB612126241100414DBF /* Data */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +327,7 @@
 				416639B6212338F10011D5F3 /* TimeController.swift in Sources */,
 				416639B22122E4680011D5F3 /* ImageController.swift in Sources */,
 				411F0F812125EC3400493D34 /* EntranceViewController.swift in Sources */,
+				419CEB632126245100414DBF /* OnlineImageCount.swift in Sources */,
 				413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */,
 				41BFF23A1FAA08B2002F2E0F /* StartController.swift in Sources */,
 				4121CA042124D4DE00BAEB66 /* NetworkController.swift in Sources */,

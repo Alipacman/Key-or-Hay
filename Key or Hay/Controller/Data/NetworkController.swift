@@ -14,7 +14,15 @@ import FirebaseStorage
 class NetworkController {
     
     var ref: DatabaseReference!
-    var availiblepics = 1
+    var storage : Storage
+    var count : Int?
+    
+    
+    
+    init() {
+        // Get a reference to the storage service, using the default Firebase App
+        self.storage = Storage.storage()
+    }
     
     func start() {
     }
@@ -27,18 +35,24 @@ class NetworkController {
         
     }
     
+    func prepareAsyncPic(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20.0, execute: {
+            self.getCount()
+            self.getPictures()
+        })
+    }
+    
     func getPictures(){
-        
+        print("getting Picture Count")
+//        self.getCount()
         print("downloading Images")
-        // Get a reference to the storage service, using the default Firebase App
-        let storage = Storage.storage()
         
         // Get reference to the image on Firebase Storage
         let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/0.jpg")
         
         let dataPath = self.checkDirc(pathName : "Images")
         
-        for i in stride(from: 0, to: availiblepics + 1, by: 1) {
+        for i in stride(from: 0, to: self.count!, by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i)")
             let downloadTask = imageRef.write(toFile: localURL) { url, error in
                 if let error = error {
