@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+/*
 extension NetworkController {
     
     func getCount() {
@@ -49,3 +49,4 @@ extension NetworkController {
         }
     }
 }
+ */

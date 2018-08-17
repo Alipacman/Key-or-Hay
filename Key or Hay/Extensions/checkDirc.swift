@@ -10,22 +10,33 @@ import Foundation
 
 extension NetworkController {
     
-    func checkDirc(pathName : String) -> String {
+    func getDirc(pathName : String) -> String {
         var paths: [Any] = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory: String = paths[0] as? String ?? ""
         // Get documents folder
+        return URL(fileURLWithPath: documentsDirectory).appendingPathComponent("\(pathName)").absoluteString
+    }
+    
+    func checkIfDataExists(dataPath : String) -> Bool{
         
-        var isDirc : ObjCBool = false
+        var filePath = ""
         
-        var dataPath: String = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("\(pathName)").absoluteString
-        print(dataPath)
-        if !FileManager.default.fileExists(atPath: dataPath, isDirectory: &isDirc) {
-            if !isDirc.boolValue{
-                dataPath = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("\(pathName)").path
-                try? FileManager.default.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil)
-                print("created Image Folder")
-            }
+        // Fine documents directory on device
+        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+            let dir = dirs[0] //documents directory
+            filePath = dir.appendingFormat("/" + dataPath)
+//            print("Local path = \(filePath)")
+        
+        let fileManager = FileManager.default
+        
+        // Check if file exists
+        if fileManager.fileExists(atPath: filePath) {
+//            print("File exists")
+            return false
+        } else {
+//            print("File does not exist")
         }
-        return dataPath
+        return true
     }
 }

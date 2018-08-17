@@ -35,34 +35,33 @@ class NetworkController {
         
     }
     
-    func prepareAsyncPic(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20.0, execute: {
-            self.getCount()
-            self.getPictures()
-        })
-    }
+//    func prepareAsyncPic(){
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 20.0, execute: {
+//            //    self.getCount()
+//            self.getPictures()
+//        })
+//    }
     
-    func getPictures(){
-        print("getting Picture Count")
-//        self.getCount()
-        print("downloading Images")
+    func getPictures(imageCount : Int){
         
-        // Get reference to the image on Firebase Storage
-        let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/0.jpg")
+        // Creates Img Folder if not already created and downloads all missing pictures from 0 to imageCount
         
-        let dataPath = self.checkDirc(pathName : "Images")
+        let dataPath = self.getDirc(pathName : "Images")
         
-        for i in stride(from: 0, to: self.count!, by: 1) {
-            let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i)")
-            let downloadTask = imageRef.write(toFile: localURL) { url, error in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("image \(i) loaded into Documents/Images")
+        for i in stride(from: 0, to: 10, by: 1) {
+            let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
+            if self.checkIfDataExists(dataPath: "Images/\(i).jpg"){
+                print("image \(i) will be downloaded")
+                let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(i).jpg")
+                imageRef.write(toFile: localURL) { url, error in
+                    if let error = error {
+                        //                        print("Here is the error: \(error)")
+                    } else {
+                        print("image \(i) loaded into Documents/Images")
+                    }
                 }
             }
         }
-        
     }
     
     func addPicture(){
