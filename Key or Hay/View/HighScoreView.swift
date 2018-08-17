@@ -13,7 +13,6 @@ class HighScoreViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
     
-    
     var userScore = 0
     
     

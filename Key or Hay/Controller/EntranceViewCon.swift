@@ -13,7 +13,7 @@ class EntranceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let networkController = NetworkController()
-        networkController.prepareAsyncPic()
+//        networkController.prepareAsyncPic()
     }
 
 }

@@ -31,7 +31,8 @@ class TimeController {
     
     @objc func updateCounting(){
         timePassed += 0.1
-        gameView?.timeCounter.text! = String(format: "%.1f", timePassed)
+        gameView!.timeCounter.text! = String(format: "%.1f", timePassed)
+        gameView!.progressBar.progress = Float((self.timePassed/self.timeToPlay))
         if timePassed >= timeToPlay{
             delegate?.timeFinished(self)
         }

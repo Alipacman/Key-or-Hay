@@ -11,7 +11,7 @@ import UIKit
 
 class ImageController {
     
-    let image = #imageLiteral(resourceName: "Ahmedo")
+    let image = #imageLiteral(resourceName: "husseino")
     let image2 = #imageLiteral(resourceName: "keanu")
     
     var switcher  = true

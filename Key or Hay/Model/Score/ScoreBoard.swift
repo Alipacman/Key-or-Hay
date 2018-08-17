@@ -8,17 +8,16 @@
 
 import Foundation
 
-struct Leaderboard {
+struct ScoreBoard {
     
-    var names = [String]()
-    var scores = [Int]()
+    var entrys = [ScoreEntry]()
     
-    
-    
-    init(names : Array<String>, scores : Array<Int>) {
-        self.names = names
-        self.scores = scores
+    init(entrys : Array<ScoreEntry>) {
+        self.entrys = entrys
     }
     
+    func sortEntrys() {
+//        self.entrys.sort(by: p1 < p2)
+    }
 
 }
