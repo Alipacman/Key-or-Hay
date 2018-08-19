@@ -21,4 +21,27 @@ class DirectroryHelp{
         
         return filePath
     }
+    
+    static func checkIfDataExists(dataPath : String) -> Bool{
+        
+        var filePath = ""
+        
+        // Fine documents directory on device
+        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        let dir = dirs[0] //documents directory
+        filePath = dir.appendingFormat("/" + dataPath)
+        //            print("Local path = \(filePath)")
+        
+        let fileManager = FileManager.default
+        
+        // Check if file exists
+        if fileManager.fileExists(atPath: filePath) {
+            //            print("File exists")
+            return false
+        } else {
+            //            print("File does not exist")
+        }
+        return true
+    }
 }

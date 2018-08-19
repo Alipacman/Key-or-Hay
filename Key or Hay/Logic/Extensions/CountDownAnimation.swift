@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension StartController {
+extension GamePrepController {
     
     //TODO: Nice Spring animation
     func StartCountDown(){

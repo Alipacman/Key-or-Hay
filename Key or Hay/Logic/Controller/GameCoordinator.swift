@@ -14,8 +14,8 @@ extension GameView{
         cardContainer.isHidden = true
         imageContainer.isHidden = true
         pointTimeStack.isHidden = true
-        self.startController = StartController(self, preparationTime)
-        self.startController!.prepareStart()
+        self.gamePrepController = GamePrepController(self, preparationTime)
+        self.gamePrepController!.prepareStart()
         
         self.cardPointController = CardPointController(self)
         
@@ -24,7 +24,7 @@ extension GameView{
     }
     
     
-    func preparationDone(_ sender: StartController) {
+    func preparationDone(_ sender: GamePrepController) {
         print("prepartion done, starting game...")
         startGame()
     }

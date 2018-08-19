@@ -10,5 +10,5 @@ import Foundation
 
 protocol PreparationDelegate {
     
-    func preparationDone(_ sender : StartController)
+    func preparationDone(_ sender : GamePrepController)
 }

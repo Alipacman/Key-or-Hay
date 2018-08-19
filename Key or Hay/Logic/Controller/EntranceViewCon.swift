@@ -13,7 +13,7 @@ class EntranceViewController: UIViewController, DownloadDelegate {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    func everythingDownloaded(_ sender: ImageNewtworkCon) {
+    func everythingDownloaded(_ sender: ImageDownloadController) {
         startButton.isHidden = false
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
@@ -24,8 +24,8 @@ class EntranceViewController: UIViewController, DownloadDelegate {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         startButton.isHidden = true
-        let imageNewtworkCon = ImageNewtworkCon(self)
-        imageNewtworkCon.start()
+        let imageDownloadController = ImageDownloadController(self)
+        imageDownloadController.loadImgWithPromise()
     }
 
 }

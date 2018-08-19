@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import PromiseKit
 
-class ImageNewtworkCon {
+class ImageDownloadController {
     
     var ref: DatabaseReference!
     var storage : Storage
@@ -22,10 +22,6 @@ class ImageNewtworkCon {
         // Get a reference to the storage service, using the default Firebase App
         self.storage = Storage.storage()
         self.delegate = delegate
-    }
-    
-    func start() {
-        self.loadImgWithPromise()
     }
     
     func loadImgWithPromise() {
@@ -56,12 +52,12 @@ class ImageNewtworkCon {
         
         for i in stride(from: 0, to: amount , by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
-            if self.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
+            if DirectroryHelp.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
                 print("image \(i) will be downloaded")
                 let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(folder)/\(i).jpg")
                 imageRef.write(toFile: localURL) { url, error in
                     if let error = error {
-                        //                        print("Here is the error: \(error)")
+                        //print("Here is the error: \(error)")
                     } else {
                         print("image \(i) loaded into Documents/Images \(folder)")
                     }
@@ -69,9 +65,4 @@ class ImageNewtworkCon {
             }
         }
     }
-    
-    func addPicture(){
-        
-    }
-    
 }

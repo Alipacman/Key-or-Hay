@@ -11,7 +11,7 @@ import UIKit
 
 
 //Resets the MainView and starts Countdown
-class StartController {
+class GamePrepController {
     
     var gameView : GameView?
     var delegate : PreparationDelegate?

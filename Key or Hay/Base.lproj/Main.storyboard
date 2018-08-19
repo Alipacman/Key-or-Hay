@@ -49,6 +49,14 @@
                                 <rect key="frame" x="177" y="593" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-qX-zzf">
+                                <rect key="frame" x="164" y="656" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="frc-xp-hlY" kind="show" id="fQS-nT-hG7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -435,9 +443,34 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="All Scores"/>
                                 <connections>
-                                    <segue destination="xCg-oe-vMQ" kind="show" id="dlN-93-byY"/>
+                                    <segue destination="xCg-oe-vMQ" kind="show" identifier="Scoreboard" id="dlN-93-byY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-CF-AYv">
+                                <rect key="frame" x="235" y="505" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SUbmit image"/>
+                                <connections>
+                                    <segue destination="3qx-Cd-Rkw" kind="popoverPresentation" popoverAnchorView="WyK-CF-AYv" id="oJy-Kn-4Cj">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-Gm-Z9H">
+                                <rect key="frame" x="143" y="691" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SubmitScore"/>
+                                <connections>
+                                    <action selector="submitScoreButtonPressed:" destination="frc-xp-hlY" eventType="touchUpInside" id="4r0-sT-eal"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-ex-5be">
+                                <rect key="frame" x="69" y="577" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -451,6 +484,7 @@
                     </view>
                     <connections>
                         <outlet property="HighscoreLabel" destination="doB-lh-srr" id="OnH-dq-GWG"/>
+                        <outlet property="nameField" destination="LFs-ex-5be" id="D4S-7w-x2G"/>
                         <outlet property="scoreLabel" destination="qF7-wf-eqA" id="ABA-IR-deF"/>
                     </connections>
                 </viewController>
@@ -540,11 +574,64 @@
             </objects>
             <point key="canvasLocation" x="3434" y="122"/>
         </scene>
+        <!--Submit Picture View Controller-->
+        <scene sceneID="L2d-oW-Jrq">
+            <objects>
+                <viewController id="3qx-Cd-Rkw" customClass="SubmitPictureViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DKb-iW-Mwc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-mO-qNQ">
+                                <rect key="frame" x="163" y="632" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="3qx-Cd-Rkw" eventType="touchUpInside" id="XMD-bW-Yqq"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vod-fw-A1I" userLabel="CardContainer">
+                                <rect key="frame" x="9" y="165" width="356" height="356"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHZ-CE-Gd1">
+                                        <rect key="frame" x="8" y="8" width="340" height="340"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke9-HM-fRi">
+                                <rect key="frame" x="159" y="700" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remake"/>
+                                <connections>
+                                    <action selector="remakeButtonPressed:" destination="3qx-Cd-Rkw" eventType="touchUpInside" id="Xke-ar-qsL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="38q-aD-OBa"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="IHZ-CE-Gd1" id="q6R-DR-wYh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCD-oI-v8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3132" y="864.53201970443354"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo?" width="173" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NOr-fl-Q1b"/>
+        <segue reference="g4i-Nu-zQI"/>
+        <segue reference="YRT-1R-08R"/>
     </inferredMetricsTieBreakers>
 </document>

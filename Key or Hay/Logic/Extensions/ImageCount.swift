@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import PromiseKit
 
-extension ImageNewtworkCon {
+extension ImageDownloadController {
     
     func downloadCountFile() -> Promise<Void> {
         return Promise { seal in
@@ -33,13 +33,11 @@ extension ImageNewtworkCon {
     }
     
     func readSetCount() -> Promise<[String]> {
-        print("readset")
         return Promise { seal in
             
             DispatchQueue.global(qos: .background).async {
                 let path = DirectroryHelp.getPath(path: "Images/")
                 let localURL = URL(fileURLWithPath: path).appendingPathComponent("ImageCount.rtf")
-                
                 do {
                     let counts = try String(contentsOf: localURL, encoding: .utf8).lastWords(3)
                     print("here is the count: \(counts)")

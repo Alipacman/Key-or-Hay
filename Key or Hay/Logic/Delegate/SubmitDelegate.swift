@@ -1,5 +1,5 @@
 //
-//  DownloadDelegate.swift
+//  SubmitDelegate.swift
 //  Key or Hay
 //
 //  Created by Ali Ebrahimi Pourasad on 19.08.18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DownloadDelegate {
-    func everythingDownloaded(_ sender : ImageDownloadController)
+protocol SubmitDelegate {
+    func ImageSubmitted(_ sender : ImageSubmitController)
 }

@@ -12,7 +12,7 @@ import UIKit
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
     
-    var startController : StartController?
+    var gamePrepController : GamePrepController?
     var cardPointController : CardPointController?
     var timeController : TimeController?
     
