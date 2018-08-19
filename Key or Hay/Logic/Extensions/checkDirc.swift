@@ -10,12 +10,17 @@ import Foundation
 
 extension NetworkController {
     
+    /* replaced with getPath
     func getDirc(pathName : String) -> String {
         var paths: [Any] = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory: String = paths[0] as? String ?? ""
         // Get documents folder
-        return URL(fileURLWithPath: documentsDirectory).appendingPathComponent("\(pathName)").absoluteString
+        
+        let url = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("\(pathName)").absoluteString
+        print("HEREURL NW : \(url)")
+        return url
     }
+ */
     
     func checkIfDataExists(dataPath : String) -> Bool{
         

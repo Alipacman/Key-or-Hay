@@ -8,19 +8,15 @@
 
 import Foundation
 import UIKit
+/*
+extension GameController2 {
 
-
-//Resets the MainView and starts Countdown
-class StartController {
-    
-    func startGame(){
+    func gameStart(){
         PointCounter.isHidden = false
         timeCounter.isHidden = false
         scheduledTimerWithTimeInterval()
         createCard()
     }
-    
-
     
     func start(){
         let translateTransform = CGAffineTransform(translationX: 500, y: 0)
@@ -57,15 +53,10 @@ class StartController {
             self.StartNumberLabel.text = "\(self.self.startSecond)"
         }
     }
-    
-    func addCardToView(card : Card) {
-        view.addSubview(card)
-        view.sendSubview(toBack: card)
-        card.setupContainer(cardToUse: card , PicToUse :pic)
-    }
-    
 
     
     
     
 }
+ 
+ */

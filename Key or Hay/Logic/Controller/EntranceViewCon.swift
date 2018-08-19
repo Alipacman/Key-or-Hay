@@ -13,7 +13,7 @@ class EntranceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let networkController = NetworkController()
-        networkController.getPictures(imageCount : 10)
+        networkController.start()
     }
 
 }

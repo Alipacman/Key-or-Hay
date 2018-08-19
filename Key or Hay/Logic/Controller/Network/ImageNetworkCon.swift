@@ -10,13 +10,12 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 import FirebaseStorage
+import PromiseKit
 
 class NetworkController {
     
     var ref: DatabaseReference!
     var storage : Storage
-    var count : Int?
-    
     
     
     init() {
@@ -25,34 +24,40 @@ class NetworkController {
     }
     
     func start() {
+        self.loadImgWithPromise()
     }
     
-    func getScores() {
-        
+    func loadImgWithPromise() {
+        firstly{
+            self.downloadCountFile()
+            }.then {
+                return self.readSetCount()
+            }.then {countArray in
+                self.downloadAllFolders(countArray: countArray)
+            }.done {
+                print("done")
+        }
     }
     
-    func submitScore() {
-        
+    //    TODO: Add delegatefunc if no internet connection
+    func downloadAllFolders(countArray: [String]) -> Promise<Void> {
+        return Promise {seal in
+            self.downloadImagesFromFolder(folder: "Ali", amount: Int(countArray[0])!)
+            self.downloadImagesFromFolder(folder: "Hussein", amount: Int(countArray[1])!)
+            self.downloadImagesFromFolder(folder: "Random", amount: Int(countArray[2])!)
+            seal.fulfill(())
+        }
     }
     
-//    func prepareAsyncPic(){
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 20.0, execute: {
-//            //    self.getCount()
-//            self.getPictures()
-//        })
-//    }
-    
-    func getPictures(imageCount : Int){
+    func downloadImagesFromFolder(folder: String, amount : Int) {
         
-        // Creates Img Folder if not already created and downloads all missing pictures from 0 to imageCount
+        let dataPath = DirectroryHelp.getPath(path : "Images/\(folder)")
         
-        let dataPath = self.getDirc(pathName : "Images")
-        
-        for i in stride(from: 0, to: 10, by: 1) {
+        for i in stride(from: 0, to: amount , by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
             if self.checkIfDataExists(dataPath: "Images/\(i).jpg"){
                 print("image \(i) will be downloaded")
-                let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(i).jpg")
+                let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(folder)/\(i).jpg")
                 imageRef.write(toFile: localURL) { url, error in
                     if let error = error {
                         //                        print("Here is the error: \(error)")

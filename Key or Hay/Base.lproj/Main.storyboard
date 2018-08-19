@@ -154,9 +154,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cy1-ei-SO7" userLabel="leftView">
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="67"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjS-LH-7CI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjS-LH-7CI" userLabel="Ale">
                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="67"/>
-                                                <state key="normal" title="Kay"/>
+                                                <state key="normal" title="Ale"/>
                                                 <connections>
                                                     <action selector="buttonClickedWithSender:" destination="e3a-Vw-5D3" eventType="touchUpInside" id="7dQ-ye-SaB"/>
                                                 </connections>
@@ -537,7 +537,6 @@
         <image name="logo?" width="173" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4i-Nu-zQI"/>
         <segue reference="YRT-1R-08R"/>
     </inferredMetricsTieBreakers>
 </document>
