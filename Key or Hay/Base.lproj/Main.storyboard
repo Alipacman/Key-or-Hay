@@ -45,6 +45,10 @@
                                     <constraint firstAttribute="height" constant="240" id="l56-cY-Kuq"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eXg-6q-pHh">
+                                <rect key="frame" x="177" y="593" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -58,6 +62,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Key or Hay" id="xz1-dU-Z4s"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="eXg-6q-pHh" id="P4a-MK-idf"/>
+                        <outlet property="startButton" destination="fcS-En-oKz" id="Ajc-2d-DJp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -537,6 +545,6 @@
         <image name="logo?" width="173" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YRT-1R-08R"/>
+        <segue reference="NOr-fl-Q1b"/>
     </inferredMetricsTieBreakers>
 </document>

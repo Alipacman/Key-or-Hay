@@ -12,15 +12,16 @@ import FirebaseDatabase
 import FirebaseStorage
 import PromiseKit
 
-class NetworkController {
+class ImageNewtworkCon {
     
     var ref: DatabaseReference!
     var storage : Storage
+    var delegate : DownloadDelegate?
     
-    
-    init() {
+    init(_ delegate : DownloadDelegate) {
         // Get a reference to the storage service, using the default Firebase App
         self.storage = Storage.storage()
+        self.delegate = delegate
     }
     
     func start() {
@@ -35,7 +36,7 @@ class NetworkController {
             }.then {countArray in
                 self.downloadAllFolders(countArray: countArray)
             }.done {
-                print("done")
+                self.delegate?.everythingDownloaded(self)
         }
     }
     
@@ -55,14 +56,14 @@ class NetworkController {
         
         for i in stride(from: 0, to: amount , by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
-            if self.checkIfDataExists(dataPath: "Images/\(i).jpg"){
+            if self.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
                 print("image \(i) will be downloaded")
                 let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(folder)/\(i).jpg")
                 imageRef.write(toFile: localURL) { url, error in
                     if let error = error {
                         //                        print("Here is the error: \(error)")
                     } else {
-                        print("image \(i) loaded into Documents/Images")
+                        print("image \(i) loaded into Documents/Images \(folder)")
                     }
                 }
             }

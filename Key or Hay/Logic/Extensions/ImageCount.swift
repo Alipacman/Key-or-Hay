@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import PromiseKit
 
-extension NetworkController {
+extension ImageNewtworkCon {
     
     func downloadCountFile() -> Promise<Void> {
         return Promise { seal in

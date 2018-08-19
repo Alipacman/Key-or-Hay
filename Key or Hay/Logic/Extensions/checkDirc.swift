@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NetworkController {
+extension ImageNewtworkCon {
     
     /* replaced with getPath
     func getDirc(pathName : String) -> String {
