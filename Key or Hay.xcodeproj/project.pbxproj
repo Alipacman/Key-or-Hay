@@ -12,6 +12,7 @@
 		4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FA2129CA46008EA9E9 /* SubmitDelegate.swift */; };
 		4113D2FD2129D91D008EA9E9 /* DateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FC2129D91D008EA9E9 /* DateGetter.swift */; };
 		4113D2FF2129DB0B008EA9E9 /* ScoreDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FE2129DB0B008EA9E9 /* ScoreDownlCon.swift */; };
+		41156E2D212ABA1B0057471A /* GoldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156E2C212ABA1B0057471A /* GoldController.swift */; };
 		411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F0F802125EC3400493D34 /* EntranceViewCon.swift */; };
 		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
 		4121CA042124D4DE00BAEB66 /* ImageDownloadCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* ImageDownloadCon.swift */; };
@@ -49,6 +50,7 @@
 		4113D2FA2129CA46008EA9E9 /* SubmitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitDelegate.swift; sourceTree = "<group>"; };
 		4113D2FC2129D91D008EA9E9 /* DateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGetter.swift; sourceTree = "<group>"; };
 		4113D2FE2129DB0B008EA9E9 /* ScoreDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDownlCon.swift; sourceTree = "<group>"; };
+		41156E2C212ABA1B0057471A /* GoldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldController.swift; sourceTree = "<group>"; };
 		411F0F802125EC3400493D34 /* EntranceViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewCon.swift; sourceTree = "<group>"; };
 		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4121CA032124D4DE00BAEB66 /* ImageDownloadCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadCon.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				41D98AE32126E50A00DA29D4 /* ScoresTableCon.swift */,
 				416639B5212338F10011D5F3 /* TimeCon.swift */,
 				416639B12122E4670011D5F3 /* ImageController.swift */,
+				41156E2C212ABA1B0057471A /* GoldController.swift */,
 				419CEB612126241100414DBF /* Network */,
 			);
 			path = Controller;
@@ -395,6 +398,7 @@
 				410C324821296C38000EBE04 /* StringExtension.swift in Sources */,
 				416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */,
 				4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */,
+				41156E2D212ABA1B0057471A /* GoldController.swift in Sources */,
 				41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */,
 				41E9215C2128B85000F80FE2 /* DirectoryHelp.swift in Sources */,
 			);

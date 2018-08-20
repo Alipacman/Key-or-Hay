@@ -23,7 +23,9 @@ class ScoreDownloadController {
     }
     
    func submitScore(scoreEntry : ScoreEntry){
-    self.ref.childByAutoId().setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
+    let uuid = UIDevice.current.identifierForVendor?.uuidString
+    
+    self.ref.child("\(uuid)").setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
     scoreArray.removeAll(keepingCapacity: false)
     }
     
@@ -41,6 +43,7 @@ class ScoreDownloadController {
                 let entry = ScoreEntry(name: username, score: score)
                 self.scoreArray.append(entry)
             }
+        self.scoreArray = self.scoreArray.sorted(by: { $0.score! > $1.score! })
         }) { (error) in
             print("ERROR: \(error.localizedDescription)")
         }

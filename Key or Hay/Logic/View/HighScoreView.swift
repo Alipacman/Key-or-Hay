@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HighScoreViewController: UIViewController {
+class HighScoreViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
@@ -21,10 +21,12 @@ class HighScoreViewController: UIViewController {
         super.viewDidLoad()
         scoreLabel.text = "Dein Score: \(userScore)"
         scoreDownloadController = ScoreDownloadController()
+        self.nameField.delegate = self
     }
     
-    func testEntry() -> ScoreEntry {
-        return ScoreEntry(name: "ali", score: 30)
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func restart(_ sender: Any) {
