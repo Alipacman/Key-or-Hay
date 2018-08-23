@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         let defaultValue = ["GoldValue" : 0]
         defaults.register(defaults: defaultValue)
-        return true
+        return true 
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

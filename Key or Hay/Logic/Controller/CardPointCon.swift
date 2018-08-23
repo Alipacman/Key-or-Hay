@@ -14,11 +14,14 @@ class CardPointController {
     let imageController = ImageController()
     
     var gameView : GameView?
+    var timeController : TimeController
+    
     var rightButton = -1
     var cardStackArray = [Card]()
     
-    init(_ gameView : GameView) {
+    init( gameView : GameView, timeController : TimeController) {
         self.gameView = gameView
+        self.timeController = timeController
         print("init CardPointController")
     }
     
@@ -46,6 +49,7 @@ class CardPointController {
         
         if pressedButton == rightButton{
             self.gameView!.pointCounter.text = String(currentPoints! + 1)
+            timeController.AddbonusTime(timeToAdd: 0.4)
         }
         else{
             self.gameView!.pointCounter.text = String(currentPoints! - 1)

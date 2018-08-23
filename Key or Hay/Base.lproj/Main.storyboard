@@ -50,13 +50,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-qX-zzf">
-                                <rect key="frame" x="164" y="656" width="46" height="30"/>
+                                <rect key="frame" x="172" y="656" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="skip"/>
                                 <connections>
                                     <segue destination="frc-xp-hlY" kind="show" id="fQS-nT-hG7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79p-5D-Kbl">
+                                <rect key="frame" x="53" y="719" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update Gold"/>
+                                <connections>
+                                    <action selector="showGold:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BLK-HA-BdU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6M-uF-q8O">
+                                <rect key="frame" x="72" y="748" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add 10"/>
+                                <connections>
+                                    <action selector="add10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHh-uS-S8j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gold:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOj-72-WK6">
+                                <rect key="frame" x="115" y="480" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,13 +94,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Key or Hay" id="xz1-dU-Z4s"/>
                     <connections>
+                        <outlet property="GoldLable" destination="xOj-72-WK6" id="Oqn-gZ-HKi"/>
                         <outlet property="activityIndicator" destination="eXg-6q-pHh" id="P4a-MK-idf"/>
                         <outlet property="startButton" destination="fcS-En-oKz" id="Ajc-2d-DJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="122"/>
+            <point key="canvasLocation" x="605.60000000000002" y="121.92118226600985"/>
         </scene>
         <!--Game View-->
         <scene sceneID="Q7f-hy-PiE">
@@ -631,7 +655,7 @@
         <image name="logo?" width="173" height="173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4i-Nu-zQI"/>
-        <segue reference="YRT-1R-08R"/>
+        <segue reference="fQS-nT-hG7"/>
+        <segue reference="NOr-fl-Q1b"/>
     </inferredMetricsTieBreakers>
 </document>

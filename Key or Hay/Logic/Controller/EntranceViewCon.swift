@@ -26,6 +26,17 @@ class EntranceViewController: UIViewController, DownloadDelegate {
         startButton.isHidden = true
         let imageDownloadController = ImageDownloadController(self)
         imageDownloadController.loadImgWithPromise()
+        
+        
+//        delete from here
+        GoldLable.text = String (Gold.sharedGold.value)
     }
 
+    @IBAction func showGold(_ sender: Any) {
+        GoldLable.text = "Gold: " + String (Gold.sharedGold.value)
+    }
+    @IBAction func add10(_ sender: Any) {
+        Gold.addGold(toAdd: 10)
+    }
+    @IBOutlet weak var GoldLable: UILabel!
 }

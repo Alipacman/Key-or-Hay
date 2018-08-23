@@ -37,4 +37,9 @@ class TimeController {
             delegate?.timeFinished(self)
         }
     }
+    
+    func AddbonusTime(timeToAdd : Double) {
+        timePassed -= timeToAdd
+    }
+    
 }

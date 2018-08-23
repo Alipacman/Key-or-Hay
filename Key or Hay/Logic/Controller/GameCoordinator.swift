@@ -17,9 +17,9 @@ extension GameView{
         self.gamePrepController = GamePrepController(self, preparationTime)
         self.gamePrepController!.prepareStart()
         
-        self.cardPointController = CardPointController(self)
-        
         self.timeController = TimeController(self, timeToPlay: gameLenght)
+        self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
+        
         super.viewDidLoad()
     }
     
