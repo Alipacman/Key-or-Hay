@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+//        For storing Gold
+        let defaults = UserDefaults.standard
+        let defaultValue = ["GoldValue" : 0]
+        defaults.register(defaults: defaultValue)
         return true
     }
 
