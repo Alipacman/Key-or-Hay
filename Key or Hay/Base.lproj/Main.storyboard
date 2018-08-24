@@ -28,7 +28,7 @@
                                     <segue destination="e3a-Vw-5D3" kind="presentation" id="NOr-fl-Q1b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key or Hay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsL-dc-0hG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay or Ayy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsL-dc-0hG">
                                 <rect key="frame" x="53" y="65" width="269" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="Cgh-AY-CoE"/>
@@ -38,13 +38,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo?" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-R2-006">
-                                <rect key="frame" x="66" y="171" width="242" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="V5v-R2-006" secondAttribute="height" multiplier="121:120" id="Oel-jO-SKF"/>
-                                    <constraint firstAttribute="height" constant="240" id="l56-cY-Kuq"/>
-                                </constraints>
-                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eXg-6q-pHh">
                                 <rect key="frame" x="177" y="593" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,6 +73,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBlank" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-R2-006">
+                                <rect key="frame" x="41" y="171" width="293" height="279"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V5v-R2-006" secondAttribute="height" multiplier="121:120" constant="11.675000000000011" id="Oel-jO-SKF"/>
+                                    <constraint firstAttribute="height" constant="279" id="l56-cY-Kuq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -87,8 +87,8 @@
                             <constraint firstItem="OsL-dc-0hG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="VjK-yZ-cJv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OsL-dc-0hG" secondAttribute="trailing" constant="53" id="ZlP-mK-ucY"/>
                             <constraint firstItem="OsL-dc-0hG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="bhz-qC-9zM"/>
-                            <constraint firstItem="V5v-R2-006" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="ldG-Wn-pmJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V5v-R2-006" secondAttribute="trailing" constant="67" id="ntV-uT-fQr"/>
+                            <constraint firstItem="V5v-R2-006" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="ldG-Wn-pmJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V5v-R2-006" secondAttribute="trailing" constant="41" id="ntV-uT-fQr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -652,7 +652,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo?" width="173" height="173"/>
+        <image name="iconBlank" width="746" height="746"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fQS-nT-hG7"/>

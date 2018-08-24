@@ -19,13 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo?" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-hI-38h">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBlank" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-hI-38h">
                                 <rect key="frame" x="12" y="235.66666666666663" width="351" height="342"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Yw-hI-38h" secondAttribute="height" multiplier="1:1" constant="9" id="HWW-aQ-aCT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key or Hay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-6C-hJQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay or Ayy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-6C-hJQ">
                                 <rect key="frame" x="53" y="98" width="269" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jVJ-6C-hJQ" secondAttribute="height" multiplier="269:98" id="Zyp-u9-Mkk"/>
@@ -53,6 +53,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo?" width="173" height="173"/>
+        <image name="iconBlank" width="746" height="746"/>
     </resources>
 </document>

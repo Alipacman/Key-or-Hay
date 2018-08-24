@@ -21,7 +21,7 @@ class DirectroryHelp{
         
         return filePath
     }
-    
+
     static func checkIfDataExists(dataPath : String) -> Bool{
         
         var filePath = ""
@@ -30,6 +30,8 @@ class DirectroryHelp{
         let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
         
         let dir = dirs[0] //documents directory
+        //        TODO: optimze
+        //    could be optimzed by only calling getPath
         filePath = dir.appendingFormat("/" + dataPath)
         //            print("Local path = \(filePath)")
         
