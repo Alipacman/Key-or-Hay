@@ -27,7 +27,7 @@ class CardPointController {
     
     func spawnCard(){
         print("spawning card")
-        let imageValues = imageController.getImageValues()
+        let imageValues = imageController.getRandomImage()
         rightButton = (imageValues[1] as? Int)!
         let card = Card(image : imageValues[0] as! UIImage, frame: (gameView?.cardContainer.frame)!)
         

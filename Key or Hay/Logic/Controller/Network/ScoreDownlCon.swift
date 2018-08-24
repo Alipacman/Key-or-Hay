@@ -22,11 +22,11 @@ class ScoreDownloadController {
         self.getScores()
     }
     
-   func submitScore(scoreEntry : ScoreEntry){
-    let uuid = UIDevice.current.identifierForVendor?.uuidString
-    
-    self.ref.child("\(uuid)").setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
-    scoreArray.removeAll(keepingCapacity: false)
+    func submitScore(scoreEntry : ScoreEntry){
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+        self.ref.child("\(uuid)").setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
+        scoreArray.removeAll(keepingCapacity: false)
     }
     
     func getScores(){
@@ -43,11 +43,10 @@ class ScoreDownloadController {
                 let entry = ScoreEntry(name: username, score: score)
                 self.scoreArray.append(entry)
             }
-        self.scoreArray = self.scoreArray.sorted(by: { $0.score! > $1.score! })
+            self.scoreArray = self.scoreArray.sorted(by: { $0.score! > $1.score! })
         }) { (error) in
             print("ERROR: \(error.localizedDescription)")
         }
-        
     }
     
     func giveScore() -> [ScoreEntry] {

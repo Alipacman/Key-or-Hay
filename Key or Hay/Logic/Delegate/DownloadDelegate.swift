@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DownloadDelegate {
-    func everythingDownloaded(_ sender : ImageDownloadController)
+    func downloadFinished(_ sender : ImageDownloadController)
 }

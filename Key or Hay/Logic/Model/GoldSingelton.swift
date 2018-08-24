@@ -10,7 +10,7 @@ import Foundation
 
 class Gold {
     
-    static var sharedGold = Gold() // This is singleton
+    static var sharedGold = Gold() // This is the single instance
     
     var value : Int
     
@@ -24,7 +24,7 @@ class Gold {
         self.safeGold()
     }
     
-    static func safeGold(){
+    private static func safeGold(){
         let defaults = UserDefaults.standard
         defaults.set(Gold.sharedGold.value, forKey: "GoldValue")
         defaults.synchronize()

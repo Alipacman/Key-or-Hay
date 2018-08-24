@@ -32,7 +32,7 @@ class ImageDownloadController {
             }.then {countArray in
                 self.downloadAllFolders(countArray: countArray)
             }.done {
-                self.delegate?.everythingDownloaded(self)
+                self.delegate?.downloadFinished(self)
         }
     }
     

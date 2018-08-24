@@ -13,6 +13,10 @@ class ImageController {
     
     var imageArray : Array<Any> = []
     
+    init() {
+        self.allImagesIntoArray()
+    }
+    
     func allImagesIntoArray(){
         getImagesIntoArray(folder : "Ali", imageValue : 0)
         getImagesIntoArray(folder : "Hussein", imageValue : 2)
@@ -36,8 +40,7 @@ class ImageController {
         }
     }
     
-    func getImageValues() -> Array<Any> {
-        self.allImagesIntoArray()
+    func getRandomImage() -> Array<Any> {
         let randomIndex = Int(arc4random_uniform(UInt32(self.imageArray.count)))
         return imageArray[randomIndex] as! Array<Any>
     }

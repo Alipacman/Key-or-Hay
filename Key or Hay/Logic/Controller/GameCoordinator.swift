@@ -35,11 +35,11 @@ extension GameView{
         cardPointController!.spawnCard()
     }
     
-    func pressedButton(tag : Int){
+    func choiceButtonPressed(tag : Int){
         cardPointController!.buttonPressed(buttonNumber: tag)
     }
     
-    func timeFinished(_ sender: TimeController) {
+    func gametimeFinished(_ sender: TimeController) {
         self.performSegue(withIdentifier: "highscore", sender: self)
     }
 }

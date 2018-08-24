@@ -44,21 +44,12 @@ class GamePrepController {
  
     
 //    time handler of countdown
+// other part in countdownAnmiation
     
     func prepareAsyncCountDown(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.StartCountDown()
         })
-    }
-    func startdown(){
-        timer = Timer.scheduledTimer(timeInterval: 1.4, target: self, selector: #selector(self.downCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc func downCounter(){
-        self.startSecond = self.startSecond - 1
-        DispatchQueue.main.async {
-            self.gameView!.startNumberLabel.text = "\(self.startSecond)"
-        }
     }
     
 }

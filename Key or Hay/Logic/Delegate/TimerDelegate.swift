@@ -9,6 +9,5 @@
 import Foundation
 
 protocol TimerDelegate {
-    
-    func timeFinished(_ sender : TimeController)
+    func gametimeFinished(_ sender : TimeController)
 }

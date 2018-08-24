@@ -13,7 +13,7 @@ class EntranceViewController: UIViewController, DownloadDelegate {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    func everythingDownloaded(_ sender: ImageDownloadController) {
+    func downloadFinished(_ sender: ImageDownloadController) {
         startButton.isHidden = false
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true

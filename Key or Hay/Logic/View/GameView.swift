@@ -36,7 +36,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     @IBOutlet weak var rightButtonView: UIView!
     
     @IBAction func buttonClicked(sender: UIButton){
-        self.pressedButton(tag : sender.tag)
+        self.choiceButtonPressed(tag : sender.tag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

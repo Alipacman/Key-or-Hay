@@ -34,7 +34,7 @@ class TimeController {
         gameView!.timeCounter.text! = String(format: "%.1f", timePassed)
         gameView!.progressBar.progress = Float((self.timePassed/self.timeToPlay))
         if timePassed >= timeToPlay{
-            delegate?.timeFinished(self)
+            delegate?.gametimeFinished(self)
         }
     }
     

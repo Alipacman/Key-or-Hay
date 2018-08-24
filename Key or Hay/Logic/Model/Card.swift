@@ -22,7 +22,6 @@ class Card :UIView {
         self.viewContainer = self.createViewContainer()
         self.imageContainer = self.createImageContainer()
         self.viewContainer?.addSubview(imageContainer!)
-        viewContainer?.addSubview(imageContainer!)
     }
     
     required init?(coder aDecoder: NSCoder) {

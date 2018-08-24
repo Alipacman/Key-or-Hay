@@ -28,8 +28,7 @@ class SubmitPictureViewController: UIViewController, UINavigationControllerDeleg
         }
     }
     
-        func submitPicture()
-    {
+    func submitPicture() {
         
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
