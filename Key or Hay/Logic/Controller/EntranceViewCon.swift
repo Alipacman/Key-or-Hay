@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Hero
+import Spring
 
 class EntranceViewController: UIViewController, DownloadDelegate {
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var springImageView: SpringImageView!
+    
     
     func downloadFinished(_ sender: ImageDownloadController) {
         startButton.isHidden = false
@@ -27,9 +31,14 @@ class EntranceViewController: UIViewController, DownloadDelegate {
         let imageDownloadController = ImageDownloadController(self)
         imageDownloadController.loadImgWithPromise()
         
-        
 //        delete from here
         GoldLable.text = String (Gold.sharedGold.value)
+        
+        self.hero.isEnabled = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        HeartController.initImageView(springImageView: self.springImageView)
     }
 
     @IBAction func showGold(_ sender: Any) {

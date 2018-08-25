@@ -39,6 +39,9 @@
 		41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D98AE52126E5A000DA29D4 /* ScoreEntry.swift */; };
 		41D98AE82126F17500DA29D4 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D98AE72126F17500DA29D4 /* EntryViewCell.swift */; };
 		41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E30EBF2041DD0300C3F17E /* HighScoreView.swift */; };
+		41E777242131D94D0037A586 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777232131D94D0037A586 /* TutorialController.swift */; };
+		41E777262131DDCA0037A586 /* HeartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777252131DDCA0037A586 /* HeartController.swift */; };
+		41E777282131E38B0037A586 /* HeartTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777272131E38B0037A586 /* HeartTestController.swift */; };
 		41E9215C2128B85000F80FE2 /* DirectoryHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */; };
 		6A8F0452EF01965A9ECA3CA9 /* Pods_Key_or_Hay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,9 @@
 		41D98AE52126E5A000DA29D4 /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
 		41D98AE72126F17500DA29D4 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
 		41E30EBF2041DD0300C3F17E /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
+		41E777232131D94D0037A586 /* TutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		41E777252131DDCA0037A586 /* HeartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartController.swift; sourceTree = "<group>"; };
+		41E777272131E38B0037A586 /* HeartTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartTestController.swift; sourceTree = "<group>"; };
 		41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelp.swift; sourceTree = "<group>"; };
 		63EB1C6C03BBB2678D1018F5 /* Pods-Key or Hay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Key or Hay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Key or Hay/Pods-Key or Hay.release.xcconfig"; sourceTree = "<group>"; };
 		AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Key_or_Hay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +153,8 @@
 		4191891121300FC1005831AC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				41E777252131DDCA0037A586 /* HeartController.swift */,
+				41E777272131E38B0037A586 /* HeartTestController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */,
 				416639AF2122CE250011D5F3 /* CardPointCon.swift */,
 				416639B5212338F10011D5F3 /* TimeCon.swift */,
+				41E777232131D94D0037A586 /* TutorialController.swift */,
 				416639B12122E4670011D5F3 /* ImageController.swift */,
 				419CEB612126241100414DBF /* Network */,
 			);
@@ -338,6 +347,7 @@
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
@@ -350,6 +360,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
@@ -380,6 +391,7 @@
 				41C764502129C0FB003D051D /* SubmitPictureVCon.swift in Sources */,
 				411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */,
 				419CEB632126245100414DBF /* ImageCount.swift in Sources */,
+				41E777282131E38B0037A586 /* HeartTestController.swift in Sources */,
 				4113D2F92129C902008EA9E9 /* ImageSubmitCon.swift in Sources */,
 				4113D2FD2129D91D008EA9E9 /* DateGetter.swift in Sources */,
 				413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */,
@@ -387,10 +399,12 @@
 				4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */,
 				41D98AE82126F17500DA29D4 /* EntryViewCell.swift in Sources */,
 				416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */,
+				41E777262131DDCA0037A586 /* HeartController.swift in Sources */,
 				41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */,
 				414175DC21248E4A002B1B90 /* ContainerInstaller.swift in Sources */,
 				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */,
+				41E777242131D94D0037A586 /* TutorialController.swift in Sources */,
 				410C324821296C38000EBE04 /* StringExtension.swift in Sources */,
 				416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */,
 				4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */,

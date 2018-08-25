@@ -25,8 +25,30 @@ class ScoreDownloadController {
     func submitScore(scoreEntry : ScoreEntry){
         let uuid = UIDevice.current.identifierForVendor?.uuidString
         
-        self.ref.child("\(uuid)").setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
-        scoreArray.removeAll(keepingCapacity: false)
+        let oldHighScore = self.getOldHighscore(uuid : uuid!)
+        
+        if (oldHighScore < scoreEntry.score!){
+            self.ref.child("\(uuid)").setValue(["name" : scoreEntry.name!, "score" :scoreEntry.score!])
+            scoreArray.removeAll(keepingCapacity: false)
+        }
+    }
+    
+    //    TODO: fix this
+    func getOldHighscore(uuid : String) -> Int {
+        
+        var oldScore = 0
+        self.ref.observe(DataEventType.value, with: { (snapshot) in
+            // Get user value
+            
+            let value = snapshot.value as? NSDictionary
+            let user = value?.allKeys(for: uuid)
+            let castedScore = user as! NSDictionary
+            oldScore = castedScore["score"] as? Int ?? 0
+            
+        }) { (error) in
+            print("ERROR: \(error.localizedDescription)")
+        }
+        return oldScore
     }
     
     func getScores(){

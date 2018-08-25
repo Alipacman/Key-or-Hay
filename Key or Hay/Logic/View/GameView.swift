@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Spring
+import Hero
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
@@ -35,6 +36,9 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     @IBOutlet weak var centralButtonView: UIView!
     @IBOutlet weak var rightButtonView: UIView!
     
+    @IBOutlet weak var springImageView: SpringImageView!
+    
+    
     @IBAction func buttonClicked(sender: UIButton){
         self.choiceButtonPressed(tag : sender.tag)
     }
@@ -43,6 +47,10 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
         let points = Int(self.pointCounter.text!)
         let destinySegue = segue.destination as! HighScoreViewController
         destinySegue.userScore = points!
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        HeartController.initImageView(springImageView: self.springImageView)
     }
     
     

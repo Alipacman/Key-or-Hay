@@ -7,21 +7,30 @@
 //
 
 import UIKit
+import Spring
+import Hero
 
 class HighScoreViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var springImageView: SpringImageView!
     
     var userScore = 0
     var scoreDownloadController : ScoreDownloadController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
         scoreLabel.text = "Dein Score: \(userScore)"
         scoreDownloadController = ScoreDownloadController()
         self.nameField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.hero.isEnabled = true
+        HeartController.initImageView(springImageView: self.springImageView)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

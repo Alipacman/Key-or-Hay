@@ -25,7 +25,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="e3a-Vw-5D3" kind="presentation" id="NOr-fl-Q1b"/>
+                                    <segue destination="e3a-Vw-5D3" kind="show" id="zCi-GE-0Xc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay or Ayy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsL-dc-0hG">
@@ -80,6 +80,18 @@
                                     <constraint firstAttribute="height" constant="279" id="l56-cY-Kuq"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efb-Mt-i7T">
+                                <rect key="frame" x="267" y="719" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="heartTest"/>
+                                <connections>
+                                    <segue destination="5TK-sv-fky" kind="show" id="ZPK-I0-tON"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-p4-Ifu" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="142" y="146" width="62" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -96,12 +108,46 @@
                     <connections>
                         <outlet property="GoldLable" destination="xOj-72-WK6" id="Oqn-gZ-HKi"/>
                         <outlet property="activityIndicator" destination="eXg-6q-pHh" id="P4a-MK-idf"/>
+                        <outlet property="springImageView" destination="Uzl-p4-Ifu" id="FEb-jS-aAQ"/>
                         <outlet property="startButton" destination="fcS-En-oKz" id="Ajc-2d-DJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605.60000000000002" y="121.92118226600985"/>
+            <point key="canvasLocation" x="756" y="-10"/>
+        </scene>
+        <!--Heart Test Controller-->
+        <scene sceneID="49b-U7-ci6">
+            <objects>
+                <viewController id="5TK-sv-fky" customClass="HeartTestController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RB4-Es-BCb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-3u-gvZ">
+                                <rect key="frame" x="203" y="647" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="7lD-pg-wRa" kind="unwind" unwindAction="unwindToViewController:" id="loh-Rr-V8n"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-26-MvO" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="156" y="152" width="62" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xtq-Cp-6Dr"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="NaP-26-MvO" id="ltX-B6-KML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnF-25-Fcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7lD-pg-wRa" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-546.39999999999998" y="121.92118226600985"/>
         </scene>
         <!--Game View-->
         <scene sceneID="Q7f-hy-PiE">
@@ -272,9 +318,13 @@
                                 </constraints>
                             </stackView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="icb-KE-WY7">
-                                <rect key="frame" x="16" y="129" width="343" height="3"/>
+                                <rect key="frame" x="16" y="599" width="343" height="3"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hL7-8L-3j5" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="155" y="568" width="62" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -287,6 +337,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DQP-PU-NqZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IpC-Ee-TSi"/>
                     <connections>
                         <outlet property="cardContainer" destination="WwW-cE-SPD" id="RN1-R6-DQu"/>
                         <outlet property="centralButtonView" destination="rdv-KQ-K2d" id="xLZ-hs-2S6"/>
@@ -296,6 +347,7 @@
                         <outlet property="pointTimeStack" destination="GyF-LO-6cp" id="xvH-2j-kqj"/>
                         <outlet property="progressBar" destination="icb-KE-WY7" id="udO-Zu-wfl"/>
                         <outlet property="rightButtonView" destination="RZ7-C9-PLU" id="U3J-xx-TIp"/>
+                        <outlet property="springImageView" destination="hL7-8L-3j5" id="hxS-D8-Vxs"/>
                         <outlet property="startNumberLabel" destination="Mp4-fD-BRr" id="xDi-eY-kql"/>
                         <outlet property="startNumberView" destination="aOe-Bi-by3" id="T9e-oC-Xxn"/>
                         <outlet property="timeCounter" destination="UhK-Bv-5l7" id="ELh-t0-c2C"/>
@@ -304,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyT-tL-vPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583.2" y="121.92118226600985"/>
+            <point key="canvasLocation" x="1679" y="884"/>
         </scene>
         <!--High Score View Controller-->
         <scene sceneID="NEA-xW-Z8m">
@@ -495,6 +547,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-Pd-dP2">
+                                <rect key="frame" x="241" y="577" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="bakc to entrence"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="OMt-hQ-Kod"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dbb-Br-KQv" customClass="SpringImageView" customModule="Spring">
+                                <rect key="frame" x="295" y="410" width="62" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -510,6 +574,7 @@
                         <outlet property="HighscoreLabel" destination="doB-lh-srr" id="OnH-dq-GWG"/>
                         <outlet property="nameField" destination="LFs-ex-5be" id="D4S-7w-x2G"/>
                         <outlet property="scoreLabel" destination="qF7-wf-eqA" id="ABA-IR-deF"/>
+                        <outlet property="springImageView" destination="Dbb-Br-KQv" id="sl6-U5-uIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05Q-UW-kVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -655,7 +720,7 @@
         <image name="iconBlank" width="746" height="746"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fQS-nT-hG7"/>
-        <segue reference="NOr-fl-Q1b"/>
+        <segue reference="g4i-Nu-zQI"/>
+        <segue reference="YRT-1R-08R"/>
     </inferredMetricsTieBreakers>
 </document>
