@@ -12,6 +12,113 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tutorial View Controller-->
+        <scene sceneID="qyt-N4-NEx">
+            <objects>
+                <viewController id="cXo-Ek-IuT" customClass="TutorialViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OzD-vr-srp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-iF-QKh">
+                                <rect key="frame" x="279" y="748" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Ktu-wL-EGf" kind="unwind" unwindAction="unwindToViewController:" id="4ia-Mi-SnM"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-rx-yAd">
+                                <rect key="frame" x="80" y="180" width="214" height="214"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Ich bin Ali &amp; vielen dank, dass du dich auf diesen Scheiß einlässt" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOP-aD-nqS" customClass="SpringTextView" customModule="Spring">
+                                <rect key="frame" x="67" y="458" width="240" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Ich bin Hussein &amp; bin unfreiwillig hier" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZL-dA-NEW" customClass="SpringTextView" customModule="Spring">
+                                <rect key="frame" x="77" y="468" width="240" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU6-6r-OJp" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="137" y="718" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="startAnimation"/>
+                                <connections>
+                                    <action selector="startAnimation:" destination="cXo-Ek-IuT" eventType="touchUpInside" id="c7V-J2-kyz"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa0-4R-jUf" customClass="SpringLabel" customModule="Spring">
+                                <rect key="frame" x="77" y="103" width="217" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9D7-SJ-rFy"/>
+                    </view>
+                    <connections>
+                        <outlet property="aliText" destination="NOP-aD-nqS" id="bmZ-oy-and"/>
+                        <outlet property="animationButton" destination="wU6-6r-OJp" id="7SL-sy-zoY"/>
+                        <outlet property="heyLabel" destination="Pa0-4R-jUf" id="iHe-MH-ANM"/>
+                        <outlet property="husseinText" destination="PZL-dA-NEW" id="HWa-hG-l2J"/>
+                        <outlet property="midView" destination="YLL-rx-yAd" id="Jxm-Cb-OHW"/>
+                        <segue destination="Sc0-YB-xba" kind="show" identifier="NextTutorial" id="oJP-73-wPp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qse-8p-IZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ktu-wL-EGf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-431" y="-892"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="l4O-un-uVH">
+            <objects>
+                <viewController id="Sc0-YB-xba" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6SZ-k2-lBH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E89-B1-2Dq">
+                                <rect key="frame" x="16" y="123" width="343" height="313"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HusseinKopf" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-ou-nnv">
+                                        <rect key="frame" x="8" y="8" width="327" height="297"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="husseinKopf"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wer ist das?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTQ-1U-0cF">
+                                <rect key="frame" x="139" y="482" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Evn-jk-cxC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wlR-mX-3rg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4IX-hA-AJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="-829"/>
+        </scene>
         <!--Key or Hay-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -25,7 +132,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="e3a-Vw-5D3" kind="show" id="zCi-GE-0Xc"/>
+                                    <segue destination="e3a-Vw-5D3" kind="popoverPresentation" popoverAnchorView="fcS-En-oKz" id="zCi-GE-0Xc">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay or Ayy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsL-dc-0hG">
@@ -92,6 +201,14 @@
                                 <rect key="frame" x="142" y="146" width="62" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-GX-4Kf">
+                                <rect key="frame" x="284" y="561" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tutorial"/>
+                                <connections>
+                                    <segue destination="cXo-Ek-IuT" kind="show" id="Qo9-vx-7Bo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -114,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-10"/>
+            <point key="canvasLocation" x="758" y="30"/>
         </scene>
         <!--Heart Test Controller-->
         <scene sceneID="49b-U7-ci6">
@@ -147,7 +264,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnF-25-Fcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7lD-pg-wRa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-546.39999999999998" y="121.92118226600985"/>
+            <point key="canvasLocation" x="-839" y="395"/>
         </scene>
         <!--Game View-->
         <scene sceneID="Q7f-hy-PiE">
@@ -324,6 +441,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hL7-8L-3j5" customClass="SpringImageView" customModule="Spring">
                                 <rect key="frame" x="155" y="568" width="62" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -717,10 +838,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HusseinKopf" width="464" height="614"/>
         <image name="iconBlank" width="746" height="746"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4i-Nu-zQI"/>
-        <segue reference="YRT-1R-08R"/>
+        <segue reference="fQS-nT-hG7"/>
+        <segue reference="zCi-GE-0Xc"/>
     </inferredMetricsTieBreakers>
 </document>
