@@ -643,7 +643,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="All Scores"/>
                                 <connections>
-                                    <segue destination="xCg-oe-vMQ" kind="show" identifier="Scoreboard" id="dlN-93-byY"/>
+                                    <segue destination="xCg-oe-vMQ" kind="show" identifier="Scoreboard" id="cga-oI-RRK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-CF-AYv">
@@ -846,6 +846,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fQS-nT-hG7"/>
-        <segue reference="zCi-GE-0Xc"/>
+        <segue reference="YRT-1R-08R"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,7 +11,7 @@ import Hero
 import Spring
 import Pastel
 
-class EntranceViewController: UIViewController, DownloadDelegate {
+class EntranceViewController: UIViewController, imgDownloadDelegate {
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

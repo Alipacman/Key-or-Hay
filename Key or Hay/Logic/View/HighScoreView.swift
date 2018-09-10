@@ -10,7 +10,8 @@ import UIKit
 import Spring
 import Hero
 
-class HighScoreViewController: UIViewController, UITextFieldDelegate {
+class HighScoreViewController: UIViewController, UITextFieldDelegate, highscoreDownDelegate {
+    
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
@@ -19,19 +20,21 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate {
     
     var userScore = 0
     var scoreDownloadController : ScoreDownloadController?
-    var scoreArray : [ScoreEntry] = []
+    var scoreArray : [ScoreEntry]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         scoreLabel.text = "Dein Score: \(userScore)"
-        self.scoreDownloadController = ScoreDownloadController()
         self.nameField.delegate = self
         
-        self.scoreArray.removeAll()
-        self.scoreArray = (scoreDownloadController?.getScores())!
+        self.scoreArray = []
+        self.scoreDownloadController = ScoreDownloadController(delegate : self)
     }
     
+    func downloadFinished(_ sender: ScoreDownloadController, scoreArray : [ScoreEntry]) {
+        self.scoreArray = scoreArray
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,8 +55,8 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate {
     @IBAction func submitScoreButtonPressed(_ sender: Any) {
         let uuid = UIDevice.current.identifierForVendor?.uuidString
         
-        if let score = self.scoreDownloadController!.submitScore(scoreArray : scoreArray, scoreEntry: ScoreEntry(uuid : uuid!, name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!)){
-            scoreArray.append(score)
+        if let score = self.scoreDownloadController!.submitScore( scoreEntry: ScoreEntry(uuid : uuid!, name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!)){
+            self.scoreArray?.append(score)
         }
     }
     

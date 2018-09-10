@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DownloadDelegate {
+protocol imgDownloadDelegate {
     func downloadFinished(_ sender : ImageDownloadController)
 }

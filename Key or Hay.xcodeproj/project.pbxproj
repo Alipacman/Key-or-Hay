@@ -22,6 +22,7 @@
 		413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */; };
 		413E114D1FA7F51600926D52 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E114C1FA7F51600926D52 /* GameView.swift */; };
 		414175DC21248E4A002B1B90 /* ContainerInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414175DB21248E4A002B1B90 /* ContainerInstaller.swift */; };
+		4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166228B21466FBB00A3EEEC /* highscoreDownDelegate.swift */; };
 		416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639AF2122CE250011D5F3 /* CardPointCon.swift */; };
 		416639B22122E4680011D5F3 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B12122E4670011D5F3 /* ImageController.swift */; };
 		416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B3212312770011D5F3 /* GameCoordinator.swift */; };
@@ -67,6 +68,7 @@
 		413E11461FA7DFCB00926D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		413E114C1FA7F51600926D52 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		414175DB21248E4A002B1B90 /* ContainerInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerInstaller.swift; sourceTree = "<group>"; };
+		4166228B21466FBB00A3EEEC /* highscoreDownDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highscoreDownDelegate.swift; sourceTree = "<group>"; };
 		416639AF2122CE250011D5F3 /* CardPointCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPointCon.swift; sourceTree = "<group>"; };
 		416639B12122E4670011D5F3 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		416639B3212312770011D5F3 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				413E113A1FA7DFCB00926D52 /* AppDelegate.swift */,
 				41A50BA121222F950034E640 /* PreparationDelegate.swift */,
 				4177E26B21299B1B007F2937 /* DownloadDelegate.swift */,
+				4166228B21466FBB00A3EEEC /* highscoreDownDelegate.swift */,
 				416639B72123399E0011D5F3 /* TimerDelegate.swift */,
 				4113D2FA2129CA46008EA9E9 /* SubmitDelegate.swift */,
 			);
@@ -423,6 +426,7 @@
 				419549C9213480FC009FCE1C /* SpringViewController.swift in Sources */,
 				41E777262131DDCA0037A586 /* HeartController.swift in Sources */,
 				41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */,
+				4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */,
 				414175DC21248E4A002B1B90 /* ContainerInstaller.swift in Sources */,
 				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */,

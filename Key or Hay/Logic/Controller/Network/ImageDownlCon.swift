@@ -16,9 +16,9 @@ class ImageDownloadController {
     
     var ref: DatabaseReference!
     var storage : Storage
-    var delegate : DownloadDelegate?
+    var delegate : imgDownloadDelegate?
     
-    init(_ delegate : DownloadDelegate) {
+    init(_ delegate : imgDownloadDelegate) {
         // Get a reference to the storage service, using the default Firebase App
         self.storage = Storage.storage()
         self.delegate = delegate
