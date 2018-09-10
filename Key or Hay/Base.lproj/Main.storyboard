@@ -78,15 +78,15 @@
             </objects>
             <point key="canvasLocation" x="-431" y="-892"/>
         </scene>
-        <!--View Controller-->
+        <!--Interactive Tutorial View Controller-->
         <scene sceneID="l4O-un-uVH">
             <objects>
-                <viewController id="Sc0-YB-xba" sceneMemberID="viewController">
+                <viewController id="Sc0-YB-xba" customClass="InteractiveTutorialViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6SZ-k2-lBH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E89-B1-2Dq">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E89-B1-2Dq" customClass="KolodaView">
                                 <rect key="frame" x="16" y="123" width="343" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -114,10 +114,13 @@
                         <viewLayoutGuide key="safeArea" id="Evn-jk-cxC"/>
                     </view>
                     <navigationItem key="navigationItem" id="wlR-mX-3rg"/>
+                    <connections>
+                        <outlet property="kolodaView" destination="E89-B1-2Dq" id="fvy-fV-iti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4IX-hA-AJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="-829"/>
+            <point key="canvasLocation" x="758" y="-873"/>
         </scene>
         <!--Key or Hay-->
         <scene sceneID="tne-QT-ifu">

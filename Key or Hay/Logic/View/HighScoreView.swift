@@ -19,14 +19,20 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate {
     
     var userScore = 0
     var scoreDownloadController : ScoreDownloadController?
+    var scoreArray : [ScoreEntry] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hero.isEnabled = true
+
         scoreLabel.text = "Dein Score: \(userScore)"
-        scoreDownloadController = ScoreDownloadController()
+        self.scoreDownloadController = ScoreDownloadController()
         self.nameField.delegate = self
+        
+        self.scoreArray.removeAll()
+        self.scoreArray = (scoreDownloadController?.getScores())!
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.hero.isEnabled = true
@@ -44,14 +50,17 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitScoreButtonPressed(_ sender: Any) {
-        self.scoreDownloadController!.submitScore(scoreEntry: ScoreEntry(name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!))
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+        if let score = self.scoreDownloadController!.submitScore(scoreArray : scoreArray, scoreEntry: ScoreEntry(uuid : uuid!, name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!)){
+            scoreArray.append(score)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Scoreboard"{
-            let scoresArray = self.scoreDownloadController!.giveScore()
             let destinySegue = segue.destination as! ScoresTableViewController
-            destinySegue.scoreArray = scoresArray
+            destinySegue.scoreArray = self.scoreArray
         }
     }
 }

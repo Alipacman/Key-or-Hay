@@ -39,7 +39,7 @@ extension ImageDownloadController {
                 let path = DirectroryHelp.getPath(path: "Images/")
                 let localURL = URL(fileURLWithPath: path).appendingPathComponent("ImageCount.rtf")
                 do {
-                    let counts = try String(contentsOf: localURL, encoding: .utf8).lastWords(3)
+                    let counts = try String(contentsOf: localURL, encoding: .utf8).lastWords(4)
                     print("here is the count: \(counts)")
                     seal.fulfill(counts)
                 }

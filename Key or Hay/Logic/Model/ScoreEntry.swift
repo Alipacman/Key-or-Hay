@@ -10,10 +10,12 @@ import Foundation
 
 struct ScoreEntry {
     
+    var uuid : String?
     var name : String?
     var score : Int?
     
-    init(name :String, score : Int) {
+    init(uuid : String ,name :String, score : Int) {
+        self.uuid = uuid
         self.name = name
         self.score = score
     }
