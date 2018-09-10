@@ -212,6 +212,14 @@
                                     <segue destination="cXo-Ek-IuT" kind="show" id="Qo9-vx-7Bo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-XE-jzn">
+                                <rect key="frame" x="173" y="735" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="newLife"/>
+                                <connections>
+                                    <segue destination="HIn-oI-StA" kind="show" id="zgC-sy-woP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -268,6 +276,81 @@
                 <exit id="7lD-pg-wRa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-839" y="395"/>
+        </scene>
+        <!--Swipe View Controller-->
+        <scene sceneID="eXk-zW-zU7">
+            <objects>
+                <viewController id="HIn-oI-StA" customClass="ZLSwipeViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rbQ-4M-hdx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbc-j5-QuW">
+                                <rect key="frame" x="47" y="667" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="removeAll:" destination="HIn-oI-StA" eventType="touchUpInside" id="Dfk-f6-92R"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vha-lO-SIA" customClass="ZLSwipeableView" customModule="ZLSwipeableViewSwift">
+                                <rect key="frame" x="37" y="135" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vha-lO-SIA" secondAttribute="height" multiplier="1:1" id="ezR-fR-L9F"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="69" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-h1-WcG">
+                                <rect key="frame" x="161" y="63" width="52" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tD-VD-TFc" customClass="AMProgressBar" customModule="AMProgressBar">
+                                <rect key="frame" x="10" y="583" width="355" height="40"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jeD-ze-va2"/>
+                                    <constraint firstAttribute="width" secondItem="6tD-VD-TFc" secondAttribute="height" multiplier="71:8" id="nTX-TN-2ab"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.92156862750000001" green="0.2784313725" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="stripesColor">
+                                        <color key="value" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textPosition">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6tD-VD-TFc" firstAttribute="top" secondItem="vha-lO-SIA" secondAttribute="bottom" constant="50" id="3O9-Ny-9ez"/>
+                            <constraint firstItem="vha-lO-SIA" firstAttribute="leading" secondItem="RJX-rd-Wjs" secondAttribute="leading" constant="37" id="BXk-Bn-XFi"/>
+                            <constraint firstItem="RJX-rd-Wjs" firstAttribute="trailing" secondItem="6tD-VD-TFc" secondAttribute="trailing" constant="10" id="BbA-b1-1qx"/>
+                            <constraint firstItem="6tD-VD-TFc" firstAttribute="leading" secondItem="RJX-rd-Wjs" secondAttribute="leading" constant="10" id="Th0-BS-amq"/>
+                            <constraint firstItem="RJX-rd-Wjs" firstAttribute="trailing" secondItem="vha-lO-SIA" secondAttribute="trailing" constant="38" id="mzO-JM-Lc2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RJX-rd-Wjs"/>
+                    </view>
+                    <connections>
+                        <outlet property="healthBar" destination="6tD-VD-TFc" id="jA6-Vg-bhW"/>
+                        <outlet property="zlSwipe" destination="vha-lO-SIA" id="dP9-ez-EOv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-SI-QW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408.80000000000001" y="773.64532019704438"/>
         </scene>
         <!--Game View-->
         <scene sceneID="Q7f-hy-PiE">
@@ -846,6 +929,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fQS-nT-hG7"/>
-        <segue reference="YRT-1R-08R"/>
+        <segue reference="zCi-GE-0Xc"/>
     </inferredMetricsTieBreakers>
 </document>
