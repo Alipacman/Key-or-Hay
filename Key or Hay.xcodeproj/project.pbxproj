@@ -22,7 +22,6 @@
 		413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */; };
 		413E114D1FA7F51600926D52 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E114C1FA7F51600926D52 /* GameView.swift */; };
 		414012B221471012009E3D11 /* mainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414012B121471012009E3D11 /* mainGameView.swift */; };
-		414175DC21248E4A002B1B90 /* ContainerInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414175DB21248E4A002B1B90 /* ContainerInstaller.swift */; };
 		4141F8112146B76900B11C97 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4141F8102146B76900B11C97 /* HealthBar.swift */; };
 		4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166228B21466FBB00A3EEEC /* highscoreDownDelegate.swift */; };
 		416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639AF2122CE250011D5F3 /* CardPointCon.swift */; };
@@ -72,7 +71,6 @@
 		413E11461FA7DFCB00926D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		413E114C1FA7F51600926D52 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		414012B121471012009E3D11 /* mainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGameView.swift; sourceTree = "<group>"; };
-		414175DB21248E4A002B1B90 /* ContainerInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerInstaller.swift; sourceTree = "<group>"; };
 		4141F8102146B76900B11C97 /* HealthBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		4166228B21466FBB00A3EEEC /* highscoreDownDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highscoreDownDelegate.swift; sourceTree = "<group>"; };
 		416639AF2122CE250011D5F3 /* CardPointCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPointCon.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				416A63B21FAA4C1800074381 /* GameCardAnimations.swift */,
 				41A50B9F21222D7D0034E640 /* CountDownAnimation.swift */,
 				4113D2FC2129D91D008EA9E9 /* DateGetter.swift */,
-				414175DB21248E4A002B1B90 /* ContainerInstaller.swift */,
 				410C324721296C38000EBE04 /* StringExtension.swift */,
 				4176F56C2135EA0200431505 /* TutorialTexts.swift */,
 			);
@@ -243,8 +240,8 @@
 				41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */,
 				416639AF2122CE250011D5F3 /* CardPointCon.swift */,
 				416639B5212338F10011D5F3 /* TimeCon.swift */,
-				4176F5702135FE0200431505 /* Tutorial */,
 				416639B12122E4670011D5F3 /* ImageController.swift */,
+				4176F5702135FE0200431505 /* Tutorial */,
 				419CEB612126241100414DBF /* Network */,
 			);
 			path = Controller;
@@ -380,6 +377,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/NumberMorphView/NumberMorphView.framework",
 				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
@@ -395,6 +393,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NumberMorphView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
@@ -444,7 +443,6 @@
 				41E777262131DDCA0037A586 /* HeartController.swift in Sources */,
 				41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */,
 				4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */,
-				414175DC21248E4A002B1B90 /* ContainerInstaller.swift in Sources */,
 				41A50BA021222D7D0034E640 /* CountDownAnimation.swift in Sources */,
 				416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */,
 				410C324821296C38000EBE04 /* StringExtension.swift in Sources */,

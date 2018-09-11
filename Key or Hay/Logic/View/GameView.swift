@@ -9,6 +9,10 @@
 import UIKit
 import Spring
 import Hero
+import ZLSwipeableViewSwift
+import NumberMorphView
+import AMProgressBar
+import ChameleonFramework
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
@@ -19,24 +23,21 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
     var preparationTime = 4
     var gameLenght = 10.0
+    var pointCounter = 0
     
-    @IBOutlet weak var progressBar: UIProgressView!
+    var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)
     
-    @IBOutlet weak var startNumberView: UIView!
-    @IBOutlet weak var startNumberLabel: UILabel!
+    @IBOutlet weak var zLSwipeableView: ZLSwipeableView!
+    @IBOutlet weak var healthBar: AMProgressBar!
     
-    @IBOutlet weak var cardContainer: UIView!
-    @IBOutlet weak var imageContainer: UIImageView!
-    
-    @IBOutlet weak var pointTimeStack: UIStackView!
-    @IBOutlet weak var pointCounter: UILabel!
-    @IBOutlet weak var timeCounter: UILabel!
+    @IBOutlet weak var countdownLable: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
     
     @IBOutlet weak var leftButtonView: UIView!
     @IBOutlet weak var centralButtonView: UIView!
     @IBOutlet weak var rightButtonView: UIView!
     
-    @IBOutlet weak var springImageView: SpringImageView!
+    @IBOutlet weak var healthSpringView: SpringImageView!
     
     
     @IBAction func buttonClicked(sender: UIButton){
@@ -44,16 +45,23 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let points = Int(self.pointCounter.text!)
         let destinySegue = segue.destination as! HighScoreViewController
-        destinySegue.userScore = points!
+        destinySegue.userScore = pointCounter
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        HeartController.initImageView(springImageView: self.springImageView)
+        HeartController.initImageView(springImageView: self.healthSpringView)
     }
     
+    func updatePoints(number : Int){
+        pointCounter += number
+        self.pointLabel.text = String(self.pointCounter)
+    }
     
+    func initHealthBar() {
+        HealthBarSetup.setup()
+        healthBar.setProgress(progress: 0.0, animated: true)
+    }
     
 }
 

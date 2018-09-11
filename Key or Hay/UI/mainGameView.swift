@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Pastel
 
-extension ZLSwipeViewController {
-    func startPastel(){
+class Pastel {
+    
+    static func startPastel(view : UIView){
         
         let pastelView = PastelView(frame: view.bounds)
         
@@ -28,4 +30,5 @@ extension ZLSwipeViewController {
         pastelView.startAnimation()
         view.insertSubview(pastelView, at: 0)
     }
+    
 }

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import ZLSwipeableViewSwift
+import ChameleonFramework
 
 class CardPointController {
     
@@ -16,56 +18,68 @@ class CardPointController {
     var gameView : GameView?
     var timeController : TimeController
     
-    var rightButton = -1
-    var cardStackArray = [Card]()
+    var counter = 0
+    
+    var rightButtons = [Int]()
+    
+    var zLSwipeableView: ZLSwipeableView
+    
+    var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)
     
     init( gameView : GameView, timeController : TimeController) {
         self.gameView = gameView
         self.timeController = timeController
+        self.zLSwipeableView = gameView.zLSwipeableView
+        self.zLSwipeableView.numberOfActiveView = 20
+        self.zLSwipeableView.nextView = {
+            return self.createView()
+        }
         print("init CardPointController")
     }
     
-    func spawnCard(){
-        print("spawning card")
+    func createView() -> UIView {
         let imageValues = imageController.getRandomImage()
-        rightButton = (imageValues[1] as? Int)!
-        let card = Card(image : imageValues[0] as! UIImage, frame: (gameView?.cardContainer.frame)!)
+        rightButtons.append((imageValues[1] as? Int)!)
         
-        gameView!.view.addSubview(card.viewContainer!)
-        gameView!.view.sendSubview(toBack: card.viewContainer!)
-        self.setupContainer(cardToUse: card.viewContainer!, PicToUse:card.imageContainer!)
-        cardStackArray.append(card)
+        let cardView = CardView(image : imageValues[0] as! UIImage,frame: zLSwipeableView.bounds)
+        cardView.backgroundColor = colorArray?[Int(arc4random_uniform(UInt32(self.colorArray!.count)))] as? UIColor
+        return cardView
     }
     
     func buttonPressed(buttonNumber : Int) {
         self.checkResult(pressedButton: buttonNumber)
         self.handleSlideOut(pressedButton: buttonNumber)
+        counter += 1
+        if (counter % 15 == 0){
+            self.zLSwipeableView.nextView = {
+                return self.createView()
+            }
+        }
         print("buttonPressed: \(buttonNumber)")
-        spawnCard()
     }
     
+    //    TPDO: Anmiate bonustime
     func checkResult(pressedButton : Int) {
-        let currentPoints = Int(self.gameView!.pointCounter.text!)
-        
-        if pressedButton == rightButton{
-            self.gameView!.pointCounter.text = String(currentPoints! + 1)
+        if pressedButton == rightButtons.first{
+            self.gameView!.updatePoints(number: 1)
             timeController.AddbonusTime(timeToAdd: 0.4)
         }
         else{
-            self.gameView!.pointCounter.text = String(currentPoints! - 1)
+            self.gameView!.updatePoints(number: -2)
+            timeController.AddbonusTime(timeToAdd: -0.5)
         }
     }
     
     func handleSlideOut(pressedButton : Int) {
         if pressedButton == 0{
-            cardStackArray[0].animatedSlideoutRL(direction: "left")
+            self.zLSwipeableView.swipeTopView(inDirection: .Left)
         }
         if pressedButton == 1{
-            cardStackArray[0].animatedSlideoutUp()
+            self.zLSwipeableView.swipeTopView(inDirection: .Up)
         }
         if pressedButton == 2{
-            cardStackArray[0].animatedSlideoutRL(direction: "right")
+            self.zLSwipeableView.swipeTopView(inDirection: .Right)
         }
-        cardStackArray.remove(at: 0)
+        rightButtons.removeFirst()
     }
 }

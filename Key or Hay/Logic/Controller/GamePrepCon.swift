@@ -29,16 +29,13 @@ class GamePrepController {
     
     func prepareStart() {
         print("prepStarted")
-        gameView!.imageContainer.isHidden = true
-        gameView!.pointTimeStack.isHidden = true
 
         self.prepareAsyncCountDown()
     }
     
     func countDownFinished(){
         print("countdownFinished")
-     //   self.downCounter() why?
-        gameView!.startNumberView.isHidden = true
+
         delegate?.preparationDone(self)
     }
  

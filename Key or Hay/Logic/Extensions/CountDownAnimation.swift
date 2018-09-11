@@ -15,20 +15,7 @@ extension GamePrepController {
     func StartCountDown(){
         print("starting Countdown")
         
-        let translateTransform = CGAffineTransform(translationX: 500, y: 0)
-        let scaleTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        UIView.animate(withDuration: 1.5, delay: 0.1, options: [.curveEaseIn, .repeat ] , animations: {
-            UIView.setAnimationRepeatCount(3)
-            self.gameView!.startNumberView.transform = translateTransform
-            self.countTime()
-            print("animation durchlauf")
-            UIView.animate(withDuration: 1.5, delay: 1, options: [.curveEaseIn, .repeat ], animations: {
-                UIView.setAnimationRepeatCount(3)
-                self.gameView!.startNumberView.transform = scaleTransform
-            }, completion: { _ in
-                self.countDownFinished()
-            })
-        },completion: nil)
+//        countdownLable
     }
     
     func countTime(){
@@ -38,7 +25,7 @@ extension GamePrepController {
     @objc func changeTimeLable(){
         self.startSecond = self.startSecond - 1
         DispatchQueue.main.async {
-            self.gameView!.startNumberLabel.text = "\(self.startSecond)"
+            self.gameView!.countdownLable.text = "\(self.startSecond)"
         }
     }
     

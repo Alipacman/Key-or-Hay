@@ -7,19 +7,21 @@
 //
 
 import Foundation
+import NumberMorphView
 
 extension GameView{
     
     override func viewDidLoad() {
-        cardContainer.isHidden = true
-        imageContainer.isHidden = true
-        pointTimeStack.isHidden = true
+        Pastel.startPastel(view: self.view)
+        
         self.gamePrepController = GamePrepController(self, preparationTime)
         self.gamePrepController!.prepareStart()
         
         self.timeController = TimeController(self, timeToPlay: gameLenght)
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
+        initHealthBar()
+        startGame()
         super.viewDidLoad()
     }
     
@@ -30,9 +32,7 @@ extension GameView{
     }
     
     func startGame(){
-        self.pointTimeStack.isHidden = false
         timeController!.startTimer()
-        cardPointController!.spawnCard()
     }
     
     func choiceButtonPressed(tag : Int){

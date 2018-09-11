@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TimeController {
     
@@ -31,15 +32,15 @@ class TimeController {
     
     @objc func updateCounting(){
         timePassed += 0.1
-        gameView!.timeCounter.text! = String(format: "%.1f", timePassed)
-        gameView!.progressBar.progress = Float((self.timePassed/self.timeToPlay))
+        self.gameView?.healthBar.setProgress(progress: CGFloat(self.timePassed/self.timeToPlay), animated: true)
         if timePassed >= timeToPlay{
             delegate?.gametimeFinished(self)
         }
     }
     
     func AddbonusTime(timeToAdd : Double) {
-        timePassed -= timeToAdd
+        if (timePassed > 0.5 ){
+            timePassed -= timeToAdd
+        }
     }
-    
 }
