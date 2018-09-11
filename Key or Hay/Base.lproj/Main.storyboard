@@ -350,7 +350,7 @@
                     </view>
                     <connections>
                         <outlet property="healthBar" destination="6tD-VD-TFc" id="jA6-Vg-bhW"/>
-                        <outlet property="zlSwipe" destination="vha-lO-SIA" id="dP9-ez-EOv"/>
+                        <outlet property="zLSwipeableView" destination="vha-lO-SIA" id="dP9-ez-EOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-SI-QW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -933,7 +933,7 @@
         <image name="iconBlank" width="746" height="746"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fQS-nT-hG7"/>
+        <segue reference="g4i-Nu-zQI"/>
         <segue reference="zCi-GE-0Xc"/>
     </inferredMetricsTieBreakers>
 </document>
