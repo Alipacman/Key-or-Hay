@@ -30,7 +30,7 @@ class CardPointController {
         self.gameView = gameView
         self.timeController = timeController
         self.zLSwipeableView = gameView.zLSwipeableView
-        self.zLSwipeableView.numberOfActiveView = 20
+        self.zLSwipeableView.numberOfActiveView = 5
         self.zLSwipeableView.nextView = {
             return self.createView()
         }
@@ -50,7 +50,7 @@ class CardPointController {
         self.checkResult(pressedButton: buttonNumber)
         self.handleSlideOut(pressedButton: buttonNumber)
         counter += 1
-        if (counter % 15 == 0){
+        if (counter % 3 == 0){
             self.zLSwipeableView.nextView = {
                 return self.createView()
             }
@@ -65,7 +65,7 @@ class CardPointController {
             timeController.AddbonusTime(timeToAdd: 0.4)
         }
         else{
-            self.gameView!.updatePoints(number: -2)
+            self.gameView!.updatePoints(number: -1)
             timeController.AddbonusTime(timeToAdd: -0.5)
         }
     }

@@ -10,9 +10,9 @@ import UIKit
 import Spring
 import Hero
 import ZLSwipeableViewSwift
-import NumberMorphView
 import AMProgressBar
 import ChameleonFramework
+import LGButton
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
@@ -27,21 +27,31 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
     var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)
     
+    @IBOutlet weak var zlSpringView: SpringView!
     @IBOutlet weak var zLSwipeableView: ZLSwipeableView!
+    
+    @IBOutlet weak var healtBarSpringView: SpringView!
     @IBOutlet weak var healthBar: AMProgressBar!
     
-    @IBOutlet weak var countdownLable: UILabel!
-    @IBOutlet weak var pointLabel: UILabel!
-    
-    @IBOutlet weak var leftButtonView: UIView!
-    @IBOutlet weak var centralButtonView: UIView!
-    @IBOutlet weak var rightButtonView: UIView!
+    @IBOutlet weak var countdownLable: SpringLabel!
+    @IBOutlet weak var pointLabel: SpringLabel!
     
     @IBOutlet weak var healthSpringView: SpringImageView!
     
+    @IBOutlet weak var leftButtonSpringView: SpringView!
+    @IBOutlet weak var midButtonSpringView: SpringView!
+    @IBOutlet weak var rightButtonSpringView: SpringView!
     
-    @IBAction func buttonClicked(sender: UIButton){
+    @IBOutlet weak var highscoreSpringView: SpringView!
+    
+    
+    @IBAction func action(_ sender: LGButton){
+        print("salam \(sender.tag)")
         self.choiceButtonPressed(tag : sender.tag)
+    }
+    
+    @IBAction func restart(_ sender: Any) {
+        restart()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

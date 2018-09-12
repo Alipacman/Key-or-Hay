@@ -26,12 +26,14 @@ class TimeController {
     
     // Handels Counting
     func startTimer(){
+        timePassed = 0.0
+        timer.invalidate()
         // Scheduling timer to Call the function "updateCounting" with the interval of 0.1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
     
     @objc func updateCounting(){
-        timePassed += 0.1
+        timePassed += 0.2
         self.gameView?.healthBar.setProgress(progress: CGFloat(self.timePassed/self.timeToPlay), animated: true)
         if timePassed >= timeToPlay{
             delegate?.gametimeFinished(self)

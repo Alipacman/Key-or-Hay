@@ -19,6 +19,8 @@ class GamePrepController {
     var startSecond : Int
     var timer = Timer()
     
+    var counter = 0
+    
     
     init(_ gameView : GameView, _ startSecond: Int) {
         self.gameView = gameView
@@ -27,26 +29,46 @@ class GamePrepController {
         print("init StartController")
     }
     
+    
     func prepareStart() {
         print("prepStarted")
-
-        self.prepareAsyncCountDown()
+        counter = 0
+        startCountDown()
     }
     
-    func countDownFinished(){
-        print("countdownFinished")
-
-        delegate?.preparationDone(self)
+    func startCountDown(){
+        print("starting Countdown")
+        print(counter)
+        if counter > 0{
+            self.gameView?.countdownLable.isHidden = false
+        }
+        else{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.startBoardPrepAnimation()
+            })
+        }
+        gameView?.countdownLable.text = String(4 - counter)
+        gameView?.countdownLable.animation = "squeezeLeft"
+        gameView?.countdownLable.curve = "easeInExpo"
+        gameView?.countdownLable.y = 2.3
+        gameView?.countdownLable.rotate = 2.5
+        gameView?.countdownLable.damping = 0.7
+        gameView?.countdownLable.velocity = 0.5
+        gameView?.countdownLable.duration = 1.0
+        gameView?.countdownLable.animateNext {
+            self.gameView?.countdownLable.animation = "zoomOut"
+            self.gameView?.countdownLable.animateNext {
+                self.gameView?.countdownLable.isHidden = true
+                self.counter += 1
+                self.gameView?.countdownLable.animateNext {
+                    if self.counter <= 3 {
+                        self.startCountDown()
+                    }
+                    else{
+                        self.delegate?.preparationDone(self)
+                    }
+                }
+            }
+        }
     }
- 
-    
-//    time handler of countdown
-// other part in countdownAnmiation
-    
-    func prepareAsyncCountDown(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.StartCountDown()
-        })
-    }
-    
 }

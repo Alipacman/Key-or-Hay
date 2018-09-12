@@ -7,12 +7,13 @@
 //
 
 import Foundation
-import NumberMorphView
 
 extension GameView{
     
     override func viewDidLoad() {
         Pastel.startPastel(view: self.view)
+        initHealthBar()
+        hideAll()
         
         self.gamePrepController = GamePrepController(self, preparationTime)
         self.gamePrepController!.prepareStart()
@@ -20,11 +21,19 @@ extension GameView{
         self.timeController = TimeController(self, timeToPlay: gameLenght)
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
-        initHealthBar()
-        startGame()
         super.viewDidLoad()
     }
     
+    func hideAll(){
+        zlSpringView.isHidden = true
+        healthSpringView.isHidden = true
+        healtBarSpringView.isHidden = true
+        pointLabel.isHidden = true
+        leftButtonSpringView.isHidden = true
+        midButtonSpringView.isHidden = true
+        rightButtonSpringView.isHidden = true
+        highscoreSpringView.isHidden = true
+    }
     
     func preparationDone(_ sender: GamePrepController) {
         print("prepartion done, starting game...")
@@ -32,7 +41,13 @@ extension GameView{
     }
     
     func startGame(){
-        timeController!.startTimer()
+        zlSpringView.isHidden = false
+        countdownLable.animation = "squeezeLeft"
+        countdownLable.rotate = 1.6
+        countdownLable.force = 1.5
+        countdownLable.animateNext {
+            self.timeController!.startTimer()
+        }
     }
     
     func choiceButtonPressed(tag : Int){
@@ -40,6 +55,15 @@ extension GameView{
     }
     
     func gametimeFinished(_ sender: TimeController) {
-        self.performSegue(withIdentifier: "highscore", sender: self)
+        allFallDownAnimation()
+//        self.performSegue(withIdentifier: "highscore", sender: self)
     }
+    
+    func restart() {
+        allFallDownAnimation()
+        hideAll()
+        pointCounter = 0
+        self.gamePrepController!.prepareStart()
+    }
+    
 }
