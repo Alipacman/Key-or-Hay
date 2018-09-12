@@ -43,7 +43,7 @@ class GamePrepController {
             self.gameView?.countdownLable.isHidden = false
         }
         else{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.startBoardPrepAnimation()
             })
         }

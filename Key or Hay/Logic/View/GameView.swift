@@ -16,6 +16,7 @@ import LGButton
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
+    var counter = 0
     
     var gamePrepController : GamePrepController?
     var cardPointController : CardPointController?
@@ -45,6 +46,8 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     @IBOutlet weak var highscoreSpringView: SpringView!
     
     
+    
+    
     @IBAction func action(_ sender: LGButton){
         print("salam \(sender.tag)")
         self.choiceButtonPressed(tag : sender.tag)
@@ -54,10 +57,11 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
         restart()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinySegue = segue.destination as! HighScoreViewController
-        destinySegue.userScore = pointCounter
-    }
+//    umschreiben für tabelle
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destinySegue = segue.destination as! HighScoreViewController
+//        destinySegue.userScore = pointCounter
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         HeartController.initImageView(springImageView: self.healthSpringView)
@@ -68,9 +72,13 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
         self.pointLabel.text = String(self.pointCounter)
     }
     
-    func initHealthBar() {
+    func initHealthBarAndHighScore() {
         HealthBarSetup.setup()
         healthBar.setProgress(progress: 0.0, animated: true)
+        
+        highscoreSpringView.clipsToBounds = true
+        highscoreSpringView.layer.cornerRadius = 20
+        Pastel.startPastel(view: highscoreSpringView, color: "analogous")
     }
     
 }

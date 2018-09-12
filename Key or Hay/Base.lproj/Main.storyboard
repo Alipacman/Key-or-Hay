@@ -336,6 +336,36 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-za-iYT" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="16" y="44" width="339" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzL-vK-2Ui">
+                                        <rect key="frame" x="130" y="356" width="79" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-ve-pXT">
+                                        <rect key="frame" x="139" y="111" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="restart:" destination="e3a-Vw-5D3" eventType="touchUpInside" id="h5s-FW-VtI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7c-e0-KCj">
+                                        <rect key="frame" x="139" y="222" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="oPm-g9-9CS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RxN-1R-vhI" userLabel="ZLS Spring View" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="19" y="121" width="336" height="391"/>
                                 <subviews>
@@ -457,22 +487,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-ve-pXT">
-                                <rect key="frame" x="43" y="62" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="restart:" destination="e3a-Vw-5D3" eventType="touchUpInside" id="h5s-FW-VtI"/>
-                                </connections>
-                            </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sws-NN-iR2" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="10" y="36" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -509,7 +523,7 @@
                         <outlet property="healtBarSpringView" destination="PWL-Yx-JV4" id="xXT-Fu-47R"/>
                         <outlet property="healthBar" destination="3bf-6c-seX" id="7Va-hG-v10"/>
                         <outlet property="healthSpringView" destination="hL7-8L-3j5" id="hxS-D8-Vxs"/>
-                        <outlet property="highscoreSpringView" destination="sws-NN-iR2" id="Qg4-qA-ari"/>
+                        <outlet property="highscoreSpringView" destination="ep3-za-iYT" id="OEB-Lo-CTw"/>
                         <outlet property="leftButtonSpringView" destination="jmq-67-5QN" id="3Zf-ub-nOO"/>
                         <outlet property="midButtonSpringView" destination="VB9-v7-MfW" id="X34-72-mBF"/>
                         <outlet property="pointLabel" destination="2rO-hZ-SCQ" id="yZM-XQ-qId"/>
@@ -888,5 +902,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="g4i-Nu-zQI"/>
         <segue reference="zCi-GE-0Xc"/>
+        <segue reference="oPm-g9-9CS"/>
     </inferredMetricsTieBreakers>
 </document>

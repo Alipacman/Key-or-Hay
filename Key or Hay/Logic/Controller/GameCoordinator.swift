@@ -11,18 +11,18 @@ import Foundation
 extension GameView{
     
     override func viewDidLoad() {
-        Pastel.startPastel(view: self.view)
-        initHealthBar()
+        Pastel.startPastel(view: self.view, color : "normal")
+        initHealthBarAndHighScore()
         hideAll()
-        
         self.gamePrepController = GamePrepController(self, preparationTime)
-        self.gamePrepController!.prepareStart()
         
+        self.gamePrepController!.prepareStart()
         self.timeController = TimeController(self, timeToPlay: gameLenght)
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
         super.viewDidLoad()
     }
+    
     
     func hideAll(){
         zlSpringView.isHidden = true
@@ -42,10 +42,10 @@ extension GameView{
     
     func startGame(){
         zlSpringView.isHidden = false
-        countdownLable.animation = "squeezeLeft"
-        countdownLable.rotate = 1.6
-        countdownLable.force = 1.5
-        countdownLable.animateNext {
+        zlSpringView.animation = "zoomIn"
+        zlSpringView.rotate = 1.6
+        zlSpringView.force = 1.5
+        zlSpringView.animateNext {
             self.timeController!.startTimer()
         }
     }
@@ -60,10 +60,14 @@ extension GameView{
     }
     
     func restart() {
-        allFallDownAnimation()
-        hideAll()
-        pointCounter = 0
-        self.gamePrepController!.prepareStart()
+        self.highscoreSpringView.animation = "fadeOut"
+        self.highscoreSpringView.duration = 1.0
+        self.highscoreSpringView.animateNext {
+            self.highscoreSpringView.isHidden = true
+            self.pointCounter = 0
+            self.pointLabel.text = String(0)
+            self.gamePrepController!.prepareStart()
+        }
     }
     
 }
