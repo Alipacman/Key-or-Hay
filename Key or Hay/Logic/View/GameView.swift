@@ -23,7 +23,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     var timeController : TimeController?
     
     var preparationTime = 4
-    var gameLenght = 10.0
+    var gameLenght = 20.0
     var pointCounter = 0
     
     var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)

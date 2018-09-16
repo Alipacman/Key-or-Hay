@@ -58,12 +58,12 @@ class ImageDownloadController {
             seal.fulfill(())
         }
     }
-    
+//    currently all pics are png
     func downloadImagesFromFolder(folder: String, amount : Int) {
         
         let dataPath = DirectroryHelp.getPath(path : "Images/\(folder)")
         
-        for i in stride(from: 0, to: amount , by: 1) {
+        for i in stride(from: 1, to: amount + 1, by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
             if DirectroryHelp.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
                 print("image \(i) will be downloaded")

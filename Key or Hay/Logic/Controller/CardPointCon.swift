@@ -39,9 +39,9 @@ class CardPointController {
     
     func createView() -> UIView {
         let imageValues = imageController.getRandomImage()
-        rightButtons.append((imageValues[1] as? Int)!)
+        rightButtons.append((imageValues![1] as? Int)!)
         
-        let cardView = CardView(image : imageValues[0] as! UIImage,frame: zLSwipeableView.bounds)
+        let cardView = CardView(image : imageValues![0] as! UIImage,frame: zLSwipeableView.bounds)
         cardView.backgroundColor = colorArray?[Int(arc4random_uniform(UInt32(self.colorArray!.count)))] as? UIColor
         return cardView
     }
