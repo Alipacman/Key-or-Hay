@@ -62,7 +62,7 @@ class ImageDownloadController {
     func downloadImagesFromFolder(folder: String, amount : Int) {
         
         let dataPath = DirectroryHelp.getPath(path : "Images/\(folder)")
-        
+        //        TODO: check all amounts and the image getter
         for i in stride(from: 1, to: amount + 1, by: 1) {
             let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
             if DirectroryHelp.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){

@@ -13,6 +13,7 @@ import ZLSwipeableViewSwift
 import AMProgressBar
 import ChameleonFramework
 import LGButton
+import Pastel
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
@@ -23,8 +24,10 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     var timeController : TimeController?
     
     var preparationTime = 4
-    var gameLenght = 20.0
+    var gameLenght = 30.0
     var pointCounter = 0
+    
+    var pastel : PastelView?
     
     var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)
     
@@ -64,11 +67,14 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
 //    }
     
     override func viewWillAppear(_ animated: Bool) {
-        HeartController.initImageView(springImageView: self.healthSpringView)
+//        HeartController.initImageView(springImageView: self.healthSpringView)
     }
     
     func updatePoints(number : Int){
         pointCounter += number
+        if pointCounter < 0{
+            self.pointCounter = 0
+        }
         self.pointLabel.text = String(self.pointCounter)
     }
     

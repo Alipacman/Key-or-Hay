@@ -11,16 +11,21 @@ import Foundation
 extension GameView{
     
     override func viewDidLoad() {
-        Pastel.startPastel(view: self.view, color : "normal")
+        pastel = Pastel.startPastel(view: self.view, color : "normal")
         initHealthBarAndHighScore()
         hideAll()
-        self.gamePrepController = GamePrepController(self, preparationTime)
         
-        self.gamePrepController!.prepareStart()
+        self.gamePrepController = GamePrepController(self, preparationTime)
+
         self.timeController = TimeController(self, timeToPlay: gameLenght)
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
+        
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.gamePrepController!.prepareStart()
     }
     
     
