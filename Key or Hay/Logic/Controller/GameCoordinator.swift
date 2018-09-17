@@ -12,6 +12,8 @@ extension GameView{
     
     override func viewDidLoad() {
         pastel = Pastel.startPastel(view: self.view, color : "normal")
+        self.setName.delegate = self
+        
         initHealthBarAndHighScore()
         hideAll()
         
@@ -61,6 +63,7 @@ extension GameView{
     
     func gametimeFinished(_ sender: TimeController) {
         allFallDownAnimation()
+        deinScore.text = "Dein Score: \(String(pointCounter))"
 //        self.performSegue(withIdentifier: "highscore", sender: self)
     }
     

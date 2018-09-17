@@ -15,7 +15,7 @@ import ChameleonFramework
 import LGButton
 import Pastel
 
-class GameView: UIViewController, PreparationDelegate, TimerDelegate{
+class GameView: UIViewController, PreparationDelegate, TimerDelegate, UITextFieldDelegate{
     
     var counter = 0
     
@@ -48,6 +48,8 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
     
     @IBOutlet weak var highscoreSpringView: SpringView!
     
+    @IBOutlet weak var deinScore: UILabel!
+    @IBOutlet weak var setName: UITextField!
     
     
     
@@ -85,6 +87,11 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate{
         highscoreSpringView.clipsToBounds = true
         highscoreSpringView.layer.cornerRadius = 20
         Pastel.startPastel(view: highscoreSpringView, color: "analogous")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
