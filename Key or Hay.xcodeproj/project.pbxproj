@@ -16,7 +16,7 @@
 		411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F0F802125EC3400493D34 /* EntranceViewCon.swift */; };
 		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
 		4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */; };
-		4132428D2150504A005A1048 /* _.gitignore_.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4132428C21505049005A1048 /* _.gitignore_.rtf */; };
+		4132428F215051D7005A1048 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4132428E215051D7005A1048 /* .gitignore */; };
 		413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E113A1FA7DFCB00926D52 /* AppDelegate.swift */; };
 		413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E113E1FA7DFCB00926D52 /* Main.storyboard */; };
 		413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413E11411FA7DFCB00926D52 /* Assets.xcassets */; };
@@ -65,7 +65,7 @@
 		411F0F802125EC3400493D34 /* EntranceViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewCon.swift; sourceTree = "<group>"; };
 		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownlCon.swift; sourceTree = "<group>"; };
-		4132428C21505049005A1048 /* _.gitignore_.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = _.gitignore_.rtf; sourceTree = SOURCE_ROOT; };
+		4132428E215051D7005A1048 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		413E11371FA7DFCB00926D52 /* Key or Hay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key or Hay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		413E113A1FA7DFCB00926D52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		413E113F1FA7DFCB00926D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				413E11461FA7DFCB00926D52 /* Info.plist */,
 				418AE8942124CEE40004C47F /* Notes.md */,
 				4121CA012124D20600BAEB66 /* GoogleService-Info.plist */,
-				4132428C21505049005A1048 /* _.gitignore_.rtf */,
+				4132428E215051D7005A1048 /* .gitignore */,
 			);
 			path = "Key or Hay";
 			sourceTree = "<group>";
@@ -343,9 +343,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4132428F215051D7005A1048 /* .gitignore in Resources */,
 				413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */,
 				4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */,
-				4132428D2150504A005A1048 /* _.gitignore_.rtf in Resources */,
 				413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */,
 				413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */,
 			);
