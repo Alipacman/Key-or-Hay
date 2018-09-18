@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct ScoreEntry {
+struct ScoreEntry :Hashable {
+    
+    var hashValue: Int
     
     var uuid : String?
     var name : String?
@@ -18,6 +20,7 @@ struct ScoreEntry {
         self.uuid = uuid
         self.name = name
         self.score = score
+        self.hashValue = score
     }
     
 }

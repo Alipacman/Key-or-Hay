@@ -7,15 +7,17 @@
 //
 
 import UIKit
-import Hero
 import Spring
 import Pastel
 
-class EntranceViewController: UIViewController, imgDownloadDelegate {
+class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDownDelegate {
+    
+    var scoreArray : [ScoreEntry] = []
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var springImageView: SpringImageView!
+    
     
     
     func downloadFinished(_ sender: ImageDownloadController) {
@@ -24,46 +26,37 @@ class EntranceViewController: UIViewController, imgDownloadDelegate {
         activityIndicator.isHidden = true
     }
     
-
+    func scoreDownloadFinished(_ sender: ScoreNetworkController, scoreArray : [ScoreEntry]) {
+        self.scoreArray = scoreArray
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.scoreArray = Array(Set<ScoreEntry>(self.scoreArray))
+        
         activityIndicator.startAnimating()
         startButton.isHidden = true
+        
         let imageDownloadController = ImageDownloadController(self)
         imageDownloadController.loadImgWithPromise()
         
-//        delete from here
-        GoldLable.text = String (Gold.sharedGold.value)
+        let highscoreDownloader = ScoreNetworkController(delegate: self)
+        highscoreDownloader.downloadScores()
         
-        self.hero.isEnabled = true
-        
-        let pastelView = PastelView(frame: view.bounds)
-        
-        // Custom Direction
-        pastelView.startPastelPoint = .bottomLeft
-        pastelView.endPastelPoint = .topRight
-        
-        // Custom Duration
-        pastelView.animationDuration = 2.0
-        
-        // Custom Color
-        pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                              UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                              UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0)])
-        
-        pastelView.startAnimation()
-        view.insertSubview(pastelView, at: 0)
+        Pastel.startPastel(view: self.view, color: "normal")
+
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        HeartController.initImageView(springImageView: self.springImageView)
+//    override func viewWillAppear(_ animated: Bool) {
+//        HeartController.initImageView(springImageView: self.springImageView)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameView"{
+            let destinySegue = segue.destination as! GameView
+            destinySegue.scoreArray = self.scoreArray
+        }
     }
-
-    @IBAction func showGold(_ sender: Any) {
-        GoldLable.text = "Gold: " + String (Gold.sharedGold.value)
-    }
-    @IBAction func add10(_ sender: Any) {
-        Gold.addGold(toAdd: 10)
-    }
-    @IBOutlet weak var GoldLable: UILabel!
 }

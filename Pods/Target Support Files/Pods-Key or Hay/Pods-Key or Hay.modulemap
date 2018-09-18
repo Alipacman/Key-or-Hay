@@ -1,0 +1,6 @@
+framework module Pods_Key_or_Hay {
+  umbrella header "Pods-Key or Hay-umbrella.h"
+
+  export *
+  module * { export * }
+}

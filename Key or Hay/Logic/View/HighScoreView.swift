@@ -10,8 +10,7 @@ import UIKit
 import Spring
 import Hero
 
-class HighScoreViewController: UIViewController, UITextFieldDelegate, highscoreDownDelegate {
-    
+class HighScoreViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var HighscoreLabel: UILabel!
@@ -19,24 +18,18 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate, highscoreD
     @IBOutlet weak var springImageView: SpringImageView!
     
     var userScore = 0
-    var scoreDownloadController : ScoreDownloadController?
-    var scoreArray : [ScoreEntry]?
+    var scoreDownloadController : ScoreNetworkController?
+    var scoreArray : [ScoreEntry]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scoreLabel.text = "Dein Score: \(userScore)"
         self.nameField.delegate = self
-        
-        self.scoreArray = []
-        self.scoreDownloadController = ScoreDownloadController(delegate : self)
-    }
-    
-    func downloadFinished(_ sender: ScoreDownloadController, scoreArray : [ScoreEntry]) {
-        self.scoreArray = scoreArray
     }
     
     
+      /*
     override func viewWillAppear(_ animated: Bool) {
         self.hero.isEnabled = true
         HeartController.initImageView(springImageView: self.springImageView)
@@ -55,15 +48,17 @@ class HighScoreViewController: UIViewController, UITextFieldDelegate, highscoreD
     @IBAction func submitScoreButtonPressed(_ sender: Any) {
         let uuid = UIDevice.current.identifierForVendor?.uuidString
         
+        let entry = ScoreEntry(uuid: uuid!, name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!)
         if let score = self.scoreDownloadController!.submitScore( scoreEntry: ScoreEntry(uuid : uuid!, name: nameField.text!, score: Int((scoreLabel.text?.lastWord)!)!)){
             self.scoreArray?.append(score)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Scoreboard"{
-            let destinySegue = segue.destination as! ScoresTableViewController
-            destinySegue.scoreArray = self.scoreArray
+        if segue.identifier == "gameView"{
+            let destinySegue = segue.destination as! GameView
+            destinySegue.scoreArray = self.scoreArray!
         }
     }
+  */
 }

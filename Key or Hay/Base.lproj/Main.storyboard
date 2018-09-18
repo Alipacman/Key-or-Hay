@@ -149,9 +149,6 @@
                                 <rect key="frame" x="172" y="656" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="skip"/>
-                                <connections>
-                                    <segue destination="frc-xp-hlY" kind="show" id="fQS-nT-hG7"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79p-5D-Kbl">
                                 <rect key="frame" x="53" y="719" width="87" height="30"/>
@@ -213,9 +210,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="e3a-Vw-5D3" kind="popoverPresentation" popoverAnchorView="fcS-En-oKz" id="zCi-GE-0Xc">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="e3a-Vw-5D3" kind="show" identifier="gameView" id="zCi-GE-0Xc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,7 +227,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Key or Hay" id="xz1-dU-Z4s"/>
                     <connections>
-                        <outlet property="GoldLable" destination="xOj-72-WK6" id="Oqn-gZ-HKi"/>
                         <outlet property="activityIndicator" destination="eXg-6q-pHh" id="P4a-MK-idf"/>
                         <outlet property="springImageView" destination="Uzl-p4-Ifu" id="FEb-jS-aAQ"/>
                         <outlet property="startButton" destination="fcS-En-oKz" id="Ajc-2d-DJp"/>
@@ -644,7 +638,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -663,6 +657,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-M9-i2O">
                                         <rect key="frame" x="133" y="532.66666666666663" width="77" height="30"/>
                                         <state key="normal" title="Alle Scores"/>
+                                        <connections>
+                                            <segue destination="xCg-oe-vMQ" kind="popoverPresentation" identifier="Scoreboard" popoverAnchorView="5YG-M9-i2O" id="hYm-NY-zsS">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khA-Wu-0kY">
                                         <rect key="frame" x="153" y="570.66666666666663" width="36" height="30"/>
@@ -868,20 +867,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="IpC-Ee-TSi"/>
                     <connections>
+                        <outlet property="achievedScore" destination="sU4-PE-hkx" id="ySv-Q1-xRe"/>
                         <outlet property="countdownLable" destination="Ggg-3I-nKP" id="2oS-3U-Xfh"/>
-                        <outlet property="deinScore" destination="sU4-PE-hkx" id="ySv-Q1-xRe"/>
                         <outlet property="healtBarSpringView" destination="PWL-Yx-JV4" id="xXT-Fu-47R"/>
                         <outlet property="healthBar" destination="3bf-6c-seX" id="7Va-hG-v10"/>
                         <outlet property="healthSpringView" destination="hL7-8L-3j5" id="hxS-D8-Vxs"/>
                         <outlet property="highscoreSpringView" destination="ep3-za-iYT" id="OEB-Lo-CTw"/>
                         <outlet property="leftButtonSpringView" destination="jmq-67-5QN" id="3Zf-ub-nOO"/>
                         <outlet property="midButtonSpringView" destination="VB9-v7-MfW" id="X34-72-mBF"/>
+                        <outlet property="nameField" destination="od7-nM-2Pk" id="nL5-Ht-nCX"/>
                         <outlet property="pointLabel" destination="2rO-hZ-SCQ" id="yZM-XQ-qId"/>
                         <outlet property="rightButtonSpringView" destination="FlH-D7-FCH" id="9gk-4F-mec"/>
-                        <outlet property="setName" destination="od7-nM-2Pk" id="nL5-Ht-nCX"/>
                         <outlet property="zLSwipeableView" destination="vha-lO-SIA" id="ydx-rm-xQI"/>
                         <outlet property="zlSpringView" destination="RxN-1R-vhI" id="aqs-V0-fpO"/>
-                        <segue destination="frc-xp-hlY" kind="show" identifier="highscore" animates="NO" id="g4i-Nu-zQI"/>
+                        <outletCollection property="topNames" destination="00Y-Zx-2wf" collectionClass="NSMutableArray" id="3LY-2U-Swh"/>
+                        <outletCollection property="topNames" destination="wpl-8g-hfg" collectionClass="NSMutableArray" id="uPl-wh-VfD"/>
+                        <outletCollection property="topNames" destination="UIa-57-9LZ" collectionClass="NSMutableArray" id="CXo-3G-VsD"/>
+                        <outletCollection property="topNames" destination="nEn-dk-H9j" collectionClass="NSMutableArray" id="c6y-ZL-kzk"/>
+                        <outletCollection property="topNames" destination="VBm-cC-neB" collectionClass="NSMutableArray" id="mqN-QK-0MD"/>
+                        <outletCollection property="topScores" destination="JAP-0l-orp" collectionClass="NSMutableArray" id="SzN-MV-TdS"/>
+                        <outletCollection property="topScores" destination="Pfj-zZ-vcr" collectionClass="NSMutableArray" id="kcS-Vc-Tag"/>
+                        <outletCollection property="topScores" destination="cUH-lr-8gC" collectionClass="NSMutableArray" id="hWD-DT-GdH"/>
+                        <outletCollection property="topScores" destination="cld-nu-xIz" collectionClass="NSMutableArray" id="u8q-cC-go8"/>
+                        <outletCollection property="topScores" destination="fvX-4W-hZm" collectionClass="NSMutableArray" id="BF8-iC-XI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyT-tL-vPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1048,9 +1056,6 @@
                                 <rect key="frame" x="164" y="423" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="All Scores"/>
-                                <connections>
-                                    <segue destination="xCg-oe-vMQ" kind="show" identifier="Scoreboard" id="cga-oI-RRK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-CF-AYv">
                                 <rect key="frame" x="235" y="505" width="97" height="30"/>
@@ -1119,14 +1124,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="CeQ-Bd-qVU">
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="CeQ-Bd-qVU">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Scores" id="pOk-Ee-uhe">
                                     <barButtonItem key="leftBarButtonItem" title="Back" id="ica-Ob-25t">
                                         <connections>
-                                            <segue destination="0DA-m0-6tR" kind="unwind" unwindAction="unwindToViewController:" id="7oM-ZM-gyO"/>
+                                            <segue destination="0DA-m0-6tR" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="Zyn-UE-Yx1"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -1191,7 +1196,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-BL-nMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0DA-m0-6tR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3434" y="122"/>
+            <point key="canvasLocation" x="2358" y="896"/>
         </scene>
         <!--Submit Picture View Controller-->
         <scene sceneID="L2d-oW-Jrq">
@@ -1251,8 +1256,7 @@
         <image name="iconBlank" width="746" height="746"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4i-Nu-zQI"/>
-        <segue reference="YRT-1R-08R"/>
+        <segue reference="zCi-GE-0Xc"/>
         <segue reference="oPm-g9-9CS"/>
     </inferredMetricsTieBreakers>
 </document>

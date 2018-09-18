@@ -15,17 +15,20 @@ import ChameleonFramework
 import LGButton
 import Pastel
 
-class GameView: UIViewController, PreparationDelegate, TimerDelegate, UITextFieldDelegate{
+class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFieldDelegate{
     
     var counter = 0
     
     var gamePrepController : GamePrepController?
     var cardPointController : CardPointController?
     var timeController : TimeController?
-    
+    var scoreNetworkController : ScoreNetworkController?
+     
+    var scoreArray : [ScoreEntry]!
     var preparationTime = 4
-    var gameLenght = 30.0
+    var gameLenght = 5.0
     var pointCounter = 0
+    var scoreMode = false
     
     var pastel : PastelView?
     
@@ -48,10 +51,11 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate, UITextFiel
     
     @IBOutlet weak var highscoreSpringView: SpringView!
     
-    @IBOutlet weak var deinScore: UILabel!
-    @IBOutlet weak var setName: UITextField!
-    
-    
+    @IBOutlet weak var achievedScore: UILabel!
+    @IBOutlet weak var nameField: UITextField!
+
+    @IBOutlet var topNames : [UILabel]!
+    @IBOutlet var topScores : [UILabel]!
     
     @IBAction func action(_ sender: LGButton){
         print("salam \(sender.tag)")
@@ -93,6 +97,32 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate, UITextFiel
         self.view.endEditing(true)
         return false
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == nameField{
+            let char = string.cString(using: String.Encoding.utf8)
+            let isBackSpace = strcmp(char, "\\b")
+            if isBackSpace == -92 {
+                return true
+            }
+            return textField.text!.count <= 9
+        }
+        return true
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Scoreboard"{
+            let destinySegue = segue.destination as! ScoresTableViewController
+            destinySegue.scoreArray = self.scoreArray
+        }
+    }
+    
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+            scoreMode = true
+    }
+    
+    
     
 }
 

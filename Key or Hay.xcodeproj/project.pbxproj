@@ -11,7 +11,7 @@
 		4113D2F92129C902008EA9E9 /* ImageSubmitCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2F82129C902008EA9E9 /* ImageSubmitCon.swift */; };
 		4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FA2129CA46008EA9E9 /* SubmitDelegate.swift */; };
 		4113D2FD2129D91D008EA9E9 /* DateGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FC2129D91D008EA9E9 /* DateGetter.swift */; };
-		4113D2FF2129DB0B008EA9E9 /* ScoreDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FE2129DB0B008EA9E9 /* ScoreDownlCon.swift */; };
+		4113D2FF2129DB0B008EA9E9 /* ScoreNetworkCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FE2129DB0B008EA9E9 /* ScoreNetworkCon.swift */; };
 		41156E2D212ABA1B0057471A /* GoldSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156E2C212ABA1B0057471A /* GoldSingelton.swift */; };
 		411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F0F802125EC3400493D34 /* EntranceViewCon.swift */; };
 		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
@@ -60,7 +60,7 @@
 		4113D2F82129C902008EA9E9 /* ImageSubmitCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSubmitCon.swift; sourceTree = "<group>"; };
 		4113D2FA2129CA46008EA9E9 /* SubmitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitDelegate.swift; sourceTree = "<group>"; };
 		4113D2FC2129D91D008EA9E9 /* DateGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGetter.swift; sourceTree = "<group>"; };
-		4113D2FE2129DB0B008EA9E9 /* ScoreDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDownlCon.swift; sourceTree = "<group>"; };
+		4113D2FE2129DB0B008EA9E9 /* ScoreNetworkCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreNetworkCon.swift; sourceTree = "<group>"; };
 		41156E2C212ABA1B0057471A /* GoldSingelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldSingelton.swift; sourceTree = "<group>"; };
 		411F0F802125EC3400493D34 /* EntranceViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewCon.swift; sourceTree = "<group>"; };
 		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 			children = (
 				4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */,
 				4113D2F82129C902008EA9E9 /* ImageSubmitCon.swift */,
-				4113D2FE2129DB0B008EA9E9 /* ScoreDownlCon.swift */,
+				4113D2FE2129DB0B008EA9E9 /* ScoreNetworkCon.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 				41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */,
 				41C8EE932146922400721E1C /* ZLSwipeViewController.swift in Sources */,
 				4177E26C21299B1B007F2937 /* DownloadDelegate.swift in Sources */,
-				4113D2FF2129DB0B008EA9E9 /* ScoreDownlCon.swift in Sources */,
+				4113D2FF2129DB0B008EA9E9 /* ScoreNetworkCon.swift in Sources */,
 				4141F8112146B76900B11C97 /* HealthBar.swift in Sources */,
 				416A63B31FAA4C1800074381 /* GameCardAnimations.swift in Sources */,
 				413E114D1FA7F51600926D52 /* GameView.swift in Sources */,

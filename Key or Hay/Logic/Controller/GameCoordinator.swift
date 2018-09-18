@@ -7,27 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
 extension GameView{
     
     override func viewDidLoad() {
         pastel = Pastel.startPastel(view: self.view, color : "normal")
-        self.setName.delegate = self
+        self.nameField.delegate = self
+        
+        self.scoreArray = Array(Set(self.scoreArray))
         
         initHealthBarAndHighScore()
         hideAll()
         
+        
         self.gamePrepController = GamePrepController(self, preparationTime)
-
+        
         self.timeController = TimeController(self, timeToPlay: gameLenght)
+        
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
-        
+        self.scoreNetworkController = ScoreNetworkController(delegate : nil)
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.gamePrepController!.prepareStart()
+        if !scoreMode{
+            self.gamePrepController!.prepareStart()
+        }
     }
     
     
@@ -48,6 +55,7 @@ extension GameView{
     }
     
     func startGame(){
+        scoreMode = false
         zlSpringView.isHidden = false
         zlSpringView.animation = "zoomIn"
         zlSpringView.rotate = 1.6
@@ -62,12 +70,13 @@ extension GameView{
     }
     
     func gametimeFinished(_ sender: TimeController) {
+        updateTopScores()
         allFallDownAnimation()
-        deinScore.text = "Dein Score: \(String(pointCounter))"
-//        self.performSegue(withIdentifier: "highscore", sender: self)
+        achievedScore.text = "Dein Score: \(String(pointCounter))"
     }
     
     func restart() {
+        submitScore()
         self.highscoreSpringView.animation = "fadeOut"
         self.highscoreSpringView.duration = 1.0
         self.highscoreSpringView.animateNext {
@@ -77,5 +86,23 @@ extension GameView{
             self.gamePrepController!.prepareStart()
         }
     }
+    
+    func submitScore(){
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+        let entry = ScoreEntry(uuid: uuid!, name: nameField.text!, score: Int((achievedScore.text?.lastWord)!)!)
+        if (self.scoreNetworkController!.submitScore(scoreEntry: entry)){
+            self.scoreArray.append(entry)
+        }
+    }
+    
+    func updateTopScores(){
+        let scoreArray = self.scoreNetworkController?.giveTopScores(scoreArray: self.scoreArray)
+        for i in (0...4) {
+            topNames[i].text = scoreArray![i].name
+            topScores[i].text = String(scoreArray![i].score!)
+        }
+    }
+    
     
 }

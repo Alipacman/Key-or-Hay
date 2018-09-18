@@ -9,5 +9,5 @@
 import Foundation
 
 protocol highscoreDownDelegate {
-    func downloadFinished(_ sender : ScoreDownloadController, scoreArray : [ScoreEntry])
+    func scoreDownloadFinished(_ sender : ScoreNetworkController, scoreArray : [ScoreEntry])
 }

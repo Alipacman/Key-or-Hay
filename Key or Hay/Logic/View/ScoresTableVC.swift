@@ -14,6 +14,7 @@ class ScoresTableViewController: UITableViewController {
     var scoreArray : [ScoreEntry]!
 
     override func viewDidLoad() {
+//        Pastel.startPastel(view: self.view, color: "normal")
         super.viewDidLoad()
     }
 
