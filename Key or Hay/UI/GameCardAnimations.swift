@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension Card {
+extension CardView {
     
     func animatedSlideoutUp (){
         let translateTransform = CGAffineTransform(translationX: 0, y: -600)

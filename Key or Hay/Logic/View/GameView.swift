@@ -8,7 +8,6 @@
 
 import UIKit
 import Spring
-import Hero
 import ZLSwipeableViewSwift
 import AMProgressBar
 import ChameleonFramework
@@ -17,18 +16,19 @@ import Pastel
 
 class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFieldDelegate{
     
-    var counter = 0
-    
     var gamePrepController : GamePrepController?
     var cardPointController : CardPointController?
     var timeController : TimeController?
     var scoreNetworkController : ScoreNetworkController?
      
     var scoreArray : [ScoreEntry]!
+    
+    var counter = 0
     var preparationTime = 4
     var gameLenght = 5.0
     var pointCounter = 0
     var scoreMode = false
+    
     
     var pastel : PastelView?
     
@@ -96,18 +96,6 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == nameField{
-            let char = string.cString(using: String.Encoding.utf8)
-            let isBackSpace = strcmp(char, "\\b")
-            if isBackSpace == -92 {
-                return true
-            }
-            return textField.text!.count <= 9
-        }
-        return true
     }
     
     

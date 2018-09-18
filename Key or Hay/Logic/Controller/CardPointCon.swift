@@ -18,7 +18,7 @@ class CardPointController {
     var gameView : GameView?
     var timeController : TimeController
     
-    var counter = 0
+    var cardCounter = 0
     
     var rightButtons = [Int]()
     
@@ -49,8 +49,8 @@ class CardPointController {
     func buttonPressed(buttonNumber : Int) {
         self.checkResult(pressedButton: buttonNumber)
         self.handleSlideOut(pressedButton: buttonNumber)
-        counter += 1
-        if (counter % 3 == 0){
+        cardCounter += 1
+        if (cardCounter % 3 == 0){
             self.zLSwipeableView.nextView = {
                 return self.createView()
             }

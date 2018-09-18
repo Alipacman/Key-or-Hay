@@ -8,7 +8,6 @@
 
 import UIKit
 import Spring
-import Hero
 
 class HeartTestController: UIViewController {
     
@@ -16,9 +15,6 @@ class HeartTestController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        self.hero.isEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

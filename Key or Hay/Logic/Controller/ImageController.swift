@@ -36,7 +36,6 @@ class ImageController {
         let imageCounter = contents!.count
         
 //        imgcounter -1 when simalted?!
-//        changed to -10 cause error
         for i in stride(from: 1, to: imageCounter - 1, by: 1) {
             let imageURL = URL(fileURLWithPath: filePath).appendingPathComponent("/\(i).jpg")
             let image = UIImage(contentsOfFile: imageURL.path)

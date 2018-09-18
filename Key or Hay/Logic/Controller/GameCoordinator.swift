@@ -70,13 +70,13 @@ extension GameView{
     }
     
     func gametimeFinished(_ sender: TimeController) {
-        updateTopScores()
+        self.updateTopScores()
         allFallDownAnimation()
         achievedScore.text = "Dein Score: \(String(pointCounter))"
     }
     
     func restart() {
-        submitScore()
+        self.submitScore()
         self.highscoreSpringView.animation = "fadeOut"
         self.highscoreSpringView.duration = 1.0
         self.highscoreSpringView.animateNext {
@@ -87,22 +87,6 @@ extension GameView{
         }
     }
     
-    func submitScore(){
-        let uuid = UIDevice.current.identifierForVendor?.uuidString
-        
-        let entry = ScoreEntry(uuid: uuid!, name: nameField.text!, score: Int((achievedScore.text?.lastWord)!)!)
-        if (self.scoreNetworkController!.submitScore(scoreEntry: entry)){
-            self.scoreArray.append(entry)
-        }
-    }
-    
-    func updateTopScores(){
-        let scoreArray = self.scoreNetworkController?.giveTopScores(scoreArray: self.scoreArray)
-        for i in (0...4) {
-            topNames[i].text = scoreArray![i].name
-            topScores[i].text = String(scoreArray![i].score!)
-        }
-    }
     
     
 }

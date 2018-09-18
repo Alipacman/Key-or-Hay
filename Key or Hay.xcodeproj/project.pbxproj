@@ -16,6 +16,7 @@
 		411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F0F802125EC3400493D34 /* EntranceViewCon.swift */; };
 		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
 		4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */; };
+		4125D8EB21515863004A9005 /* scoreExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125D8EA21515863004A9005 /* scoreExtention.swift */; };
 		4132428F215051D7005A1048 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4132428E215051D7005A1048 /* .gitignore */; };
 		413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E113A1FA7DFCB00926D52 /* AppDelegate.swift */; };
 		413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E113E1FA7DFCB00926D52 /* Main.storyboard */; };
@@ -31,23 +32,18 @@
 		416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B3212312770011D5F3 /* GameCoordinator.swift */; };
 		416639B6212338F10011D5F3 /* TimeCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B5212338F10011D5F3 /* TimeCon.swift */; };
 		416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416639B72123399E0011D5F3 /* TimerDelegate.swift */; };
-		416A63B31FAA4C1800074381 /* GameCardAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A63B21FAA4C1800074381 /* GameCardAnimations.swift */; };
 		416B854C2135FE45008EB6EA /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416B854B2135FE44008EB6EA /* TutorialController.swift */; };
 		416B854E2135FE99008EB6EA /* InteractiveTutorialVCr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416B854D2135FE99008EB6EA /* InteractiveTutorialVCr.swift */; };
 		4176F56D2135EA0200431505 /* TutorialTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4176F56C2135EA0200431505 /* TutorialTexts.swift */; };
 		4177E26C21299B1B007F2937 /* DownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177E26B21299B1B007F2937 /* DownloadDelegate.swift */; };
-		419549C9213480FC009FCE1C /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419549C8213480FB009FCE1C /* SpringViewController.swift */; };
 		419CEB632126245100414DBF /* ImageCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419CEB622126245100414DBF /* ImageCount.swift */; };
-		41A50B942121F3DA0034E640 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50B932121F3DA0034E640 /* Card.swift */; };
 		41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A50BA121222F950034E640 /* PreparationDelegate.swift */; };
 		41BFF23A1FAA08B2002F2E0F /* GamePrepCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */; };
 		41C764502129C0FB003D051D /* SubmitPictureVCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7644F2129C0FB003D051D /* SubmitPictureVCon.swift */; };
 		41C8EE912146920600721E1C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C8EE902146920600721E1C /* CardView.swift */; };
-		41C8EE932146922400721E1C /* ZLSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C8EE922146922400721E1C /* ZLSwipeViewController.swift */; };
 		41D98AE42126E50A00DA29D4 /* ScoresTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D98AE32126E50A00DA29D4 /* ScoresTableVC.swift */; };
 		41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D98AE52126E5A000DA29D4 /* ScoreEntry.swift */; };
 		41D98AE82126F17500DA29D4 /* EntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D98AE72126F17500DA29D4 /* EntryViewCell.swift */; };
-		41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E30EBF2041DD0300C3F17E /* HighScoreView.swift */; };
 		41E4AB10214970150070A4E9 /* fallDownAnimationGameViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4AB0F214970150070A4E9 /* fallDownAnimationGameViewC.swift */; };
 		41E777262131DDCA0037A586 /* HeartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777252131DDCA0037A586 /* HeartController.swift */; };
 		41E777282131E38B0037A586 /* HeartTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777272131E38B0037A586 /* HeartTestController.swift */; };
@@ -65,6 +61,7 @@
 		411F0F802125EC3400493D34 /* EntranceViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewCon.swift; sourceTree = "<group>"; };
 		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownlCon.swift; sourceTree = "<group>"; };
+		4125D8EA21515863004A9005 /* scoreExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreExtention.swift; sourceTree = "<group>"; };
 		4132428E215051D7005A1048 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		413E11371FA7DFCB00926D52 /* Key or Hay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key or Hay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		413E113A1FA7DFCB00926D52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,24 +79,19 @@
 		416639B3212312770011D5F3 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		416639B5212338F10011D5F3 /* TimeCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCon.swift; sourceTree = "<group>"; };
 		416639B72123399E0011D5F3 /* TimerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDelegate.swift; sourceTree = "<group>"; };
-		416A63B21FAA4C1800074381 /* GameCardAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardAnimations.swift; sourceTree = "<group>"; };
 		416B854B2135FE44008EB6EA /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		416B854D2135FE99008EB6EA /* InteractiveTutorialVCr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractiveTutorialVCr.swift; path = "/Users/ali/Desktop/Swift/KeyorHay/Key or Hay/Logic/Controller/Tutorial/InteractiveTutorialVCr.swift"; sourceTree = "<absolute>"; };
 		4176F56C2135EA0200431505 /* TutorialTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTexts.swift; sourceTree = "<group>"; };
 		4177E26B21299B1B007F2937 /* DownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDelegate.swift; sourceTree = "<group>"; };
 		418AE8942124CEE40004C47F /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
-		419549C8213480FB009FCE1C /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringViewController.swift; path = "../../../../Downloads/Spring-master/SpringApp/SpringViewController.swift"; sourceTree = "<group>"; };
 		419CEB622126245100414DBF /* ImageCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCount.swift; sourceTree = "<group>"; };
-		41A50B932121F3DA0034E640 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		41A50BA121222F950034E640 /* PreparationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDelegate.swift; sourceTree = "<group>"; };
 		41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePrepCon.swift; sourceTree = "<group>"; };
 		41C7644F2129C0FB003D051D /* SubmitPictureVCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPictureVCon.swift; sourceTree = "<group>"; };
 		41C8EE902146920600721E1C /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = "../../../../../../Downloads/ZLSwipeableViewSwift-master/ZLSwipeableViewSwiftDemo/ZLSwipeableViewSwiftDemo/CardView.swift"; sourceTree = "<group>"; };
-		41C8EE922146922400721E1C /* ZLSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZLSwipeViewController.swift; path = "../../../../test segue/test segue/ZLSwipeViewController.swift"; sourceTree = "<group>"; };
 		41D98AE32126E50A00DA29D4 /* ScoresTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableVC.swift; sourceTree = "<group>"; };
 		41D98AE52126E5A000DA29D4 /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
 		41D98AE72126F17500DA29D4 /* EntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewCell.swift; sourceTree = "<group>"; };
-		41E30EBF2041DD0300C3F17E /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
 		41E4AB0F214970150070A4E9 /* fallDownAnimationGameViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fallDownAnimationGameViewC.swift; sourceTree = "<group>"; };
 		41E777252131DDCA0037A586 /* HeartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartController.swift; sourceTree = "<group>"; };
 		41E777272131E38B0037A586 /* HeartTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartTestController.swift; sourceTree = "<group>"; };
@@ -121,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4125D8EC2151599B004A9005 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				414743702147F64D0005E5B9 /* prepAnimations.swift */,
+				41E4AB0F214970150070A4E9 /* fallDownAnimationGameViewC.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		413E112E1FA7DFCB00926D52 = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +145,6 @@
 			children = (
 				4191891121300FC1005831AC /* UI */,
 				41E1795B21277EF6008B057B /* Logic */,
-				419549C8213480FB009FCE1C /* SpringViewController.swift */,
 				413E113E1FA7DFCB00926D52 /* Main.storyboard */,
 				413E11411FA7DFCB00926D52 /* Assets.xcassets */,
 				413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */,
@@ -161,7 +161,7 @@
 			children = (
 				419CEB622126245100414DBF /* ImageCount.swift */,
 				41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */,
-				416A63B21FAA4C1800074381 /* GameCardAnimations.swift */,
+				4125D8EA21515863004A9005 /* scoreExtention.swift */,
 				4113D2FC2129D91D008EA9E9 /* DateGetter.swift */,
 				410C324721296C38000EBE04 /* StringExtension.swift */,
 				4176F56C2135EA0200431505 /* TutorialTexts.swift */,
@@ -182,11 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				41E777252131DDCA0037A586 /* HeartController.swift */,
-				41E777272131E38B0037A586 /* HeartTestController.swift */,
 				414012B121471012009E3D11 /* Pastel.swift */,
-				414743702147F64D0005E5B9 /* prepAnimations.swift */,
 				4141F8102146B76900B11C97 /* HealthBar.swift */,
-				41E4AB0F214970150070A4E9 /* fallDownAnimationGameViewC.swift */,
+				4125D8EC2151599B004A9005 /* Animations */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -204,8 +202,6 @@
 		41A50B922121F3050034E640 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41C8EE922146922400721E1C /* ZLSwipeViewController.swift */,
-				41A50B932121F3DA0034E640 /* Card.swift */,
 				41C8EE902146920600721E1C /* CardView.swift */,
 				41156E2C212ABA1B0057471A /* GoldSingelton.swift */,
 				41D98AE52126E5A000DA29D4 /* ScoreEntry.swift */,
@@ -218,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				413E114C1FA7F51600926D52 /* GameView.swift */,
-				41E30EBF2041DD0300C3F17E /* HighScoreView.swift */,
 				41D98AE32126E50A00DA29D4 /* ScoresTableVC.swift */,
 				41C7644F2129C0FB003D051D /* SubmitPictureVCon.swift */,
 			);
@@ -241,6 +236,7 @@
 		41A8DD7D1FB114D900925712 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41E777272131E38B0037A586 /* HeartTestController.swift */,
 				411F0F802125EC3400493D34 /* EntranceViewCon.swift */,
 				416639B3212312770011D5F3 /* GameCoordinator.swift */,
 				41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */,
@@ -424,14 +420,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A50BA221222F950034E640 /* PreparationDelegate.swift in Sources */,
-				41C8EE932146922400721E1C /* ZLSwipeViewController.swift in Sources */,
 				4177E26C21299B1B007F2937 /* DownloadDelegate.swift in Sources */,
 				4113D2FF2129DB0B008EA9E9 /* ScoreNetworkCon.swift in Sources */,
 				4141F8112146B76900B11C97 /* HealthBar.swift in Sources */,
-				416A63B31FAA4C1800074381 /* GameCardAnimations.swift in Sources */,
 				413E114D1FA7F51600926D52 /* GameView.swift in Sources */,
 				41C8EE912146920600721E1C /* CardView.swift in Sources */,
-				41A50B942121F3DA0034E640 /* Card.swift in Sources */,
 				41D98AE42126E50A00DA29D4 /* ScoresTableVC.swift in Sources */,
 				416639B6212338F10011D5F3 /* TimeCon.swift in Sources */,
 				416639B22122E4680011D5F3 /* ImageController.swift in Sources */,
@@ -450,16 +443,15 @@
 				4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */,
 				41D98AE82126F17500DA29D4 /* EntryViewCell.swift in Sources */,
 				416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */,
-				419549C9213480FC009FCE1C /* SpringViewController.swift in Sources */,
 				41E777262131DDCA0037A586 /* HeartController.swift in Sources */,
 				41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */,
 				4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */,
 				416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */,
+				4125D8EB21515863004A9005 /* scoreExtention.swift in Sources */,
 				410C324821296C38000EBE04 /* StringExtension.swift in Sources */,
 				416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */,
 				4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */,
 				41156E2D212ABA1B0057471A /* GoldSingelton.swift in Sources */,
-				41E30EC02041DD0300C3F17E /* HighScoreView.swift in Sources */,
 				41E9215C2128B85000F80FE2 /* DirectoryHelp.swift in Sources */,
 				416B854C2135FE45008EB6EA /* TutorialController.swift in Sources */,
 				414012B221471012009E3D11 /* Pastel.swift in Sources */,
