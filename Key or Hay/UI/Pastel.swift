@@ -20,7 +20,7 @@ class Pastel {
         pastelView.endPastelPoint = .topRight
         
         // Custom Duration
-        pastelView.animationDuration = 0.2
+        pastelView.animationDuration = 1.0
         
         // Custom Color
         if (color == "normal"){

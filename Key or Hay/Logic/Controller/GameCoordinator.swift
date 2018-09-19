@@ -28,6 +28,9 @@ extension GameView{
         self.cardPointController = CardPointController(gameView : self, timeController: self.timeController!)
         
         self.scoreNetworkController = ScoreNetworkController(delegate : nil)
+        
+        self.musicController = MusicController()
+        
         super.viewDidLoad()
     }
     
@@ -40,21 +43,27 @@ extension GameView{
     
     func hideAll(){
         zlSpringView.isHidden = true
-        healthSpringView.isHidden = true
+        heartImageView.isHidden = true
         healtBarSpringView.isHidden = true
         pointLabel.isHidden = true
         leftButtonSpringView.isHidden = true
         midButtonSpringView.isHidden = true
         rightButtonSpringView.isHidden = true
         highscoreSpringView.isHidden = true
+        inGameRestartButton.isHidden = true
     }
     
     func preparationDone(_ sender: GamePrepController) {
         print("prepartion done, starting game...")
+        inGameRestartButton.isHidden = false
+        inGameRestartButton.animation = "fadeIn"
+        inGameRestartButton.animate()
+        
         startGame()
     }
     
     func startGame(){
+        musicController?.playSound(songName: "gameMusic")
         scoreMode = false
         zlSpringView.isHidden = false
         zlSpringView.animation = "zoomIn"
@@ -70,20 +79,33 @@ extension GameView{
     }
     
     func gametimeFinished(_ sender: TimeController) {
+        self.musicController?.fadeOut()
         self.updateTopScores()
         allFallDownAnimation()
         achievedScore.text = "Dein Score: \(String(pointCounter))"
     }
     
-    func restart() {
-        self.submitScore()
-        self.highscoreSpringView.animation = "fadeOut"
-        self.highscoreSpringView.duration = 1.0
-        self.highscoreSpringView.animateNext {
-            self.highscoreSpringView.isHidden = true
-            self.pointCounter = 0
-            self.pointLabel.text = String(0)
-            self.gamePrepController!.prepareStart()
+    func speedUp(){
+        print(healthBar.progressValue)
+        switch healthBar.progressValue {
+        case 0.0 ... 0.2:
+            self.healthBar.barColor = UIColor.flatRed()
+            self.heartImageView.duration = 0.2
+            self.pastel?.animationDuration = 0.2
+        case 0.2 ... 0.5:
+            self.healthBar.barColor = UIColor.flatRed()
+            self.heartImageView.duration = 0.3
+            self.pastel?.animationDuration = 1.0
+        case 0.5 ... 0.8:
+            self.healthBar.barColor = UIColor.flatRed()
+            self.heartImageView.duration = 0.5
+            self.pastel?.animationDuration = 1.5
+        case 0.8 ... 1.0:
+            self.healthBar.barColor = UIColor.flatRed()
+            self.heartImageView.duration = 0.8
+            self.pastel?.animationDuration = 2.0
+        default:
+            break
         }
     }
     

@@ -31,10 +31,10 @@ extension GamePrepController{
                 self.gameView?.healtBarSpringView.duration = 1.0
                 self.gameView?.healtBarSpringView.animate()
                 
-                self.gameView?.healthSpringView.isHidden = false
-                self.gameView?.healthSpringView.animation = "slideDown"
-                self.gameView?.healthSpringView.duration = 1.0
-                self.gameView?.healthSpringView.animate()
+                self.gameView?.heartImageView.isHidden = false
+                self.gameView?.heartImageView.animation = "fadeIn"
+                self.gameView?.heartImageView.duration = 1.0
+                self.gameView?.heartImageView.animate()
                 
                 self.gameView?.pointLabel.isHidden = false
                 self.gameView?.pointLabel.animation = "zoomIn"

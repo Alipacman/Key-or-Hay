@@ -13,6 +13,8 @@ import Pastel
 class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDownDelegate {
     
     var scoreArray : [ScoreEntry] = []
+    var musicController : MusicController = MusicController()
+    
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -45,8 +47,13 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
         let highscoreDownloader = ScoreNetworkController(delegate: self)
         highscoreDownloader.downloadScores()
         
+        musicController.playSound(songName: "mainTheme")
+        
         Pastel.startPastel(view: self.view, color: "normal")
 
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        musicController.fadeOut()
     }
     
 //    override func viewWillAppear(_ animated: Bool) {

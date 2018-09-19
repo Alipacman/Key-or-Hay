@@ -375,17 +375,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hL7-8L-3j5" customClass="SpringImageView" customModule="Spring">
-                                <rect key="frame" x="148" y="572" width="46" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" id="7Nx-ES-RPl"/>
-                                    <constraint firstAttribute="width" constant="46" id="jro-Om-all"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmq-67-5QN" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="-100" y="663" width="201" height="80"/>
                                 <subviews>
@@ -486,7 +475,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RxN-1R-vhI" userLabel="ZLS Spring View" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="10" y="64" width="355" height="355"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vha-lO-SIA" customClass="ZLSwipeableView" customModule="ZLSwipeableViewSwift">
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vha-lO-SIA" customClass="ZLSwipeableView" customModule="ZLSwipeableViewSwift">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="355"/>
                                     </view>
                                 </subviews>
@@ -498,11 +487,11 @@
                                     <constraint firstAttribute="bottom" secondItem="vha-lO-SIA" secondAttribute="bottom" id="tyi-T0-vWA"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aB-wm-IFT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aB-wm-IFT" userLabel="PointAndHealthView">
                                 <rect key="frame" x="0.0" y="419" width="375" height="234"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="35" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2rO-hZ-SCQ" customClass="SpringLabel" customModule="Spring">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="108"/>
+                                        <rect key="frame" x="0.0" y="116" width="375" height="110"/>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBoldItalic" family="Baskerville" pointSize="80"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -510,7 +499,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWL-Yx-JV4" customClass="SpringView" customModule="Spring">
-                                        <rect key="frame" x="10" y="117" width="355" height="117"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="117"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bf-6c-seX" customClass="AMProgressBar" customModule="AMProgressBar">
                                                 <rect key="frame" x="0.0" y="44" width="355" height="30"/>
@@ -530,7 +519,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="NO"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="textPosition">
-                                                        <integer key="value" value="-1"/>
+                                                        <integer key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="stripesWidth">
                                                         <real key="value" value="1"/>
@@ -543,23 +532,32 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-s5-ezX" userLabel="HearthImageView" customClass="SpringImageView" customModule="Spring">
+                                                <rect key="frame" x="137" y="19" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="gAv-bF-8dd"/>
+                                                    <constraint firstAttribute="height" constant="80" id="pRA-GR-mdB"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="3bf-6c-seX" firstAttribute="centerY" secondItem="PWL-Yx-JV4" secondAttribute="centerY" id="4A3-YI-eS3"/>
                                             <constraint firstItem="3bf-6c-seX" firstAttribute="centerX" secondItem="PWL-Yx-JV4" secondAttribute="centerX" id="6vJ-IL-LA3"/>
+                                            <constraint firstItem="P5L-s5-ezX" firstAttribute="centerX" secondItem="PWL-Yx-JV4" secondAttribute="centerX" id="G5p-a9-a0f"/>
                                             <constraint firstAttribute="trailing" secondItem="3bf-6c-seX" secondAttribute="trailing" id="QC9-K6-CNN"/>
+                                            <constraint firstItem="P5L-s5-ezX" firstAttribute="centerY" secondItem="PWL-Yx-JV4" secondAttribute="centerY" id="gQa-ZZ-LPD"/>
                                             <constraint firstItem="3bf-6c-seX" firstAttribute="leading" secondItem="PWL-Yx-JV4" secondAttribute="leading" id="xEZ-tc-Tgi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PWL-Yx-JV4" firstAttribute="top" secondItem="2rO-hZ-SCQ" secondAttribute="bottom" constant="1" id="3fd-MZ-iav"/>
+                                    <constraint firstItem="PWL-Yx-JV4" firstAttribute="bottom" secondItem="2rO-hZ-SCQ" secondAttribute="top" constant="1" id="3fd-MZ-iav"/>
                                     <constraint firstAttribute="trailing" secondItem="PWL-Yx-JV4" secondAttribute="trailing" constant="10" id="AzS-rZ-ouc"/>
-                                    <constraint firstItem="2rO-hZ-SCQ" firstAttribute="top" secondItem="9aB-wm-IFT" secondAttribute="topMargin" id="F5i-yI-j1i"/>
+                                    <constraint firstItem="2rO-hZ-SCQ" firstAttribute="bottom" secondItem="9aB-wm-IFT" secondAttribute="bottomMargin" id="F5i-yI-j1i"/>
                                     <constraint firstItem="PWL-Yx-JV4" firstAttribute="height" secondItem="9aB-wm-IFT" secondAttribute="height" multiplier="0.5" id="NEm-vn-JrV"/>
                                     <constraint firstItem="2rO-hZ-SCQ" firstAttribute="centerX" secondItem="9aB-wm-IFT" secondAttribute="centerX" id="XHa-8z-J2U"/>
                                     <constraint firstItem="PWL-Yx-JV4" firstAttribute="centerX" secondItem="9aB-wm-IFT" secondAttribute="centerX" id="cIA-cG-s7h"/>
-                                    <constraint firstAttribute="bottom" secondItem="PWL-Yx-JV4" secondAttribute="bottom" id="czu-JZ-ozL"/>
+                                    <constraint firstAttribute="top" secondItem="PWL-Yx-JV4" secondAttribute="top" id="czu-JZ-ozL"/>
                                     <constraint firstItem="PWL-Yx-JV4" firstAttribute="leading" secondItem="9aB-wm-IFT" secondAttribute="leading" constant="10" id="myt-4Z-4qd"/>
                                     <constraint firstAttribute="trailing" secondItem="2rO-hZ-SCQ" secondAttribute="trailing" id="sQt-oK-esb"/>
                                 </constraints>
@@ -572,6 +570,14 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="0.0"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvk-Q2-Ibo" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="163" y="36" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restart:" destination="e3a-Vw-5D3" eventType="touchUpInside" id="boz-rh-Bpj"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-za-iYT" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="16" y="84" width="343" height="688"/>
                                 <subviews>
@@ -610,7 +616,7 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="oPm-g9-9CS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-ve-pXT">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-ve-pXT">
                                         <rect key="frame" x="113" y="494.66666666666663" width="117" height="30"/>
                                         <state key="normal" title="Submit &amp; Restart"/>
                                         <connections>
@@ -845,7 +851,6 @@
                             <constraint firstItem="Ggg-3I-nKP" firstAttribute="trailing" secondItem="DQP-PU-NqZ" secondAttribute="trailing" id="X2C-v3-9fk"/>
                             <constraint firstItem="ep3-za-iYT" firstAttribute="top" secondItem="DQP-PU-NqZ" secondAttribute="top" constant="40" id="YSN-1Y-Prs"/>
                             <constraint firstItem="DQP-PU-NqZ" firstAttribute="trailing" secondItem="ep3-za-iYT" secondAttribute="trailing" constant="16" id="YVh-Lj-GLJ"/>
-                            <constraint firstItem="hL7-8L-3j5" firstAttribute="leading" secondItem="nbx-9P-MMh" secondAttribute="leading" constant="148" id="a6s-Lx-Xdn"/>
                             <constraint firstItem="DQP-PU-NqZ" firstAttribute="bottom" secondItem="FlH-D7-FCH" secondAttribute="bottom" constant="35" id="b7d-jk-GsB"/>
                             <constraint firstItem="jmq-67-5QN" firstAttribute="leading" secondItem="DQP-PU-NqZ" secondAttribute="leading" constant="-100" id="eQG-SX-GbX"/>
                             <constraint firstItem="DQP-PU-NqZ" firstAttribute="trailing" secondItem="FlH-D7-FCH" secondAttribute="trailing" constant="-100" id="hhc-u5-C3u"/>
@@ -859,11 +864,6 @@
                             <constraint firstAttribute="bottom" secondItem="ep3-za-iYT" secondAttribute="bottom" constant="40" id="xhV-h7-SE8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DQP-PU-NqZ"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="hL7-8L-3j5"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IpC-Ee-TSi"/>
                     <connections>
@@ -871,8 +871,9 @@
                         <outlet property="countdownLable" destination="Ggg-3I-nKP" id="2oS-3U-Xfh"/>
                         <outlet property="healtBarSpringView" destination="PWL-Yx-JV4" id="xXT-Fu-47R"/>
                         <outlet property="healthBar" destination="3bf-6c-seX" id="7Va-hG-v10"/>
-                        <outlet property="healthSpringView" destination="hL7-8L-3j5" id="hxS-D8-Vxs"/>
+                        <outlet property="heartImageView" destination="P5L-s5-ezX" id="wlJ-EF-13Q"/>
                         <outlet property="highscoreSpringView" destination="ep3-za-iYT" id="OEB-Lo-CTw"/>
+                        <outlet property="inGameRestartButton" destination="wvk-Q2-Ibo" id="djI-m1-YaA"/>
                         <outlet property="leftButtonSpringView" destination="jmq-67-5QN" id="3Zf-ub-nOO"/>
                         <outlet property="midButtonSpringView" destination="VB9-v7-MfW" id="X34-72-mBF"/>
                         <outlet property="nameField" destination="od7-nM-2Pk" id="nL5-Ht-nCX"/>

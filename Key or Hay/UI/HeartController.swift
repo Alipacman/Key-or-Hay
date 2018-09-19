@@ -18,7 +18,7 @@ class HeartController {
 //    Call from ViewWillappear
     static func initImageView(springImageView : SpringImageView) {
         springImageView.hero.id = "heart"
-        springImageView.image = #imageLiteral(resourceName: "Heart")
+        springImageView.image = #imageLiteral(resourceName: "redHeart")
         springImageView.animation = "pop"
         springImageView.curve = "easeIn"
         springImageView.duration = 1.5

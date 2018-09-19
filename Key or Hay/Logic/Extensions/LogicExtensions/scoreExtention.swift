@@ -18,15 +18,20 @@ extension GameView{
             if isBackSpace == -92 {
                 return true
             }
-            return textField.text!.count <= 9
+            return textField.text!.count <= 12
         }
         return true
     }
     
     func submitScore(){
         let uuid = UIDevice.current.identifierForVendor?.uuidString
+        var name = "Anonym"
         
-        let entry = ScoreEntry(uuid: uuid!, name: nameField.text!, score: Int((achievedScore.text?.lastWord)!)!)
+        if !(self.nameField.text?.isEmpty)!{
+            name = self.nameField.text!
+        }
+        
+        let entry = ScoreEntry(uuid: uuid!, name: name, score: Int((achievedScore.text?.lastWord)!)!)
         if (self.scoreNetworkController!.submitScore(scoreEntry: entry)){
             self.scoreArray.append(entry)
         }

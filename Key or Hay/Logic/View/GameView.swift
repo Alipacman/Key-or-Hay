@@ -20,17 +20,17 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     var cardPointController : CardPointController?
     var timeController : TimeController?
     var scoreNetworkController : ScoreNetworkController?
-     
+    var musicController : MusicController?
+    
     var scoreArray : [ScoreEntry]!
+    var pastel : PastelView?
     
     var counter = 0
     var preparationTime = 4
-    var gameLenght = 5.0
+    var gameLenght = 20.0
     var pointCounter = 0
     var scoreMode = false
     
-    
-    var pastel : PastelView?
     
     var colorArray = NSArray(ofColorsWith: ColorScheme.analogous, using: UIColor.flatPurple(), withFlatScheme: true)
     
@@ -43,11 +43,13 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     @IBOutlet weak var countdownLable: SpringLabel!
     @IBOutlet weak var pointLabel: SpringLabel!
     
-    @IBOutlet weak var healthSpringView: SpringImageView!
+    @IBOutlet weak var heartImageView: SpringImageView!
     
     @IBOutlet weak var leftButtonSpringView: SpringView!
     @IBOutlet weak var midButtonSpringView: SpringView!
     @IBOutlet weak var rightButtonSpringView: SpringView!
+    
+    @IBOutlet weak var inGameRestartButton: SpringButton!
     
     @IBOutlet weak var highscoreSpringView: SpringView!
     
@@ -63,17 +65,15 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     }
     
     @IBAction func restart(_ sender: Any) {
-        restart()
+        self.restartExtension(sender)
     }
     
-//    umschreiben für tabelle
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destinySegue = segue.destination as! HighScoreViewController
-//        destinySegue.userScore = pointCounter
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
-//        HeartController.initImageView(springImageView: self.healthSpringView)
+        HeartController.initImageView(springImageView: self.heartImageView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        musicController?.fadeOut()
     }
     
     func updatePoints(number : Int){

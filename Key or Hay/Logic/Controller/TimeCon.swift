@@ -35,6 +35,7 @@ class TimeController {
     @objc func updateCounting(){
         timePassed += 0.2
         self.gameView?.healthBar.setProgress(progress: CGFloat(self.timePassed/self.timeToPlay), animated: true)
+        gameView?.speedUp()
         if timePassed >= timeToPlay{
             delegate?.gametimeFinished(self)
             stopTimer()

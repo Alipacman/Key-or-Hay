@@ -17,6 +17,7 @@
 		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
 		4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */; };
 		4125D8EB21515863004A9005 /* scoreExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125D8EA21515863004A9005 /* scoreExtention.swift */; };
+		412B775E2152909100FC1183 /* restartExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B775D2152909100FC1183 /* restartExtension.swift */; };
 		4132428F215051D7005A1048 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4132428E215051D7005A1048 /* .gitignore */; };
 		413E113B1FA7DFCB00926D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413E113A1FA7DFCB00926D52 /* AppDelegate.swift */; };
 		413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 413E113E1FA7DFCB00926D52 /* Main.storyboard */; };
@@ -48,6 +49,9 @@
 		41E777262131DDCA0037A586 /* HeartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777252131DDCA0037A586 /* HeartController.swift */; };
 		41E777282131E38B0037A586 /* HeartTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777272131E38B0037A586 /* HeartTestController.swift */; };
 		41E9215C2128B85000F80FE2 /* DirectoryHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */; };
+		41F0EE302152634E00D497A8 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F0EE2F2152634E00D497A8 /* MusicController.swift */; };
+		41F0EE33215266A300D497A8 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41F0EE32215266A300D497A8 /* gameMusic.mp3 */; };
+		41F0EE3521526AD200D497A8 /* mainTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41F0EE3421526AD200D497A8 /* mainTheme.mp3 */; };
 		6A8F0452EF01965A9ECA3CA9 /* Pods_Key_or_Hay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +66,7 @@
 		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownlCon.swift; sourceTree = "<group>"; };
 		4125D8EA21515863004A9005 /* scoreExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreExtention.swift; sourceTree = "<group>"; };
+		412B775D2152909100FC1183 /* restartExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restartExtension.swift; sourceTree = "<group>"; };
 		4132428E215051D7005A1048 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		413E11371FA7DFCB00926D52 /* Key or Hay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Key or Hay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		413E113A1FA7DFCB00926D52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +101,9 @@
 		41E777252131DDCA0037A586 /* HeartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartController.swift; sourceTree = "<group>"; };
 		41E777272131E38B0037A586 /* HeartTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartTestController.swift; sourceTree = "<group>"; };
 		41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelp.swift; sourceTree = "<group>"; };
+		41F0EE2F2152634E00D497A8 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		41F0EE32215266A300D497A8 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
+		41F0EE3421526AD200D497A8 /* mainTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainTheme.mp3; sourceTree = "<group>"; };
 		63EB1C6C03BBB2678D1018F5 /* Pods-Key or Hay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Key or Hay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Key or Hay/Pods-Key or Hay.release.xcconfig"; sourceTree = "<group>"; };
 		AD35094ACE679D545A92D6DF /* Pods_Key_or_Hay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Key_or_Hay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F3EA57E017113462BFD8D0 /* Pods-Key or Hay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Key or Hay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Key or Hay/Pods-Key or Hay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +128,15 @@
 				41E4AB0F214970150070A4E9 /* fallDownAnimationGameViewC.swift */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		412B775F215290B400FC1183 /* LogicExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				412B775D2152909100FC1183 /* restartExtension.swift */,
+				4125D8EA21515863004A9005 /* scoreExtention.swift */,
+			);
+			path = LogicExtensions;
 			sourceTree = "<group>";
 		};
 		413E112E1FA7DFCB00926D52 = {
@@ -147,6 +164,7 @@
 				41E1795B21277EF6008B057B /* Logic */,
 				413E113E1FA7DFCB00926D52 /* Main.storyboard */,
 				413E11411FA7DFCB00926D52 /* Assets.xcassets */,
+				41F0EE312152669200D497A8 /* Music */,
 				413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */,
 				413E11461FA7DFCB00926D52 /* Info.plist */,
 				418AE8942124CEE40004C47F /* Notes.md */,
@@ -159,9 +177,9 @@
 		414175DA21248E36002B1B90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				412B775F215290B400FC1183 /* LogicExtensions */,
 				419CEB622126245100414DBF /* ImageCount.swift */,
 				41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */,
-				4125D8EA21515863004A9005 /* scoreExtention.swift */,
 				4113D2FC2129D91D008EA9E9 /* DateGetter.swift */,
 				410C324721296C38000EBE04 /* StringExtension.swift */,
 				4176F56C2135EA0200431505 /* TutorialTexts.swift */,
@@ -242,6 +260,7 @@
 				41BFF2391FAA08B2002F2E0F /* GamePrepCon.swift */,
 				416639AF2122CE250011D5F3 /* CardPointCon.swift */,
 				416639B5212338F10011D5F3 /* TimeCon.swift */,
+				41F0EE2F2152634E00D497A8 /* MusicController.swift */,
 				416639B12122E4670011D5F3 /* ImageController.swift */,
 				4176F5702135FE0200431505 /* Tutorial */,
 				419CEB612126241100414DBF /* Network */,
@@ -259,6 +278,15 @@
 				414175DA21248E36002B1B90 /* Extensions */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		41F0EE312152669200D497A8 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				41F0EE3421526AD200D497A8 /* mainTheme.mp3 */,
+				41F0EE32215266A300D497A8 /* gameMusic.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		65AF1D346879575312F06571 /* Pods */ = {
@@ -342,7 +370,9 @@
 				4132428F215051D7005A1048 /* .gitignore in Resources */,
 				413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */,
 				4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */,
+				41F0EE3521526AD200D497A8 /* mainTheme.mp3 in Resources */,
 				413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */,
+				41F0EE33215266A300D497A8 /* gameMusic.mp3 in Resources */,
 				413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,11 +474,13 @@
 				41D98AE82126F17500DA29D4 /* EntryViewCell.swift in Sources */,
 				416639B82123399E0011D5F3 /* TimerDelegate.swift in Sources */,
 				41E777262131DDCA0037A586 /* HeartController.swift in Sources */,
+				412B775E2152909100FC1183 /* restartExtension.swift in Sources */,
 				41D98AE62126E5A000DA29D4 /* ScoreEntry.swift in Sources */,
 				4166228C21466FBB00A3EEEC /* highscoreDownDelegate.swift in Sources */,
 				416639B4212312770011D5F3 /* GameCoordinator.swift in Sources */,
 				4125D8EB21515863004A9005 /* scoreExtention.swift in Sources */,
 				410C324821296C38000EBE04 /* StringExtension.swift in Sources */,
+				41F0EE302152634E00D497A8 /* MusicController.swift in Sources */,
 				416639B02122CE250011D5F3 /* CardPointCon.swift in Sources */,
 				4113D2FB2129CA46008EA9E9 /* SubmitDelegate.swift in Sources */,
 				41156E2D212ABA1B0057471A /* GoldSingelton.swift in Sources */,

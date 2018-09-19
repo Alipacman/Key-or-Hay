@@ -61,12 +61,13 @@ class CardPointController {
     //    TPDO: Anmiate bonustime
     func checkResult(pressedButton : Int) {
         if pressedButton == rightButtons.first{
+            self.gameView!.heartImageView.image = #imageLiteral(resourceName: "redHeart")
             self.gameView!.updatePoints(number: 1)
             timeController.AddbonusTime(timeToAdd: 0.4)
         }
         else{
+             self.gameView!.heartImageView.image = #imageLiteral(resourceName: "blackHeart")
             self.gameView!.updatePoints(number: -1)
-            timeController.AddbonusTime(timeToAdd: -0.5)
         }
     }
     
