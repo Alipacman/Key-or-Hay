@@ -52,30 +52,43 @@ class ImageDownloadController {
     //    TODO: Add delegatefunc if no internet connection
     func downloadAllFolders(countArray: [String]) -> Promise<Void> {
         return Promise {seal in
-            self.downloadImagesFromFolder(folder: "Ali", amount: Int(countArray[1])!)
-            self.downloadImagesFromFolder(folder: "Hussein", amount: Int(countArray[2])!)
-            self.downloadImagesFromFolder(folder: "Random", amount: Int(countArray[3])!)
-            seal.fulfill(())
+            firstly{
+                downloadImagesFromFolder(folder: "Ali", amount: Int(countArray[1])!)
+                }.then {
+                    self.downloadImagesFromFolder(folder: "Hussein", amount: Int(countArray[2])!)
+                }.then {
+                    self.downloadImagesFromFolder(folder: "Random", amount: Int(countArray[3])!)
+                }.done {
+                    seal.fulfill(())
+            }
         }
     }
-//    currently all pics are png
-    func downloadImagesFromFolder(folder: String, amount : Int) {
+    //    currently all pics are png
+    func downloadImagesFromFolder(folder: String, amount : Int) -> Promise<Void>{
         
-        let dataPath = DirectroryHelp.getPath(path : "Images/\(folder)")
-        //        TODO: check all amounts and the image getter
-        for i in stride(from: 1, to: amount + 1, by: 1) {
-            let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
-            if DirectroryHelp.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
-                print("image \(i) will be downloaded")
-                let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(folder)/\(i).jpg")
-                imageRef.write(toFile: localURL) { url, error in
-                    if let error = error {
-                        //print("Here is the error: \(error)")
-                    } else {
-                        print("image \(i) loaded into Documents/Images \(folder)")
+        return Promise {seal in
+            let dataPath = DirectroryHelp.getPath(path : "Images/\(folder)")
+            //        TODO: check all amounts and the image getter
+            for i in stride(from: 1, to: amount + 1, by: 1) {
+                let localURL = URL(fileURLWithPath: dataPath).appendingPathComponent("\(i).jpg")
+                if DirectroryHelp.checkIfDataExists(dataPath: "Images/\(folder)/\(i).jpg"){
+                    let imageRef = storage.reference(forURL: "gs://hey-or-key.appspot.com/Images/\(folder)/\(i).jpg")
+                    imageRef.write(toFile: localURL) { url, error in
+                        if let error = error {
+                            //print("Here is the error: \(error)")
+                        } else {
+                            if (i == amount){
+                                print("all \(folder) images downloaded")
+                                return seal.fulfill(())
+                            }
+                        }
                     }
+                }
+                else{
+                    return seal.fulfill(())
                 }
             }
         }
     }
 }
+

@@ -30,7 +30,6 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
     
     func scoreDownloadFinished(_ sender: ScoreNetworkController, scoreArray : [ScoreEntry]) {
         self.scoreArray = scoreArray
-        
     }
     
     override func viewDidLoad() {
