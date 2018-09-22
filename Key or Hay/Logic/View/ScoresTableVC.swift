@@ -19,7 +19,8 @@ class ScoresTableViewController: UITableViewController {
         self.navigationController?.title = "Highscores"
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isHidden = false
-
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         
         super.viewDidLoad()
     }

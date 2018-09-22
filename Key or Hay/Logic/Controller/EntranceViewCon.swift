@@ -85,5 +85,8 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
         
     }
     
+    @IBAction func unwindToEntranceView(sender: UIStoryboardSegue) {
+    }
+    
     
 }

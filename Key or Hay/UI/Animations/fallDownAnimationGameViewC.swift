@@ -16,15 +16,24 @@ extension GameView{
         falldown(obj : leftButtonSpringView)
         falldown(obj : rightButtonSpringView)
         falldown(obj : midButtonSpringView)
-        falldown(obj : healthBarSpringView)
+        fadeOut(obj : healthBarSpringView)
         //        falldown(obj : heartImageView)
         falldown(obj : leftButtonSpringView)
         falldown(obj : leftButtonSpringView)
-        falldown(obj: inGameRestartButton)
+        fadeOut(obj: inGameRestartButton)
     }
     
     func falldown(obj : Springable){
         obj.animation = "fall"
+        //        obj.force = 1.0
+        //        obj.damping = 0.4
+        //        obj.duration = 1.0
+        //        obj.rotate = 3.2
+        obj.animate()
+    }
+    
+    func fadeOut(obj : Springable){
+        obj.animation = "fadeOut"
         //        obj.force = 1.0
         //        obj.damping = 0.4
         //        obj.duration = 1.0

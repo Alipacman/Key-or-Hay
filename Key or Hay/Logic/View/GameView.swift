@@ -105,7 +105,8 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     }
     
     @IBAction func mainMenuPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.submitScore()
+        performSegue(withIdentifier: "mainMenu", sender: self)
     }
     
 }

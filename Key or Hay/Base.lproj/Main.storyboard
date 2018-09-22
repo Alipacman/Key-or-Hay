@@ -1440,9 +1440,11 @@
                         <outletCollection property="topScores" destination="cld-nu-xIz" collectionClass="NSMutableArray" id="u8q-cC-go8"/>
                         <outletCollection property="topScores" destination="fvX-4W-hZm" collectionClass="NSMutableArray" id="BF8-iC-XI0"/>
                         <segue destination="xCg-oe-vMQ" kind="show" identifier="highScores" id="e7f-Sj-hFS"/>
+                        <segue destination="TdI-13-YJX" kind="unwind" identifier="mainMenu" unwindAction="unwindToEntranceViewWithSender:" id="afe-e7-8Q1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyT-tL-vPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TdI-13-YJX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2719.1999999999998" y="29.55665024630542"/>
         </scene>
