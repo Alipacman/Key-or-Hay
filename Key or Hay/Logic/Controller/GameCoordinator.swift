@@ -51,6 +51,10 @@ extension GameView{
         rightButtonSpringView.isHidden = true
         highscoreSpringView.isHidden = true
         inGameRestartButton.isHidden = true
+        
+//        self.buttonRandomMark.isHidden = true
+//        self.buttonHusseinFace.isHidden = true
+//        self.buttonAliFace.isHidden = true
     }
     
     func preparationDone(_ sender: GamePrepController) {
@@ -82,7 +86,7 @@ extension GameView{
         self.musicController?.fadeOut()
         self.updateTopScores()
         allFallDownAnimation()
-        achievedScore.text = "Dein Score: \(String(pointCounter))"
+        achievedScore.text = String(pointCounter)
     }
     
     func speedUp(){

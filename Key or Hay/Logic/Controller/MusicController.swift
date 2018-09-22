@@ -26,6 +26,7 @@ class MusicController {
         catch{
             print(error)
         }
+        audioPlayer?.numberOfLoops = 100
         audioPlayer?.prepareToPlay()
         audioPlayer?.play()
     }

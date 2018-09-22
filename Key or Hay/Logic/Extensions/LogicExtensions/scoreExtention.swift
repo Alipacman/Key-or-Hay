@@ -31,7 +31,7 @@ extension GameView{
             name = self.nameField.text!
         }
         
-        let entry = ScoreEntry(uuid: uuid!, name: name, score: Int((achievedScore.text?.lastWord)!)!)
+        let entry = ScoreEntry(uuid: uuid!, name: name, score: Int((achievedScore.text!))!)
         if (self.scoreNetworkController!.submitScore(scoreEntry: entry)){
             self.scoreArray.append(entry)
         }

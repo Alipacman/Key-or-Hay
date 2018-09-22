@@ -78,5 +78,10 @@ class ScoreNetworkController {
         let topScoreArray = scoreArray.sorted(by: { $0.score! > $1.score! })
         return topScoreArray.prefix(upTo: 5)
     }
+    
+    func sortScorres(scoreArray : [ScoreEntry]) -> [ScoreEntry] {
+        let array = self.scoreArray!.sorted(by: { $0.score! > $1.score! })
+        return array
+    }
 }
 

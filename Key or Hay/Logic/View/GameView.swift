@@ -27,7 +27,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     
     var counter = 0
     var preparationTime = 4
-    var gameLenght = 20.0
+    var gameLenght = 30.0
     var pointCounter = 0
     var scoreMode = false
     
@@ -58,6 +58,11 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
 
     @IBOutlet var topNames : [UILabel]!
     @IBOutlet var topScores : [UILabel]!
+    
+    @IBOutlet weak var buttonAliFace: SpringImageView!
+    @IBOutlet weak var buttonRandomMark: SpringLabel!
+    @IBOutlet weak var buttonHusseinFace: SpringImageView!
+    
     
     @IBAction func action(_ sender: LGButton){
         print("salam \(sender.tag)")
@@ -101,6 +106,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Scoreboard"{
+            scoreArray = scoreNetworkController?.sortScorres(scoreArray: scoreArray)
             let destinySegue = segue.destination as! ScoresTableViewController
             destinySegue.scoreArray = self.scoreArray
         }
@@ -109,8 +115,6 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
             scoreMode = true
     }
-    
-    
     
 }
 
