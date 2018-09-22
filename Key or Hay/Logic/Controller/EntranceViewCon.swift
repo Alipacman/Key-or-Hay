@@ -9,60 +9,77 @@
 import UIKit
 import Spring
 import Pastel
+import LGButton
 
 class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDownDelegate {
     
     var scoreArray : [ScoreEntry] = []
     var musicController : MusicController = MusicController()
     
+    var imageDownloadController : ImageDownloadController?
+    var highscoreDownloader : ScoreNetworkController?
     
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var springImageView: SpringImageView!
+    var highscoresDownloaded = false
+    
+    @IBOutlet weak var startButton: LGButton!
     
     
     
     func downloadFinished(_ sender: ImageDownloadController) {
-        startButton.isHidden = false
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
+        var highScoreWaiter = true
+        
+        while highScoreWaiter {
+            if highscoresDownloaded{
+                startButton.isLoading = false
+                self.performSegue(withIdentifier: "gameView", sender: self)
+                highScoreWaiter = false
+            }
+        }
     }
     
     func scoreDownloadFinished(_ sender: ScoreNetworkController, scoreArray : [ScoreEntry]) {
         self.scoreArray = scoreArray
+        highscoresDownloaded = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scoreArray = Array(Set<ScoreEntry>(self.scoreArray))
-        
-        activityIndicator.startAnimating()
-        startButton.isHidden = true
-        
-        let imageDownloadController = ImageDownloadController(self)
-        imageDownloadController.loadImgWithPromise()
-        
-        let highscoreDownloader = ScoreNetworkController(delegate: self)
-        highscoreDownloader.downloadScores()
+        imageDownloadController = ImageDownloadController(self)
+        highscoreDownloader = ScoreNetworkController(delegate: self)
         
         musicController.playSound(songName: "mainTheme")
-        
         Pastel.startPastel(view: self.view, color: "normal")
-
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         musicController.fadeOut()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        HeartController.initImageView(springImageView: self.springImageView)
-//    }
+    @IBAction func action(_ sender: LGButton) {
+            startButton.isLoading = true
+            imageDownloadController?.loadImgWithPromise()
+            highscoreDownloader?.downloadScores()
+        }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gameView"{
+            self.scoreArray = Array(Set<ScoreEntry>(self.scoreArray))
+            
             let destinySegue = segue.destination as! GameView
             destinySegue.scoreArray = self.scoreArray
         }
     }
+    @IBAction func shopButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func tutorialButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "tutorial", sender: self)
+    }
+    
+    @IBAction func aboutButtonPressed(_ sender: Any) {
+        
+    }
+    
+    
 }

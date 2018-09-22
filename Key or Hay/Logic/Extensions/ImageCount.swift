@@ -40,7 +40,7 @@ extension ImageDownloadController {
                 let localURL = URL(fileURLWithPath: path).appendingPathComponent("ImageCount.rtf")
                 do {
                     let counts = try String(contentsOf: localURL, encoding: .utf8).lastWords(4)
-                    print("here is the count: \(counts)")
+                    print("here is the images to download count: \(counts)")
                     seal.fulfill(counts)
                 }
                 catch { print("error at readSetCount")}

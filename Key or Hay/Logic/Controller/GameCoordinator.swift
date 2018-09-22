@@ -90,7 +90,6 @@ extension GameView{
     }
     
     func speedUp(){
-        print(healthBar.progressValue)
         switch healthBar.progressValue {
         case 0.0 ... 0.2:
             self.healthBar.barColor = UIColor.flatRed()

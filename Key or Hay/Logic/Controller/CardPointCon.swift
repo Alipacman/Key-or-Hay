@@ -48,24 +48,24 @@ class CardPointController {
     
     func buttonPressed(buttonNumber : Int) {
         self.checkResult(pressedButton: buttonNumber)
-        self.handleSlideOut(pressedButton: buttonNumber)
         cardCounter += 1
         if (cardCounter % 3 == 0){
             self.zLSwipeableView.nextView = {
                 return self.createView()
             }
         }
-        print("buttonPressed: \(buttonNumber)")
     }
     
     //    TPDO: Anmiate bonustime
     func checkResult(pressedButton : Int) {
         if pressedButton == rightButtons.first{
             self.gameView!.heartImageView.image = #imageLiteral(resourceName: "redHeart")
+            self.handleSlideOut(pressedButton: pressedButton)
             self.gameView!.updatePoints(number: 1)
             timeController.AddbonusTime(timeToAdd: 0.4)
         }
         else{
+            handleSlideOut(pressedButton: 3)
              self.gameView!.heartImageView.image = #imageLiteral(resourceName: "blackHeart")
             self.gameView!.updatePoints(number: -1)
         }
@@ -80,6 +80,9 @@ class CardPointController {
         }
         if pressedButton == 2{
             self.zLSwipeableView.swipeTopView(inDirection: .Right)
+        }
+        if pressedButton == 3{
+            self.zLSwipeableView.swipeTopView(inDirection: .Down)
         }
         rightButtons.removeFirst()
     }

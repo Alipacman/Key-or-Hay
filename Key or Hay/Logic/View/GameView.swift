@@ -65,7 +65,6 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     
     
     @IBAction func action(_ sender: LGButton){
-        print("salam \(sender.tag)")
         self.choiceButtonPressed(tag : sender.tag)
     }
     

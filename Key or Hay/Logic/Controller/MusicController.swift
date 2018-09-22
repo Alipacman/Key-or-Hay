@@ -37,7 +37,7 @@ class MusicController {
             try play(url!)
         }
         catch{
-            print("error With Music")
+            print(error)
         }
     }
     
