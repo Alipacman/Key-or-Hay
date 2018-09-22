@@ -44,6 +44,7 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         
         imageDownloadController = ImageDownloadController(self)
         highscoreDownloader = ScoreNetworkController(delegate: self)
@@ -54,6 +55,9 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
     }
     override func viewWillDisappear(_ animated: Bool) {
         musicController.fadeOut()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true;
     }
     
     @IBAction func action(_ sender: LGButton) {

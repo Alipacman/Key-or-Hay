@@ -25,21 +25,9 @@
                                     <constraint firstAttribute="width" secondItem="1Yw-hI-38h" secondAttribute="height" multiplier="1:1" constant="9" id="HWW-aQ-aCT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hay or Ayy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-6C-hJQ">
-                                <rect key="frame" x="53" y="98" width="269" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jVJ-6C-hJQ" secondAttribute="height" multiplier="269:98" id="Zyp-u9-Mkk"/>
-                                    <constraint firstAttribute="height" constant="98" id="jOZ-NM-EU7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1Yw-hI-38h" firstAttribute="top" secondItem="jVJ-6C-hJQ" secondAttribute="bottom" constant="39.670000000000002" id="0WR-cH-woY"/>
-                            <constraint firstItem="jVJ-6C-hJQ" firstAttribute="centerX" secondItem="bE7-WT-xSl" secondAttribute="centerX" id="8bz-Pa-qpo"/>
                             <constraint firstItem="bE7-WT-xSl" firstAttribute="trailing" secondItem="1Yw-hI-38h" secondAttribute="trailing" constant="12" id="Eov-90-HfE"/>
                             <constraint firstItem="1Yw-hI-38h" firstAttribute="leading" secondItem="bE7-WT-xSl" secondAttribute="leading" constant="12" id="Pwm-2m-KKJ"/>
                             <constraint firstItem="1Yw-hI-38h" firstAttribute="centerY" secondItem="bE7-WT-xSl" secondAttribute="centerY" constant="-4.5" id="WKc-kt-m1h"/>

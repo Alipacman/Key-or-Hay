@@ -20,6 +20,7 @@ extension GameView{
         //        falldown(obj : heartImageView)
         falldown(obj : leftButtonSpringView)
         falldown(obj : leftButtonSpringView)
+        falldown(obj: inGameRestartButton)
     }
     
     func falldown(obj : Springable){

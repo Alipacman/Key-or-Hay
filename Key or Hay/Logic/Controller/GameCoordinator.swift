@@ -12,6 +12,7 @@ import UIKit
 extension GameView{
     
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.isHidden = true
         pastel = Pastel.startPastel(view: self.view, color : "normal", speed: 1.5)
         self.nameField.delegate = self
         

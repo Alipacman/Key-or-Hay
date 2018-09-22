@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5R-gV-wMR">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -494,6 +494,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Key or Hay" id="xz1-dU-Z4s"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="startButton" destination="MES-4g-FFv" id="5fn-46-zAN"/>
                         <segue destination="e3a-Vw-5D3" kind="show" identifier="gameView" id="VPL-rF-Mvc"/>
@@ -502,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.60000000000002" y="29.55665024630542"/>
+            <point key="canvasLocation" x="1700" y="29.55665024630542"/>
         </scene>
         <!--Heart Test Controller-->
         <scene sceneID="49b-U7-ci6">
@@ -1353,6 +1355,9 @@
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="mainMenuPressed:" destination="e3a-Vw-5D3" eventType="touchUpInside" id="yLi-3v-hiM"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -1404,7 +1409,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DQP-PU-NqZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IpC-Ee-TSi"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="achievedScore" destination="iUs-xw-71X" id="xNv-Y5-FgB"/>
                         <outlet property="buttonAliFace" destination="f9R-NM-nVH" id="59q-yz-NBC"/>
@@ -1438,32 +1444,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyT-tL-vPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="30"/>
+            <point key="canvasLocation" x="2719.1999999999998" y="29.55665024630542"/>
         </scene>
-        <!--Scores Table View Controller-->
+        <!--Highscores-->
         <scene sceneID="i41-br-o8b">
             <objects>
-                <tableViewController id="xCg-oe-vMQ" customClass="ScoresTableViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Highscores" id="xCg-oe-vMQ" customClass="ScoresTableViewController" customModule="Key_or_Hay" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y3g-dN-e2X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="CeQ-Bd-qVU">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Scores" id="pOk-Ee-uhe">
-                                    <barButtonItem key="leftBarButtonItem" title="Back" id="ica-Ob-25t">
-                                        <connections>
-                                            <segue destination="0DA-m0-6tR" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="Zyn-UE-Yx1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="entryCell" id="Zob-sn-5wK" customClass="EntryViewCell" customModule="Key_or_Hay" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zob-sn-5wK" id="27P-1I-czX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -1516,11 +1509,21 @@
                             <outlet property="delegate" destination="xCg-oe-vMQ" id="cwl-Jh-qQO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Highscores" largeTitleDisplayMode="always" id="jx1-Hz-kL2">
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="v2R-QB-vk2">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="0DA-m0-6tR" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="Sv2-f6-e4n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-BL-nMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0DA-m0-6tR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="30"/>
+            <point key="canvasLocation" x="3604" y="29.55665024630542"/>
         </scene>
         <!--Submit Picture View Controller-->
         <scene sceneID="L2d-oW-Jrq">
@@ -1573,6 +1576,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCD-oI-v8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2662" y="834"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tWE-Gc-mQ7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="c5R-gV-wMR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nhl-lk-vy2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QRu-zD-5ks"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b6-ys-nT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.60000000000002" y="29.55665024630542"/>
         </scene>
     </scenes>
     <resources>

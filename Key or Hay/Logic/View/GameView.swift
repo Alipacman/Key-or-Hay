@@ -73,6 +73,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true;
         HeartController.initImageView(springImageView: self.heartImageView)
     }
     

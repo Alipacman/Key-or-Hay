@@ -15,6 +15,12 @@ class ScoresTableViewController: UITableViewController {
 
     override func viewDidLoad() {
 //        Pastel.startPastel(view: self.view, color: "normal")
+
+        self.navigationController?.title = "Highscores"
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.isHidden = false
+
+        
         super.viewDidLoad()
     }
 
