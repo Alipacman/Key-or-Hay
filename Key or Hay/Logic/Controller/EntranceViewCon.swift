@@ -49,7 +49,7 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
         highscoreDownloader = ScoreNetworkController(delegate: self)
         
         musicController.playSound(songName: "mainTheme")
-        Pastel.startPastel(view: self.view, color: "normal")
+        Pastel.startPastel(view: self.view, color: "normal", speed: 1.0)
         
     }
     override func viewWillDisappear(_ animated: Bool) {

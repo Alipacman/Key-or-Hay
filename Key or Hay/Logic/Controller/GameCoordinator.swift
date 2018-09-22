@@ -12,12 +12,12 @@ import UIKit
 extension GameView{
     
     override func viewDidLoad() {
-        pastel = Pastel.startPastel(view: self.view, color : "normal")
+        pastel = Pastel.startPastel(view: self.view, color : "normal", speed: 1.5)
         self.nameField.delegate = self
         
         self.scoreArray = Array(Set(self.scoreArray))
         
-        initHealthBarAndHighScore()
+        initStartState()
         hideAll()
         
         
@@ -30,6 +30,8 @@ extension GameView{
         self.scoreNetworkController = ScoreNetworkController(delegate : nil)
         
         self.musicController = MusicController()
+        
+        startStateOfAnimations()
         
         super.viewDidLoad()
     }
@@ -44,7 +46,7 @@ extension GameView{
     func hideAll(){
         zlSpringView.isHidden = true
         heartImageView.isHidden = true
-        healtBarSpringView.isHidden = true
+        healthBarSpringView.isHidden = true
         pointLabel.isHidden = true
         leftButtonSpringView.isHidden = true
         midButtonSpringView.isHidden = true
@@ -89,29 +91,23 @@ extension GameView{
         achievedScore.text = String(pointCounter)
     }
     
-    func speedUp(){
-        switch healthBar.progressValue {
-        case 0.0 ... 0.2:
-            self.healthBar.barColor = UIColor.flatRed()
-            self.heartImageView.duration = 0.2
-            self.pastel?.animationDuration = 0.2
-        case 0.2 ... 0.5:
-            self.healthBar.barColor = UIColor.flatRed()
-            self.heartImageView.duration = 0.3
-            self.pastel?.animationDuration = 1.0
-        case 0.5 ... 0.8:
-            self.healthBar.barColor = UIColor.flatRed()
-            self.heartImageView.duration = 0.5
-            self.pastel?.animationDuration = 1.5
-        case 0.8 ... 1.0:
-            self.healthBar.barColor = UIColor.flatRed()
-            self.heartImageView.duration = 0.8
-            self.pastel?.animationDuration = 2.0
-        default:
-            break
+    func updatePoints(number : Int){
+        pointCounter += number
+        if pointCounter < 0{
+            self.pointCounter = 0
         }
+        self.pointLabel.text = String(self.pointCounter)
     }
     
-    
+    func initStartState() {
+        HealthBarSetup.setup()
+        healthBar.setProgress(progress: 0.0, animated: true)
+        
+        highscoreSpringView.clipsToBounds = true
+        highscoreSpringView.layer.cornerRadius = 20
+        Pastel.startPastel(view: highscoreSpringView, color: "normal", speed: 1.5)
+        
+        startStateOfAnimations()
+    }
     
 }

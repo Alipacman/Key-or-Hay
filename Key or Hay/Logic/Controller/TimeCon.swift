@@ -16,6 +16,8 @@ class TimeController {
     var timeToPlay : Double
     var timer : Timer?
     
+    var speedCounter = 0
+    
     var timePassed = 0.0
     
     init(_ gameView : GameView, timeToPlay : Double) {
@@ -27,15 +29,16 @@ class TimeController {
     // Handels Counting
     func startTimer(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 0.1 seconds
+        speedCounter = 0
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
         }
     }
     
     @objc func updateCounting(){
-        timePassed += 0.2
+        timePassed += 0.05
         self.gameView?.healthBar.setProgress(progress: CGFloat(self.timePassed/self.timeToPlay), animated: true)
-        gameView?.speedUp()
+        speedUp()
         if timePassed >= timeToPlay{
             delegate?.gametimeFinished(self)
             stopTimer()

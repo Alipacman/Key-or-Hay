@@ -12,6 +12,7 @@ import UIKit
 extension GameView{
     
     func restartExtension(_ sender : Any){
+        initStartState()
         if (sender as AnyObject).tag == 1{
             self.musicController?.fadeOut()
             self.submitScore()

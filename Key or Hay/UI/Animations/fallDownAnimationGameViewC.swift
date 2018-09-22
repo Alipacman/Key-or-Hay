@@ -16,7 +16,7 @@ extension GameView{
         falldown(obj : leftButtonSpringView)
         falldown(obj : rightButtonSpringView)
         falldown(obj : midButtonSpringView)
-        falldown(obj : healtBarSpringView)
+        falldown(obj : healthBarSpringView)
         //        falldown(obj : heartImageView)
         falldown(obj : leftButtonSpringView)
         falldown(obj : leftButtonSpringView)

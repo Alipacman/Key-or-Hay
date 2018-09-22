@@ -11,7 +11,7 @@ import Pastel
 
 class Pastel {
     
-    static func startPastel(view : UIView, color : String) -> PastelView{
+    static func startPastel(view : UIView, color : String, speed : Float) -> PastelView{
         
         let pastelView = PastelView(frame: view.bounds)
         
@@ -20,7 +20,7 @@ class Pastel {
         pastelView.endPastelPoint = .topRight
         
         // Custom Duration
-        pastelView.animationDuration = 1.0
+        pastelView.animationDuration = TimeInterval(speed)
         
         // Custom Color
         if (color == "normal"){

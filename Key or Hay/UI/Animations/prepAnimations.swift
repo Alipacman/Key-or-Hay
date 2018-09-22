@@ -26,10 +26,10 @@ extension GamePrepController{
             self.gameView?.midButtonSpringView.duration = 1.0
             self.gameView?.midButtonSpringView.animateNext {
                 
-                self.gameView?.healtBarSpringView.isHidden = false
-                self.gameView?.healtBarSpringView.animation = "slideDown"
-                self.gameView?.healtBarSpringView.duration = 1.0
-                self.gameView?.healtBarSpringView.animate()
+                self.gameView?.healthBarSpringView.isHidden = false
+                self.gameView?.healthBarSpringView.animation = "slideDown"
+                self.gameView?.healthBarSpringView.duration = 1.0
+                self.gameView?.healthBarSpringView.animate()
                 
                 self.gameView?.heartImageView.isHidden = false
                 self.gameView?.heartImageView.animation = "fadeIn"

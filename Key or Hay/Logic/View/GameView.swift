@@ -37,7 +37,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     @IBOutlet weak var zlSpringView: SpringView!
     @IBOutlet weak var zLSwipeableView: ZLSwipeableView!
     
-    @IBOutlet weak var healtBarSpringView: SpringView!
+    @IBOutlet weak var healthBarSpringView: SpringView!
     @IBOutlet weak var healthBar: AMProgressBar!
     
     @IBOutlet weak var countdownLable: SpringLabel!
@@ -80,22 +80,6 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
         musicController?.fadeOut()
     }
     
-    func updatePoints(number : Int){
-        pointCounter += number
-        if pointCounter < 0{
-            self.pointCounter = 0
-        }
-        self.pointLabel.text = String(self.pointCounter)
-    }
-    
-    func initHealthBarAndHighScore() {
-        HealthBarSetup.setup()
-        healthBar.setProgress(progress: 0.0, animated: true)
-        
-        highscoreSpringView.clipsToBounds = true
-        highscoreSpringView.layer.cornerRadius = 20
-        Pastel.startPastel(view: highscoreSpringView, color: "analogous")
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -104,7 +88,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Scoreboard"{
+        if segue.identifier == "highScores"{
             scoreArray = scoreNetworkController?.sortScorres(scoreArray: scoreArray)
             let destinySegue = segue.destination as! ScoresTableViewController
             destinySegue.scoreArray = self.scoreArray
@@ -113,6 +97,14 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
             scoreMode = true
+    }
+    
+    @IBAction func allScoresPressed(_ sender: Any) {
+        performSegue(withIdentifier: "highScores", sender: self)
+    }
+    
+    @IBAction func mainMenuPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
