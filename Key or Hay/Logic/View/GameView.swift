@@ -101,6 +101,7 @@ class GameView: UIViewController, PreparationDelegate, TimerDelegate,  UITextFie
     }
     
     @IBAction func allScoresPressed(_ sender: Any) {
+        self.scoreArray = Array(Set(self.scoreArray))
         performSegue(withIdentifier: "highScores", sender: self)
     }
     

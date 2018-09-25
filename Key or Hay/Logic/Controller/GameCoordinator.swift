@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+//TODO: make this a own class, to sperate VC form Controller
 extension GameView{
     
     override func viewDidLoad() {

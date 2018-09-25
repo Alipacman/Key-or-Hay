@@ -21,6 +21,8 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
     
     var highscoresDownloaded = false
     
+    @IBOutlet weak var startButtonLable: UILabel!
+    
     @IBOutlet weak var startButton: LGButton!
     
     
@@ -61,6 +63,7 @@ class EntranceViewController: UIViewController, imgDownloadDelegate, highscoreDo
     }
     
     @IBAction func action(_ sender: LGButton) {
+            startButtonLable.isHidden = true
             startButton.isLoading = true
             imageDownloadController?.loadImgWithPromise()
             highscoreDownloader?.downloadScores()
