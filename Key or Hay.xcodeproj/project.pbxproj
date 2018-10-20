@@ -14,7 +14,6 @@
 		4113D2FF2129DB0B008EA9E9 /* ScoreNetworkCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113D2FE2129DB0B008EA9E9 /* ScoreNetworkCon.swift */; };
 		41156E2D212ABA1B0057471A /* GoldSingelton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156E2C212ABA1B0057471A /* GoldSingelton.swift */; };
 		411F0F812125EC3400493D34 /* EntranceViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411F0F802125EC3400493D34 /* EntranceViewCon.swift */; };
-		4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4121CA012124D20600BAEB66 /* GoogleService-Info.plist */; };
 		4121CA042124D4DE00BAEB66 /* ImageDownlCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */; };
 		4125D8EB21515863004A9005 /* scoreExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4125D8EA21515863004A9005 /* scoreExtention.swift */; };
 		412B775E2152909100FC1183 /* restartExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B775D2152909100FC1183 /* restartExtension.swift */; };
@@ -51,6 +50,7 @@
 		41E777262131DDCA0037A586 /* HeartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777252131DDCA0037A586 /* HeartController.swift */; };
 		41E777282131E38B0037A586 /* HeartTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E777272131E38B0037A586 /* HeartTestController.swift */; };
 		41E9215C2128B85000F80FE2 /* DirectoryHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */; };
+		41F0728B2179C53B000BE863 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41F0728A2179C53B000BE863 /* GoogleService-Info.plist */; };
 		41F0EE302152634E00D497A8 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F0EE2F2152634E00D497A8 /* MusicController.swift */; };
 		41F0EE33215266A300D497A8 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41F0EE32215266A300D497A8 /* gameMusic.mp3 */; };
 		41F0EE3521526AD200D497A8 /* mainTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 41F0EE3421526AD200D497A8 /* mainTheme.mp3 */; };
@@ -65,7 +65,6 @@
 		4113D2FE2129DB0B008EA9E9 /* ScoreNetworkCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreNetworkCon.swift; sourceTree = "<group>"; };
 		41156E2C212ABA1B0057471A /* GoldSingelton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldSingelton.swift; sourceTree = "<group>"; };
 		411F0F802125EC3400493D34 /* EntranceViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewCon.swift; sourceTree = "<group>"; };
-		4121CA012124D20600BAEB66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4121CA032124D4DE00BAEB66 /* ImageDownlCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownlCon.swift; sourceTree = "<group>"; };
 		4125D8EA21515863004A9005 /* scoreExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreExtention.swift; sourceTree = "<group>"; };
 		412B775D2152909100FC1183 /* restartExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restartExtension.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		41E777252131DDCA0037A586 /* HeartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartController.swift; sourceTree = "<group>"; };
 		41E777272131E38B0037A586 /* HeartTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartTestController.swift; sourceTree = "<group>"; };
 		41E9215B2128B85000F80FE2 /* DirectoryHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelp.swift; sourceTree = "<group>"; };
+		41F0728A2179C53B000BE863 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41F0EE2F2152634E00D497A8 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		41F0EE32215266A300D497A8 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		41F0EE3421526AD200D497A8 /* mainTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainTheme.mp3; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				413E11431FA7DFCB00926D52 /* LaunchScreen.storyboard */,
 				413E11461FA7DFCB00926D52 /* Info.plist */,
 				418AE8942124CEE40004C47F /* Notes.md */,
-				4121CA012124D20600BAEB66 /* GoogleService-Info.plist */,
+				41F0728A2179C53B000BE863 /* GoogleService-Info.plist */,
 				4132428E215051D7005A1048 /* .gitignore */,
 			);
 			path = "Key or Hay";
@@ -375,11 +375,11 @@
 			files = (
 				4132428F215051D7005A1048 /* .gitignore in Resources */,
 				413E11451FA7DFCB00926D52 /* LaunchScreen.storyboard in Resources */,
-				4121CA022124D20700BAEB66 /* GoogleService-Info.plist in Resources */,
 				41F0EE3521526AD200D497A8 /* mainTheme.mp3 in Resources */,
 				413E11421FA7DFCB00926D52 /* Assets.xcassets in Resources */,
 				41F0EE33215266A300D497A8 /* gameMusic.mp3 in Resources */,
 				413E11401FA7DFCB00926D52 /* Main.storyboard in Resources */,
+				41F0728B2179C53B000BE863 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
