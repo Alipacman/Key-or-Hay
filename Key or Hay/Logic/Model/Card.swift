@@ -21,7 +21,9 @@ class Card :UIView {
         self.image = image
         self.viewContainer = self.createViewContainer()
         self.imageContainer = self.createImageContainer()
-        self.viewContainer?.addSubview(imageContainer!)
+        self.addSubview(imageContainer!)
+        layout()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,5 +45,27 @@ class Card :UIView {
         return view
     }
  
+    func setup() {
+        // Shadow
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.25
+        layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        layer.shadowRadius = 4.0
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+        
+        // Corner Radius
+        layer.cornerRadius = 10.0;
+    }
+    
+    func layout() {
+        imageContainer?.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
+        imageContainer?.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9).isActive = true
+        imageContainer?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        imageContainer?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+        imageContainer?.layer.cornerRadius = 10.0
+        imageContainer?.clipsToBounds = true
+    }
     
 }
